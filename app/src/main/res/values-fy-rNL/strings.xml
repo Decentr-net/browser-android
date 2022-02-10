@@ -62,7 +62,7 @@
     <string moz:removedIn="97" name="recently_saved_show_all_content_description" tools:ignore="UnusedResources">Knop Alle bewarre blêdwizers toane</string>
 
     <!-- About content. The first parameter is the name of the application. (For example: Fenix) -->
-    <string name="about_content">%1$s is makke troch Mozilla.</string>
+    <string name="about_content">%1$s is makke troch Decentr.</string>
 
     <!-- Private Browsing -->
     <!-- Title for private session option -->
@@ -87,8 +87,8 @@
     <string name="cfr_neg_button_text">Nee, tankewol</string>
 
     <!-- Open in App "contextual feature recommendation" (CFR) -->
-    <!-- Text for the info message. 'Firefox' intentionally hardcoded here.-->
-    <string name="open_in_app_cfr_info_message">Jo kinne Firefox ynstelle om keppelingen automatysk yn apps te iepenjen.</string>
+    <!-- Text for the info message. 'Decentr' intentionally hardcoded here.-->
+    <string name="open_in_app_cfr_info_message">Jo kinne Decentr ynstelle om keppelingen automatysk yn apps te iepenjen.</string>
     <!-- Text for the positive action button -->
     <string name="open_in_app_cfr_positive_button_text">Nei ynstellingen</string>
     <!-- Text for the negative action button -->
@@ -116,7 +116,7 @@
     <!-- Text for title for the auto-close dialog of the inactive tabs. -->
     <string name="tab_tray_inactive_auto_close_title">Automatysk slute nei in moanne?</string>
     <!-- Text for the body for the auto-close dialog of the inactive tabs. -->
-    <string name="tab_tray_inactive_auto_close_body">Firefox kin ljepblêden dy’t jo de ôfrûne moanne net besjoen hawwe slute.</string>
+    <string name="tab_tray_inactive_auto_close_body">Decentr kin ljepblêden dy’t jo de ôfrûne moanne net besjoen hawwe slute.</string>
     <!-- Content description for close button in the auto-close dialog of the inactive tabs. -->
     <string name="tab_tray_inactive_auto_close_button_content_description">Slute</string>
     <!-- Text for turn on auto close tabs button in the auto-close dialog of the inactive tabs. -->
@@ -298,12 +298,12 @@
     <string name="search_engine_suggestions_description">Streekrjocht fan de adresbalke út sykje</string>
 
     <!-- Home onboarding -->
-    <!-- Onboarding home screen dialog title text. Firefox is intentionally hardcoded. -->
-    <string name="onboarding_home_screen_title_2">Wat is der nij yn Firefox</string>
+    <!-- Onboarding home screen dialog title text. Decentr is intentionally hardcoded. -->
+    <string name="onboarding_home_screen_title_2">Wat is der nij yn Decentr</string>
     <!-- Onboarding home screen dialog description text. -->
     <string name="onboarding_home_screen_description_2">It is no ienfâldiger fierder te gean wêr’t jo bleaun wiene.</string>
-    <!-- Onboarding home screen dialog title text for the home section. Firefox is intentionally hardcoded. -->
-    <string name="onboarding_home_screen_section_home_title_2">Personalisearre Firefox-startside</string>
+    <!-- Onboarding home screen dialog title text for the home section. Decentr is intentionally hardcoded. -->
+    <string name="onboarding_home_screen_section_home_title_2">Personalisearre Decentr-startside</string>
     <!-- Onboarding home screen dialog description text for the home section. -->
     <string name="onboarding_home_screen_section_home_description_2">Spring nei jo iepen ljepblêden, blêdwizers en navigaasjeskiednis.</string>
     <!-- Onboarding home screen dialog description text for the tab tray section. -->
@@ -315,12 +315,12 @@
     <!-- Onboarding home screen dialog description text for the history section. -->
     <string name="onboarding_home_screen_section_useful_history_description_2">Besjoch jo lêste sykopdrachten opnij fan jo startside en ljepblêden ôf.</string>
 
-    <!-- Onboarding home screen popup dialog, shown on top of the Jump back in section. Firefox is intentionally hardcoded. -->
-    <string name="onboarding_home_screen_jump_back_contextual_hint" tools:ignore="UnusedResources">Jo personalisearre Firefox-startside makket it no ienfâldiger om fierder te gean wêr’t jo bleaun wiene. Fyn jo resinte ljepblêden, blêdwizers, en sykresultaten.</string>
+    <!-- Onboarding home screen popup dialog, shown on top of the Jump back in section. Decentr is intentionally hardcoded. -->
+    <string name="onboarding_home_screen_jump_back_contextual_hint" tools:ignore="UnusedResources">Jo personalisearre Decentr-startside makket it no ienfâldiger om fierder te gean wêr’t jo bleaun wiene. Fyn jo resinte ljepblêden, blêdwizers, en sykresultaten.</string>
 
     <!-- Search Widget -->
-    <!-- Content description for searching with a widget. Firefox is intentionally hardcoded.-->
-    <string name="search_widget_content_description">In nij Firefox-ljepblêd iepenje</string>
+    <!-- Content description for searching with a widget. Decentr is intentionally hardcoded.-->
+    <string name="search_widget_content_description">In nij Decentr-ljepblêd iepenje</string>
     <!-- Text preview for smaller sized widgets -->
     <string name="search_widget_text_short">Sykje</string>
     <!-- Text preview for larger sized widgets -->
@@ -381,12 +381,12 @@
     <string name="preferences_add_private_browsing_shortcut">Fluchkeppeling nei priveenavigaasje tafoegje</string>
     <!-- Preference for accessibility -->
     <string name="preferences_accessibility">Tagonklikheid</string>
-    <!-- Preference to override the Firefox Account server -->
-    <string name="preferences_override_fxa_server">Oanpaste Firefox Accountserver</string>
+    <!-- Preference to override the Decentr Account server -->
+    <string name="preferences_override_fxa_server">Oanpaste Decentr Accountserver</string>
     <!-- Preference to override the Sync token server -->
     <string name="preferences_override_sync_tokenserver">Oanpaste Syncserver</string>
     <!-- Toast shown after updating the FxA/Sync server override preferences -->
-    <string name="toast_override_fxa_sync_server_done">Firefox Account-/Syncserver oanpast. Tapassing wurdt ôfsluten om wizigingen ta te passen…</string>
+    <string name="toast_override_fxa_sync_server_done">Decentr Account-/Syncserver oanpast. Tapassing wurdt ôfsluten om wizigingen ta te passen…</string>
     <!-- Preference category for account information -->
     <string name="preferences_category_account">Account</string>
     <!-- Preference shown on banner to sign into account -->
@@ -402,9 +402,9 @@
     <!-- Preference for settings related to visual options -->
     <string name="preferences_customize">Oanpasse</string>
     <!-- Preference description for banner about signing in -->
-    <string name="preferences_sign_in_description">Syngronisearje blêdwizers, skiednis en mear mei jo Firefox-account</string>
+    <string name="preferences_sign_in_description">Syngronisearje blêdwizers, skiednis en mear mei jo Decentr-account</string>
     <!-- Preference shown instead of account display name while account profile information isn't available yet. -->
-    <string name="preferences_account_default_name">Firefox-account</string>
+    <string name="preferences_account_default_name">Decentr-account</string>
     <!-- Preference text for account title when there was an error syncing FxA -->
     <string name="preferences_account_sync_error">Ferbyn opnij om de syngronisaasje te ferfetsjen</string>
     <!-- Preference for language -->
@@ -529,7 +529,7 @@
     <!-- Name of the "receive tabs" notification channel. Displayed in the "App notifications" system settings for the app -->
     <string name="fxa_received_tab_channel_name">Untfongen ljepblêden</string>
     <!-- Description of the "receive tabs" notification channel. Displayed in the "App notifications" system settings for the app -->
-    <string name="fxa_received_tab_channel_description">Meldingen foar ljepblêden ûntfongen fan oare Firefox-apparaten.</string>
+    <string name="fxa_received_tab_channel_description">Meldingen foar ljepblêden ûntfongen fan oare Decentr-apparaten.</string>
     <!--  The body for these is the URL of the tab received  -->
     <string name="fxa_tab_received_notification_name">Ljepblêd ûntfongen</string>
     <!-- When multiple tabs have been received -->
@@ -560,25 +560,25 @@
     <!-- Preference switch for usage and technical data collection -->
     <string name="preference_usage_data">Gebrûks- en technyske gegevens</string>
     <!-- Preference description for usage and technical data collection -->
-    <string name="preferences_usage_data_description">Dielt gegevens oer prestaasjes, gebrûk, hardware en oanpassingen fan jo browser mei Mozilla om %1$s te helpen ferbetterjen</string>
+    <string name="preferences_usage_data_description">Dielt gegevens oer prestaasjes, gebrûk, hardware en oanpassingen fan jo browser mei Decentr om %1$s te helpen ferbetterjen</string>
     <!-- Preference switch for marketing data collection -->
     <string name="preferences_marketing_data">Marketinggegevens</string>
-    <!-- Preference description for marketing data collection, parameter is the app name (e.g. Firefox) -->
+    <!-- Preference description for marketing data collection, parameter is the app name (e.g. Decentr) -->
     <string moz:removedIn="96" name="preferences_marketing_data_description" tools:ignore="UnusedResources">Dielt gegevens oer hokker funksjes jo yn %1$s brûke mei Leanplum, ús leveransier fan mobile marketing.</string>
     <!-- Preference description for marketing data collection -->
     <string name="preferences_marketing_data_description2">Dielt basale gebrûksgegevens mei Adjust, ús leveransier fan mobile marketing</string>
     <!-- Title for studies preferences -->
     <string name="preference_experiments_2">Undersiken</string>
     <!-- Summary for studies preferences -->
-    <string name="preference_experiments_summary_2">Stelt Mozilla yn steat om ûndersiken te ynstallearjen en út te fieren</string>
+    <string name="preference_experiments_summary_2">Stelt Decentr yn steat om ûndersiken te ynstallearjen en út te fieren</string>
     <!-- Title for experiments preferences -->
     <string moz:removedIn="96" name="preference_experiments" tools:ignore="UnusedResources">Eksperiminten</string>
     <!-- Summary for experiments preferences -->
-    <string moz:removedIn="96" name="preference_experiments_summary" tools:ignore="UnusedResources">Hjirmei kin Mozilla gegevens ynstallearje en sammelje foar eksperimintele funksjes</string>
+    <string moz:removedIn="96" name="preference_experiments_summary" tools:ignore="UnusedResources">Hjirmei kin Decentr gegevens ynstallearje en sammelje foar eksperimintele funksjes</string>
     <!-- Preference switch for crash reporter -->
     <string moz:removedIn="96" name="preferences_crash_reporter" tools:ignore="UnusedResources">Ungelokrapportearder</string>
-    <!-- Preference switch for Mozilla location service -->
-    <string moz:removedIn="96" name="preferences_mozilla_location_service" tools:ignore="UnusedResources">Mozilla-lokaasjetsjinst</string>
+    <!-- Preference switch for Decentr location service -->
+    <string moz:removedIn="96" name="preferences_mozilla_location_service" tools:ignore="UnusedResources">Decentr-lokaasjetsjinst</string>
     <!-- Preference switch for app health report. The first parameter is the name of the application (For example: Fenix) -->
     <string moz:removedIn="96" name="preferences_fenix_health_report" tools:ignore="UnusedResources">%s-sûnensrapport</string>
 
@@ -586,7 +586,7 @@
     <!-- Header of the Turn on Sync preference view -->
     <string name="preferences_sync">Sync ynskeakelje</string>
     <!-- Preference for pairing -->
-    <string moz:removedIn="95" name="preferences_sync_pair" tools:ignore="UnusedResources">Keppelingskoade scanne yn desktop-Firefox</string>
+    <string moz:removedIn="95" name="preferences_sync_pair" tools:ignore="UnusedResources">Keppelingskoade scanne yn desktop-Decentr</string>
     <!-- Preference for account login -->
     <string moz:removedIn="96" name="preferences_sync_sign_in" tools:ignore="UnusedResources">Oanmelde</string>
     <!-- Preference for reconnecting to FxA sync -->
@@ -738,8 +738,8 @@
     <string name="studies_remove">Fuortsmite</string>
     <!-- Title of the active section on the studies list -->
     <string name="studies_active">Aktyf</string>
-    <!-- Description for studies, it indicates why Firefox use studies -->
-    <string name="studies_description">Firefox kin sa no en dan ûndersiken ynstallearje en útfiere.</string>
+    <!-- Description for studies, it indicates why Decentr use studies -->
+    <string name="studies_description">Decentr kin sa no en dan ûndersiken ynstallearje en útfiere.</string>
     <!-- Learn more link for studies, links to an article for more information about studies. -->
     <string name="studies_learn_more">Mear ynfo</string>
     <!-- Dialog message shown after removing a study -->
@@ -914,7 +914,7 @@
     <!-- Description text displayed on the tab crash page -->
     <string moz:removedIn="96" name="tab_crash_description" tools:ignore="UnusedResources">Jo kinne hjirûnder probearje dit ljepblêd te werstellen of te sluten.</string>
     <!-- Send crash report checkbox text on the tab crash page -->
-    <string name="tab_crash_send_report">Ungelokrapport nei Mozilla ferstjoere</string>
+    <string name="tab_crash_send_report">Ungelokrapport nei Decentr ferstjoere</string>
     <!-- Close tab button text on the tab crash page -->
     <string name="tab_crash_close">Ljepblêd slute</string>
     <!-- Restore tab button text on the tab crash page -->
@@ -1144,7 +1144,7 @@
     <!-- An option to connect additional devices -->
     <string name="sync_connect_device">Noch in apparaat keppelje</string>
     <!-- The dialog text shown when additional devices are not available -->
-    <string name="sync_connect_device_dialog">Meld jo oan by Firefox op op syn minst ien oar apparaat om in ljepblêd te ferstjoeren.</string>
+    <string name="sync_connect_device_dialog">Meld jo oan by Decentr op op syn minst ien oar apparaat om in ljepblêd te ferstjoeren.</string>
     <!-- Confirmation dialog button -->
     <string name="sync_confirmation_button">Begrepen</string>
     <!-- Share error message -->
@@ -1306,50 +1306,50 @@
     <string name="deleting_browsing_data_in_progress">Navigaasjegegevens fuortsmite…</string>
 
     <!-- Tips -->
-    <!-- text for firefox preview moving tip header "Firefox Preview" and "Firefox Nightly" are intentionally hardcoded -->
-    <string name="tip_firefox_preview_moved_header">Firefox Preview is no Firefox Nightly</string>
+    <!-- text for firefox preview moving tip header "Decentr Preview" and "Decentr Nightly" are intentionally hardcoded -->
+    <string name="tip_firefox_preview_moved_header">Decentr Preview is no Decentr Nightly</string>
     <!-- text for firefox preview moving tip description -->
-    <string name="tip_firefox_preview_moved_description">Firefox Nightly wurdt elke nacht bywurke en hat eksperimintele nije funksjes.
+    <string name="tip_firefox_preview_moved_description">Decentr Nightly wurdt elke nacht bywurke en hat eksperimintele nije funksjes.
         It kin lykwols minder stabyl wêze. Download ús bètabrowser foar in stabiler ûnderfining.</string>
 
-    <!-- text for firefox preview moving tip button. "Firefox for Android Beta" is intentionally hardcoded -->
-    <string name="tip_firefox_preview_moved_button_2">Download Firefox foar Android Beta</string>
+    <!-- text for firefox preview moving tip button. "Decentr for Android Beta" is intentionally hardcoded -->
+    <string name="tip_firefox_preview_moved_button_2">Download Decentr foar Android Beta</string>
 
-    <!-- text for firefox preview moving tip header. "Firefox Nightly" is intentionally hardcoded -->
-    <string name="tip_firefox_preview_moved_header_preview_installed">Firefox Nightly is ferpleatst</string>
+    <!-- text for firefox preview moving tip header. "Decentr Nightly" is intentionally hardcoded -->
+    <string name="tip_firefox_preview_moved_header_preview_installed">Decentr Nightly is ferpleatst</string>
     <!-- text for firefox preview moving tip description -->
     <string name="tip_firefox_preview_moved_description_preview_installed">Dizze app sil gjin befeiligingsupdates mear ûntfange. Stopje mei dizze app en wikselje nei de nije Nightly.
-        \n\nMeitsje in Firefox-account oan as jo jo blêdwizers, oanmeldingen en skiednis nei in oare app oerbringe wolle.</string>
+        \n\nMeitsje in Decentr-account oan as jo jo blêdwizers, oanmeldingen en skiednis nei in oare app oerbringe wolle.</string>
     <!-- text for firefox preview moving tip button  -->
     <string name="tip_firefox_preview_moved_button_preview_installed">Skeakelje oer nei de nije Nightly</string>
 
-    <!-- text for firefox preview moving tip header. "Firefox Nightly" is intentionally hardcoded -->
-    <string name="tip_firefox_preview_moved_header_preview_not_installed">Firefox Nightly is ferpleatst</string>
+    <!-- text for firefox preview moving tip header. "Decentr Nightly" is intentionally hardcoded -->
+    <string name="tip_firefox_preview_moved_header_preview_not_installed">Decentr Nightly is ferpleatst</string>
     <!-- text for firefox preview moving tip description -->
     <string name="tip_firefox_preview_moved_description_preview_not_installed">Dizze app sil gjin befeiligingsupdates mear ûntfange. Stopje mei dizze app en wikselje nei de nije Nightly.
-        \n\nMeitsje in Firefox-account oan as jo jo blêdwizers, oanmeldingen en skiednis nei in oare app oerbringe wolle.</string>
+        \n\nMeitsje in Decentr-account oan as jo jo blêdwizers, oanmeldingen en skiednis nei in oare app oerbringe wolle.</string>
     <!-- text for firefox preview moving tip button  -->
     <string name="tip_firefox_preview_moved_button_preview_not_installed">Download de nije Nightly</string>
 
     <!-- Onboarding -->
     <!-- Text for onboarding welcome message
-    The first parameter is the name of the app (e.g. Firefox Preview) -->
+    The first parameter is the name of the app (e.g. Decentr Preview) -->
     <string name="onboarding_header">Wolkom by %s!</string>
-    <!-- text for the Firefox Accounts section header -->
+    <!-- text for the Decentr Accounts section header -->
     <string moz:removedIn="96" name="onboarding_fxa_section_header" tools:ignore="UnusedResources">Hawwe jo al in account?</string>
-    <!-- text for the Firefox account onboarding sign in card header. The word "Firefox" should not be translated -->
-    <string name="onboarding_account_sign_in_header_1">Syngronisearje Firefox tusken apparaten</string>
-    <!-- Text for the button to learn more about signing in to your Firefox account -->
-    <string name="onboarding_manual_sign_in_description">Bring blêdwizers, skiednis en wachtwurden nei Firefox op dit apparaat.</string>
+    <!-- text for the Decentr account onboarding sign in card header. The word "Decentr" should not be translated -->
+    <string name="onboarding_account_sign_in_header_1">Syngronisearje Decentr tusken apparaten</string>
+    <!-- Text for the button to learn more about signing in to your Decentr account -->
+    <string name="onboarding_manual_sign_in_description">Bring blêdwizers, skiednis en wachtwurden nei Decentr op dit apparaat.</string>
     <!-- text for the firefox account onboarding card header when we detect you're already signed in to
-        another Firefox browser. (The word `Firefox` should not be translated)
+        another Decentr browser. (The word `Decentr` should not be translated)
         The first parameter is the email of the detected user's account -->
-    <string moz:removedIn="96" name="onboarding_firefox_account_auto_signin_header_3" tools:ignore="UnusedResources">Jo binne oanmeld as %s op in oare Firefox-browser op dit apparaat. Wolle jo oanmelde mei dizze account?</string>
+    <string moz:removedIn="96" name="onboarding_firefox_account_auto_signin_header_3" tools:ignore="UnusedResources">Jo binne oanmeld as %s op in oare Decentr-browser op dit apparaat. Wolle jo oanmelde mei dizze account?</string>
     <!-- text for the button to confirm automatic sign-in -->
     <string moz:removedIn="96" name="onboarding_firefox_account_auto_signin_confirm" tools:ignore="UnusedResources">Ja, my oanmelde</string>
     <!-- text for the automatic sign-in button while signing in is in process -->
     <string moz:removedIn="96" name="onboarding_firefox_account_signing_in" tools:ignore="UnusedResources">Oanmelde…</string>
-    <!-- text for the button to manually sign into Firefox account. -->
+    <!-- text for the button to manually sign into Decentr account. -->
     <string name="onboarding_firefox_account_sign_in_1">Registrearje</string>
     <!-- text for the button to stay signed out when presented with an option to automatically sign-in. -->
     <string moz:removedIn="96" name="onboarding_firefox_account_stay_signed_out" tools:ignore="UnusedResources">Ofmeld bliuwe</string>
@@ -1359,8 +1359,8 @@
     <string moz:removedIn="96" name="onboarding_firefox_account_automatic_signin_failed" tools:ignore="UnusedResources">Oanmelden mislearre</string>
     <!-- text for the tracking protection onboarding card header -->
     <string name="onboarding_tracking_protection_header_3">Privacy dy’t altyd oan stiet</string>
-    <!-- text for the tracking protection card description. 'Firefox' intentionally hardcoded here -->
-    <string name="onboarding_tracking_protection_description_3">Firefox soarget der automatysk foar dat bedriuwen jo net stikem folgje op ynternet.</string>
+    <!-- text for the tracking protection card description. 'Decentr' intentionally hardcoded here -->
+    <string name="onboarding_tracking_protection_description_3">Decentr soarget der automatysk foar dat bedriuwen jo net stikem folgje op ynternet.</string>
     <!-- text for tracking protection radio button option for standard level of blocking -->
     <string name="onboarding_tracking_protection_standard_button_2">Standert (standert)</string>
     <!-- text for standard blocking option button description -->
@@ -1378,7 +1378,7 @@
     <!-- text for the privacy notice onboarding card header -->
     <string name="onboarding_privacy_notice_header">Jo privacy</string>
     <!-- text for the privacy notice onboarding card description
-    The first parameter is the name of the app (e.g. Firefox Preview) Substitute %s for long browser name. -->
+    The first parameter is the name of the app (e.g. Decentr Preview) Substitute %s for long browser name. -->
     <string name="onboarding_privacy_notice_description2">Wy hawwe %s ûntwurpen om jo kontrôle te jaan oer wat jo online diele en wat jo mei ús diele.
     
     </string>
@@ -1413,18 +1413,18 @@
     <!-- Title of QR Pairing Fragment -->
     <string name="sync_scan_code">De koade scanne</string>
     <!-- Instructions on how to access pairing -->
-    <string name="sign_in_instructions"><![CDATA[Iepenje Firefox op jo kompjûter en gean nei <b>https://firefox.com/pair</b>]]></string>
+    <string name="sign_in_instructions"><![CDATA[Iepenje Decentr op jo kompjûter en gean nei <b>https://firefox.com/pair</b>]]></string>
     <!-- Text shown for sign in pairing when ready -->
     <string name="sign_in_ready_for_scan">Ree om te scannen</string>
     <!-- Text shown for settings option for sign with pairing -->
     <string name="sign_in_with_camera">Meld jo oan mei jo kamera</string>
     <!-- Text shown for settings option for sign with email -->
     <string name="sign_in_with_email">E-mail brûke</string>
-    <!-- Text shown for settings option for create new account text.'Firefox' intentionally hardcoded here.-->
-    <string name="sign_in_create_account_text"><![CDATA[Gjin account? <u>Meitsje der ien oan</u> om Firefox tusken apparaten te syngronisearjen.]]></string>
+    <!-- Text shown for settings option for create new account text.'Decentr' intentionally hardcoded here.-->
+    <string name="sign_in_create_account_text"><![CDATA[Gjin account? <u>Meitsje der ien oan</u> om Decentr tusken apparaten te syngronisearjen.]]></string>
     <!-- Text shown in confirmation dialog to sign out of account -->
-    <string moz:removedIn="96" name="sign_out_confirmation_message" tools:ignore="UnusedResources">Firefox stoppet de syngronisaasje mei jo account, mar sil gjin sneupgegevens op dit apparaat fuortsmite.</string>
-    <!-- Text shown in confirmation dialog to sign out of account. The first parameter is the name of the app (e.g. Firefox Preview) -->
+    <string moz:removedIn="96" name="sign_out_confirmation_message" tools:ignore="UnusedResources">Decentr stoppet de syngronisaasje mei jo account, mar sil gjin sneupgegevens op dit apparaat fuortsmite.</string>
+    <!-- Text shown in confirmation dialog to sign out of account. The first parameter is the name of the app (e.g. Decentr Preview) -->
     <string name="sign_out_confirmation_message_2">%s stoppet de syngronisaasje mei jo account, mar sil gjin sneupgegevens op dit apparaat fuortsmite.</string>
     <!-- Option to continue signing out of account shown in confirmation dialog to sign out of account -->
     <string name="sign_out_disconnect">Ferbining ferbrekke</string>
@@ -1598,9 +1598,9 @@
     <string name="preferences_passwords_save_logins_ask_to_save">Freegje om te bewarjen</string>
     <!-- Preference option for never saving passwords in Fenix -->
     <string name="preferences_passwords_save_logins_never_save">Nea bewarje</string>
-    <!-- Preference for autofilling saved logins in Firefox (in web content), %1$s will be replaced with the app name -->
+    <!-- Preference for autofilling saved logins in Decentr (in web content), %1$s will be replaced with the app name -->
     <string name="preferences_passwords_autofill2">Automatysk ynfolje yn %1$s</string>
-    <!-- Description for the preference for autofilling saved logins in Firefox (in web content), %1$s will be replaced with the app name -->
+    <!-- Description for the preference for autofilling saved logins in Decentr (in web content), %1$s will be replaced with the app name -->
     <string name="preferences_passwords_autofill_description">Brûkersnammen en wachtwurden op websites ynfolje en bewarje wylst jo %1$s brûke.</string>
     <!-- Preference for autofilling logins from Fenix in other apps (e.g. autofilling the Twitter app) -->
     <string name="preferences_android_autofill">Automatysk ynfolje yn oare apps</string>
@@ -1918,14 +1918,14 @@
     <string name="synced_tabs_connect_another_device">In oar apparaat ferbine.</string>
     <!-- Text displayed asking user to re-authenticate -->
     <string name="synced_tabs_reauth">Graach opnij autentisearje.</string>
-    <!-- Text displayed when user has disabled tab syncing in Firefox Sync Account -->
+    <!-- Text displayed when user has disabled tab syncing in Decentr Sync Account -->
     <string name="synced_tabs_enable_tab_syncing">Skeakelje it syngronisearjen fan ljepblêden yn.</string>
 
     <!-- Text displayed when user has no tabs that have been synced -->
-    <string name="synced_tabs_no_tabs">Jo hawwe gjin ljepblêden iepene yn Firefox op jo oare apparaten.</string>
-    <!-- Text displayed in the synced tabs screen when a user is not signed in to Firefox Sync describing Synced Tabs -->
+    <string name="synced_tabs_no_tabs">Jo hawwe gjin ljepblêden iepene yn Decentr op jo oare apparaten.</string>
+    <!-- Text displayed in the synced tabs screen when a user is not signed in to Decentr Sync describing Synced Tabs -->
     <string name="synced_tabs_sign_in_message">Besjoch in list mei ljepblêden fan jo oare apparaten.</string>
-    <!-- Text displayed on a button in the synced tabs screen to link users to sign in when a user is not signed in to Firefox Sync -->
+    <!-- Text displayed on a button in the synced tabs screen to link users to sign in when a user is not signed in to Decentr Sync -->
     <string name="synced_tabs_sign_in_button">Oanmelde om te syngronisearjen</string>
 
     <!-- The text displayed when a synced device has no tabs to show in the list of Synced Tabs. -->
@@ -1968,7 +1968,7 @@
     <!-- The header text of the auto-close message when the user is asked if they want to turn on the auto-closing of inactive tabs. -->
     <string name="inactive_tabs_auto_close_message_header" tools:ignore="UnusedResources">Automatysk slute nei in moanne?</string>
     <!-- A description below the header to notify the user what the inactive tabs auto-close feature is. -->
-    <string name="inactive_tabs_auto_close_message_description" tools:ignore="UnusedResources">Firefox kin ljepblêden dy’t jo de ôfrûne moanne net besjoen hawwe slute.</string>
+    <string name="inactive_tabs_auto_close_message_description" tools:ignore="UnusedResources">Decentr kin ljepblêden dy’t jo de ôfrûne moanne net besjoen hawwe slute.</string>
     <!-- A call to action below the description to allow the user to turn on the auto closing of inactive tabs. -->
     <string name="inactive_tabs_auto_close_message_action" tools:ignore="UnusedResources">AUTOMATYSK SLUTE YNSKEAKELJE</string>
 
@@ -1979,7 +1979,7 @@
     <!-- Header text for the inactive tabs survey asking for feedback to improve the inactive tabs feature. -->
     <string moz:removedIn="95" name="inactive_tabs_survey_header" tools:ignore="UnusedResources">Help ús te ferbetterjen</string>
     <!-- Header text for the inactive tabs survey asking for feedback to improve the inactive tabs feature. -->
-    <string name="inactive_tabs_survey_header_1">Help Firefox te ferbetterjen</string>
+    <string name="inactive_tabs_survey_header_1">Help Decentr te ferbetterjen</string>
 
     <!-- Content text for the inactive tabs survey asking the primary survey feedback question. -->
     <string name="inactive_tabs_survey_content">Wêrom hawwe jo ynaktive ljepblêden útskeakele?</string>
@@ -2001,7 +2001,7 @@
     <string name="inactive_tabs_survey_close_button_content_description">Slute</string>
 
     <!-- Default browser experiment -->
-    <string name="default_browser_experiment_card_text">Keppelingen fan websites, e-mail en berjochten automatysk yn Firefox iepenje.</string>
+    <string name="default_browser_experiment_card_text">Keppelingen fan websites, e-mail en berjochten automatysk yn Decentr iepenje.</string>
 
     <!-- Content description for close button in collection placeholder. -->
     <string name="remove_home_collection_placeholder_content_description">Fuortsmite</string>
@@ -2025,7 +2025,7 @@
     <!-- Title of an app feature. Smaller than a heading.-->
     <string name="pocket_stories_feature_title">Mooglik makke troch Pocket.</string>
     <!-- Caption for describing a certain feature. The placeholder is for a clickable text (eg: Learn more) which will load an url in a new tab when clicked.  -->
-    <string name="pocket_stories_feature_caption">Underdiel fan de Firefox-famylje. %s</string>
+    <string name="pocket_stories_feature_caption">Underdiel fan de Decentr-famylje. %s</string>
     <!-- Clickable text for opening an external link for more information about Pocket. -->
     <string name="pocket_stories_feature_learn_more">Mear ynfo</string>
 </resources>

@@ -21,7 +21,7 @@
                     android:angle="45"
                     android:centerColor="#F10366"
                     android:endColor="#FF9100"
-                    android:startColor="#6173FF" />
+                    android:startColor="#FF4F80FF" />
             </shape>
         </scale>
     </item>

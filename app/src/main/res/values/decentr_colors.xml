@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="decentr_blue">#4F80FF</color>
+    <color name="decentr_blue_hover">#2B5DE0</color>
+    <color name="decentr_blue_hover_30">#345ECD</color>
+    <color name="decentr_blue_hover_60">#2D4995</color>
+
+    <color name="decentr_green">#03B15E</color>
+    <color name="decentr_red">#FA5454</color>
+
+    <color name="decentr_black">#1C1D26</color>
+    <color name="decentr_dark_grey">#494A52</color>
+    <color name="decentr_grey">#929297</color>
+    <color name="decentr_light_grey">#B6B7BA</color>
+    <color name="decentr_outlines">#EDEDEE</color>
+    <color name="decentr_background">#F6F6F7</color>
+    <color name="decentr_white">#FFFFFF</color>
+</resources>

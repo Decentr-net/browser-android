@@ -46,6 +46,7 @@ class HomeMenu(
         object History : Item()
         object Downloads : Item()
         object Extensions : Item()
+        object Explorer : Item()
         data class SyncAccount(val accountState: AccountState) : Item()
         object WhatsNew : Item()
         object Help : Item()
@@ -147,17 +148,17 @@ class HomeMenu(
             onItemTapped.invoke(Item.Extensions)
         }
 
-        val whatsNewItem = BrowserMenuHighlightableItem(
-            context.getString(R.string.browser_menu_whats_new),
-            R.drawable.ic_whats_new,
-            iconTintColorResource = primaryTextColor,
-            highlight = BrowserMenuHighlight.LowPriority(
-                notificationTint = getColor(context, R.color.fx_mobile_icon_color_information)
-            ),
-            isHighlighted = { WhatsNew.shouldHighlightWhatsNew(context) }
-        ) {
-            onItemTapped.invoke(Item.WhatsNew)
-        }
+//        val whatsNewItem = BrowserMenuHighlightableItem(
+//            context.getString(R.string.browser_menu_whats_new),
+//            R.drawable.ic_whats_new,
+//            iconTintColorResource = primaryTextColor,
+//            highlight = BrowserMenuHighlight.LowPriority(
+//                notificationTint = getColor(context, R.color.fx_mobile_icon_color_information)
+//            ),
+//            isHighlighted = { WhatsNew.shouldHighlightWhatsNew(context) }
+//        ) {
+//            onItemTapped.invoke(Item.WhatsNew)
+//        }
 
         val helpItem = BrowserMenuImageText(
             context.getString(R.string.browser_menu_help),
@@ -201,12 +202,12 @@ class HomeMenu(
             historyItem,
             downloadsItem,
             extensionsItem,
-            syncSignInMenuItem,
+//            syncSignInMenuItem,
             accountAuthItem,
             BrowserMenuDivider(),
             desktopItem,
             BrowserMenuDivider(),
-            whatsNewItem,
+//            whatsNewItem,
             helpItem,
             customizeHomeItem,
             settingsItem,

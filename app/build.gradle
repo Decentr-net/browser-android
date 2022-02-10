@@ -24,6 +24,20 @@ import static org.gradle.api.tasks.testing.TestResult.ResultType
 apply from: 'benchmark.gradle'
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('/Users/alexeyp/Library/Mobile Documents/com~apple~CloudDocs/Documents/ключи/key_store_decentr')
+            storePassword 'decentr'
+            keyPassword 'decentr'
+            keyAlias 'key_decentr'
+        }
+        release {
+            storeFile file('/Users/alexeyp/Library/Mobile Documents/com~apple~CloudDocs/Documents/ключи/key_store_decentr')
+            storePassword 'decentr'
+            keyPassword 'decentr'
+            keyAlias 'key_decentr'
+        }
+    }
     compileSdkVersion Config.compileSdkVersion
 
     project.maybeConfigForJetpackBenchmark(it)
@@ -34,10 +48,10 @@ android {
     }
 
     defaultConfig {
-        applicationId "org.mozilla"
+        applicationId 'net.decentr'
         minSdkVersion Config.minSdkVersion
         targetSdkVersion Config.targetSdkVersion
-        versionCode 1
+        versionCode 3
         versionName Config.generateDebugVersionName()
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -87,7 +101,8 @@ android {
 
         // Changing the build config can cause files that depend on BuildConfig.java to recompile
         // so we only set the git hash in release builds to avoid possible recompilation in debug builds.
-        buildConfigField "String", "GIT_HASH", "\"${Config.getGitHash()}\""
+        //todo check git hash
+//        buildConfigField "String", "GIT_HASH", "\"${Config.getGitHash()}\""
 
         if (gradle.hasProperty("localProperties.autosignReleaseWithDebugKey")) {
             signingConfig signingConfigs.debug
@@ -102,7 +117,7 @@ android {
         debug {
             shrinkResources false
             minifyEnabled false
-            applicationIdSuffix ".fenix.debug"
+            applicationIdSuffix '.browser.debug'
             resValue "bool", "IS_DEBUG", "true"
             pseudoLocalesEnabled true
         }
@@ -132,8 +147,8 @@ android {
         }
         release releaseTemplate >> {
             buildConfigField "boolean", "USE_RELEASE_VERSIONING", "true"
-            applicationIdSuffix ".firefox"
-            def deepLinkSchemeValue = "fenix"
+            applicationIdSuffix ".browser"
+            def deepLinkSchemeValue = "browser"
             buildConfigField "String", "DEEP_LINK_SCHEME", "\"$deepLinkSchemeValue\""
             manifestPlaceholders = [
                     // This release type is meant to replace Firefox (Release channel) and therefore needs to inherit
@@ -143,7 +158,7 @@ android {
                     // fatal consequences. For example see:
                     //  - https://issuetracker.google.com/issues/36924841
                     //  - https://issuetracker.google.com/issues/36905922
-                    "sharedUserId": "org.mozilla.firefox.sharedID",
+                    "sharedUserId": "net.decentr.browser.sharedID",
                     "deepLinkScheme": deepLinkSchemeValue
             ]
         }

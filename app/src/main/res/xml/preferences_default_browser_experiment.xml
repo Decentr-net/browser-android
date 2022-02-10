@@ -194,6 +194,11 @@
             app:iconSpaceReserved="false" />
 
         <androidx.preference.Preference
+            android:key="@string/pref_key_decentr_explorer"
+            app:iconSpaceReserved="false"
+            android:title="@string/preferences_decentr_explorer" />
+
+        <androidx.preference.Preference
             android:key="@string/pref_key_about"
             android:title="@string/preferences_about"
             app:iconSpaceReserved="false" />

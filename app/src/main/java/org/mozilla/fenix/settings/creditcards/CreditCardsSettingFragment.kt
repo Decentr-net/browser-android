@@ -53,11 +53,11 @@ class CreditCardsSettingFragment : BiometricPromptPreferenceFragment() {
     /**
      * List of preferences to be enabled or disabled during authentication.
      */
-    private val creditCardPreferences: List<Int> = listOf(
-        R.string.pref_key_credit_cards_save_and_autofill_cards,
-        R.string.pref_key_credit_cards_sync_cards_across_devices,
-        R.string.pref_key_credit_cards_manage_cards
-    )
+//    private val creditCardPreferences: List<Int> = listOf(
+//        R.string.pref_key_credit_cards_save_and_autofill_cards,
+//        R.string.pref_key_credit_cards_sync_cards_across_devices,
+//        R.string.pref_key_credit_cards_manage_cards
+//    )
 
     override fun unlockMessage() = getString(R.string.credit_cards_biometric_prompt_message)
 
@@ -104,7 +104,7 @@ class CreditCardsSettingFragment : BiometricPromptPreferenceFragment() {
             updateCardManagementPreference(state.creditCards.isNotEmpty(), findNavController())
         }
 
-        setBiometricPrompt(view, creditCardPreferences)
+//        setBiometricPrompt(view, creditCardPreferences)
     }
 
     override fun onPause() {
@@ -117,28 +117,28 @@ class CreditCardsSettingFragment : BiometricPromptPreferenceFragment() {
 
         showToolbar(getString(R.string.preferences_credit_cards))
 
-        SyncPreferenceView(
-            syncPreference = requirePreference(R.string.pref_key_credit_cards_sync_cards_across_devices),
-            lifecycleOwner = viewLifecycleOwner,
-            accountManager = requireComponents.backgroundServices.accountManager,
-            syncEngine = SyncEngine.CreditCards,
-            loggedOffTitle = requireContext()
-                .getString(R.string.preferences_credit_cards_sync_cards_across_devices),
-            loggedInTitle = requireContext()
-                .getString(R.string.preferences_credit_cards_sync_cards),
-            onSignInToSyncClicked = {
-                findNavController().navigate(
-                    NavGraphDirections.actionGlobalTurnOnSync()
-                )
-            },
-            onReconnectClicked = {
-                findNavController().navigate(
-                    CreditCardsSettingFragmentDirections.actionGlobalAccountProblemFragment()
-                )
-            }
-        )
+//        SyncPreferenceView(
+//            syncPreference = requirePreference(R.string.pref_key_credit_cards_sync_cards_across_devices),
+//            lifecycleOwner = viewLifecycleOwner,
+//            accountManager = requireComponents.backgroundServices.accountManager,
+//            syncEngine = SyncEngine.CreditCards,
+//            loggedOffTitle = requireContext()
+//                .getString(R.string.preferences_credit_cards_sync_cards_across_devices),
+//            loggedInTitle = requireContext()
+//                .getString(R.string.preferences_credit_cards_sync_cards),
+//            onSignInToSyncClicked = {
+//                findNavController().navigate(
+//                    NavGraphDirections.actionGlobalTurnOnSync()
+//                )
+//            },
+//            onReconnectClicked = {
+//                findNavController().navigate(
+//                    CreditCardsSettingFragmentDirections.actionGlobalAccountProblemFragment()
+//                )
+//            }
+//        )
 
-        togglePrefsEnabled(creditCardPreferences, true)
+//        togglePrefsEnabled(creditCardPreferences, true)
     }
 
     /**
@@ -164,7 +164,7 @@ class CreditCardsSettingFragment : BiometricPromptPreferenceFragment() {
 
         manageSavedCardsPreference.setOnPreferenceClickListener {
             if (hasCreditCards) {
-                verifyCredentialsOrShowSetupWarning(requireContext(), creditCardPreferences)
+//                verifyCredentialsOrShowSetupWarning(requireContext(), creditCardPreferences)
             } else {
                 navController.navigate(
                     CreditCardsSettingFragmentDirections

@@ -137,20 +137,19 @@ class AboutFragment : Fragment(), AboutPageListener {
     }
 
     private fun populateAboutList(): List<AboutPageItem> {
-        val context = requireContext()
-
         return listOf(
-            AboutPageItem(
-                AboutItem.ExternalLink(
-                    WHATS_NEW,
-                    SupportUtils.getWhatsNewUrl(context)
-                ),
-                getString(R.string.about_whats_new, getString(R.string.app_name))
-            ),
+            // disable for decentr yet
+//            AboutPageItem(
+//                AboutItem.ExternalLink(
+//                    WHATS_NEW,
+//                    SupportUtils.getWhatsNewUrl(context)
+//                ),
+//                getString(R.string.about_whats_new, getString(R.string.app_name))
+//            ),
             AboutPageItem(
                 AboutItem.ExternalLink(
                     SUPPORT,
-                    SupportUtils.getSumoURLForTopic(context, SupportUtils.SumoTopic.HELP)
+                    SupportUtils.getDecentrDiscordURL()
                 ),
                 getString(R.string.about_support)
             ),
@@ -168,14 +167,14 @@ class AboutFragment : Fragment(), AboutPageListener {
             AboutPageItem(
                 AboutItem.ExternalLink(
                     RIGHTS,
-                    SupportUtils.getSumoURLForTopic(context, SupportUtils.SumoTopic.YOUR_RIGHTS)
+                    SupportUtils.getDecentrTerms()
                 ),
                 getString(R.string.about_know_your_rights)
             ),
-            AboutPageItem(
-                AboutItem.ExternalLink(LICENSING_INFO, ABOUT_LICENSE_URL),
-                getString(R.string.about_licensing_information)
-            ),
+//            AboutPageItem(
+//                AboutItem.ExternalLink(LICENSING_INFO, ABOUT_LICENSE_URL),
+//                getString(R.string.about_licensing_information)
+//            ),
             AboutPageItem(
                 AboutItem.Libraries,
                 getString(R.string.about_other_open_source_libraries)

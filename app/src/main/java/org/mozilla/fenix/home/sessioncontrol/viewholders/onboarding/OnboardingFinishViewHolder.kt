@@ -6,6 +6,7 @@ package org.mozilla.fenix.home.sessioncontrol.viewholders.onboarding
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import mozilla.components.browser.state.state.searchEngines
 import org.mozilla.fenix.R
 import org.mozilla.fenix.components.metrics.Event
 import org.mozilla.fenix.databinding.OnboardingFinishBinding
@@ -21,6 +22,15 @@ class OnboardingFinishViewHolder(
         val binding = OnboardingFinishBinding.bind(view)
         binding.finishButton.setOnClickListener {
             interactor.onStartBrowsingClicked()
+
+            //add decentr default search engint DDG
+            val searchEngineId = "ddg"
+            val engine = requireNotNull(
+                it.context.components.core.store.state.search.searchEngines.find { searchEngine ->
+                    searchEngine.id == searchEngineId
+                }
+            )
+            it.context.components.useCases.searchUseCases.selectSearchEngine(engine)
             it.context.components.analytics.metrics.track(Event.OnboardingFinish)
         }
     }

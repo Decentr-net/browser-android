@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="decentr_string_onboarding_dialog_info">This is beta version of Decentr browser without login (it means you can’t use all our features of Decentr Desktop yet) - it will auto update when new version is available.</string>
+</resources>

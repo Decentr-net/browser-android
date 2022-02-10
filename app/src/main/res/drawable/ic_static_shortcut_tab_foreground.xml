@@ -11,7 +11,7 @@
     <path
         android:pathData="M86.625 57.375c0.931 0 1.778-0.378 2.385-0.99A3.36 3.36 0 0 0 90 54a3.376 3.376 0 0 0-3.375-3.375h-25.65l-3.6-3.6v-25.65a3.376 3.376 0 0 0-6.75 0v25.65l-3.6 3.6h-25.65a3.376 3.376 0 0 0 0 6.75h25.65l3.6 3.6v25.65A3.376 3.376 0 0 0 54 90c0.931 0 1.778-0.378 2.385-0.99a3.36 3.36 0 0 0 0.99-2.385v-25.65l3.6-3.6h25.65z"
         android:strokeWidth="1"
-        android:fillColor="#312A65"
+        android:fillColor="#FF4F80FF"
         android:fillType="evenOdd"
         android:strokeColor="#00000000"/>
   </group>

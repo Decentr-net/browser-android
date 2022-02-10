@@ -370,7 +370,7 @@ open class DefaultToolbarMenu(
                 historyItem,
                 downloadsItem,
                 extensionsItem,
-                syncMenuItem,
+//                syncMenuItem,
                 BrowserMenuDivider(),
                 getSetDefaultBrowserItem(),
                 getSetDefaultBrowserItem()?.let { BrowserMenuDivider() },

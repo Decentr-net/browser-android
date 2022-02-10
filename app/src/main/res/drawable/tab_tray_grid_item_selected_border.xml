@@ -17,7 +17,7 @@
 
             <stroke
                 android:width="4dp"
-                android:color="@color/fx_mobile_border_color_accent" />
+                android:color="@color/decentr_blue_hover_60" />
 
             <corners android:radius="@dimen/tab_tray_grid_item_outer_border_radius" />
         </shape>

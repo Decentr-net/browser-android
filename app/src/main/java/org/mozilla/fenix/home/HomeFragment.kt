@@ -198,12 +198,14 @@ class HomeFragment : Fragment() {
             }
         }
 
-        if (!onboarding.userHasBeenOnboarded() &&
-            requireContext().settings().shouldShowPrivacyPopWindow &&
-            Config.channel.isMozillaOnline
-        ) {
-            showPrivacyPopWindow(requireContext(), requireActivity())
-        }
+        //disable Mozilla privacy popup
+//        if (!onboarding.userHasBeenOnboarded() &&
+//            requireContext().settings().shouldShowPrivacyPopWindow &&
+//            Config.channel.isMozillaOnline
+//        ) {
+//            showPrivacyPopWindow(requireContext(), requireActivity())
+//        }
+        context?.settings()?.shouldShowPrivacyPopWindow = false
 
         // DO NOT MOVE ANYTHING BELOW THIS addMarker CALL!
         requireComponents.core.engine.profiler?.addMarker(
@@ -965,7 +967,7 @@ class HomeFragment : Fragment() {
                     }
                     HomeMenu.Item.Help -> {
                         (activity as HomeActivity).openToBrowserAndLoad(
-                            searchTermOrURL = SupportUtils.getSumoURLForTopic(context, HELP),
+                            searchTermOrURL = SupportUtils.getDecentrDiscordURL(),
                             newTab = true,
                             from = BrowserDirection.FromHome
                         )

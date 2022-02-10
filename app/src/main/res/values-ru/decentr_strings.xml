@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="decentr_string_onboarding_dialog_info">Это бета версия Decentr браузера без авторизации (это означает, что функциональная особенность Decentr браузера ещё недоступна) - оно автоматически обновится, когда будет доступна новая версия приложения.</string>
+</resources>

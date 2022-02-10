@@ -132,7 +132,7 @@ private fun onboardingAdapterItems(onboardingState: OnboardingState): List<Adapt
         when (onboardingState) {
             OnboardingState.SignedOutNoAutoSignIn -> {
                 listOf(
-                    AdapterItem.OnboardingManualSignIn
+//                    AdapterItem.OnboardingManualSignIn
                 )
             }
             OnboardingState.SignedIn -> listOf()

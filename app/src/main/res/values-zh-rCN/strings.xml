@@ -67,7 +67,7 @@
     <string moz:removedIn="97" name="recently_saved_show_all_content_description" tools:ignore="UnusedResources">显示所有保存书签按钮</string>
 
     <!-- About content. The first parameter is the name of the application. (For example: Fenix) -->
-    <string name="about_content">%1$s 由 Mozilla 倾力打造。</string>
+    <string name="about_content">%1$s 由 Decentr 倾力打造。</string>
 
     <!-- Private Browsing -->
     <!-- Title for private session option -->
@@ -89,8 +89,8 @@
     <string name="cfr_neg_button_text">不了，谢谢</string>
 
     <!-- Open in App "contextual feature recommendation" (CFR) -->
-    <!-- Text for the info message. 'Firefox' intentionally hardcoded here.-->
-    <string name="open_in_app_cfr_info_message">您可以将 Firefox 设为链接的打开方式。</string>
+    <!-- Text for the info message. 'Decentr' intentionally hardcoded here.-->
+    <string name="open_in_app_cfr_info_message">您可以将 Decentr 设为链接的打开方式。</string>
     <!-- Text for the positive action button -->
     <string name="open_in_app_cfr_positive_button_text">转至设置</string>
     <!-- Text for the negative action button -->
@@ -118,7 +118,7 @@
     <!-- Text for title for the auto-close dialog of the inactive tabs. -->
     <string name="tab_tray_inactive_auto_close_title">要一个月后自动关闭吗？</string>
     <!-- Text for the body for the auto-close dialog of the inactive tabs. -->
-    <string name="tab_tray_inactive_auto_close_body">Firefox 可自动关闭您一个月内未查看的标签页。</string>
+    <string name="tab_tray_inactive_auto_close_body">Decentr 可自动关闭您一个月内未查看的标签页。</string>
     <!-- Content description for close button in the auto-close dialog of the inactive tabs. -->
     <string name="tab_tray_inactive_auto_close_button_content_description">关闭</string>
 
@@ -306,12 +306,12 @@
     <string name="search_engine_suggestions_description">直接从地址栏搜索</string>
 
     <!-- Home onboarding -->
-    <!-- Onboarding home screen dialog title text. Firefox is intentionally hardcoded. -->
-    <string name="onboarding_home_screen_title_2">Firefox 的新变化</string>
+    <!-- Onboarding home screen dialog title text. Decentr is intentionally hardcoded. -->
+    <string name="onboarding_home_screen_title_2">Decentr 的新变化</string>
     <!-- Onboarding home screen dialog description text. -->
     <string name="onboarding_home_screen_description_2">现在可以更轻松地从上次中断的地方继续浏览。</string>
-    <!-- Onboarding home screen dialog title text for the home section. Firefox is intentionally hardcoded. -->
-    <string name="onboarding_home_screen_section_home_title_2">个性化的 Firefox 主页</string>
+    <!-- Onboarding home screen dialog title text for the home section. Decentr is intentionally hardcoded. -->
+    <string name="onboarding_home_screen_section_home_title_2">个性化的 Decentr 主页</string>
 
     <!-- Onboarding home screen dialog description text for the home section. -->
     <string name="onboarding_home_screen_section_home_description_2">跳转到您打开的标签页、书签和浏览历史。</string>
@@ -325,12 +325,12 @@
     <!-- Onboarding home screen dialog description text for the history section. -->
     <string name="onboarding_home_screen_section_useful_history_description_2">从主页和标签页快速访问您的上次搜索。</string>
 
-    <!-- Onboarding home screen popup dialog, shown on top of the Jump back in section. Firefox is intentionally hardcoded. -->
-    <string name="onboarding_home_screen_jump_back_contextual_hint" tools:ignore="UnusedResources">个性化的 Firefox 主页，让您可以更轻松地从上次中断的地方继续浏览。快速找到您最近打开的标签页、书签和搜索结果。</string>
+    <!-- Onboarding home screen popup dialog, shown on top of the Jump back in section. Decentr is intentionally hardcoded. -->
+    <string name="onboarding_home_screen_jump_back_contextual_hint" tools:ignore="UnusedResources">个性化的 Decentr 主页，让您可以更轻松地从上次中断的地方继续浏览。快速找到您最近打开的标签页、书签和搜索结果。</string>
 
     <!-- Search Widget -->
-    <!-- Content description for searching with a widget. Firefox is intentionally hardcoded.-->
-    <string name="search_widget_content_description">新建 Firefox 标签页</string>
+    <!-- Content description for searching with a widget. Decentr is intentionally hardcoded.-->
+    <string name="search_widget_content_description">新建 Decentr 标签页</string>
     <!-- Text preview for smaller sized widgets -->
     <string name="search_widget_text_short">搜索</string>
     <!-- Text preview for larger sized widgets -->
@@ -392,12 +392,12 @@
     <string name="preferences_add_private_browsing_shortcut">添加隐私浏览快捷方式</string>
     <!-- Preference for accessibility -->
     <string name="preferences_accessibility">无障碍环境</string>
-    <!-- Preference to override the Firefox Account server -->
-    <string name="preferences_override_fxa_server">自定义 Firefox 账户服务器</string>
+    <!-- Preference to override the Decentr Account server -->
+    <string name="preferences_override_fxa_server">自定义 Decentr 账户服务器</string>
     <!-- Preference to override the Sync token server -->
     <string name="preferences_override_sync_tokenserver">自定义同步服务器</string>
     <!-- Toast shown after updating the FxA/Sync server override preferences -->
-    <string name="toast_override_fxa_sync_server_done">已更改 Firefox 账户/同步服务器设置。退出应用程序以应用更改…</string>
+    <string name="toast_override_fxa_sync_server_done">已更改 Decentr 账户/同步服务器设置。退出应用程序以应用更改…</string>
     <!-- Preference category for account information -->
     <string name="preferences_category_account">账户</string>
     <!-- Preference shown on banner to sign into account -->
@@ -413,9 +413,9 @@
     <!-- Preference for settings related to visual options -->
     <string name="preferences_customize">定制</string>
     <!-- Preference description for banner about signing in -->
-    <string name="preferences_sign_in_description">使用您的 Firefox 账户同步书签、历史记录等数据</string>
+    <string name="preferences_sign_in_description">使用您的 Decentr 账户同步书签、历史记录等数据</string>
     <!-- Preference shown instead of account display name while account profile information isn't available yet. -->
-    <string name="preferences_account_default_name">Firefox 账户</string>
+    <string name="preferences_account_default_name">Decentr 账户</string>
     <!-- Preference text for account title when there was an error syncing FxA -->
     <string name="preferences_account_sync_error">重新连接以恢复同步</string>
     <!-- Preference for language -->
@@ -541,7 +541,7 @@
     <!-- Name of the "receive tabs" notification channel. Displayed in the "App notifications" system settings for the app -->
     <string name="fxa_received_tab_channel_name">收到标签页</string>
     <!-- Description of the "receive tabs" notification channel. Displayed in the "App notifications" system settings for the app -->
-    <string name="fxa_received_tab_channel_description">收到来自其他 Firefox 设备的标签页通知。</string>
+    <string name="fxa_received_tab_channel_description">收到来自其他 Decentr 设备的标签页通知。</string>
 
     <!--  The body for these is the URL of the tab received  -->
     <string name="fxa_tab_received_notification_name">收到标签页</string>
@@ -576,25 +576,25 @@
     <!-- Preference switch for usage and technical data collection -->
     <string name="preference_usage_data">使用率和技术数据</string>
     <!-- Preference description for usage and technical data collection -->
-    <string name="preferences_usage_data_description">与 Mozilla 分享使用浏览器时的工作性能、使用方式、硬件设备以及有关自定义的数据，帮助我们改进 %1$s，让它变得更好</string>
+    <string name="preferences_usage_data_description">与 Decentr 分享使用浏览器时的工作性能、使用方式、硬件设备以及有关自定义的数据，帮助我们改进 %1$s，让它变得更好</string>
     <!-- Preference switch for marketing data collection -->
     <string name="preferences_marketing_data">营销数据</string>
-    <!-- Preference description for marketing data collection, parameter is the app name (e.g. Firefox) -->
+    <!-- Preference description for marketing data collection, parameter is the app name (e.g. Decentr) -->
     <string moz:removedIn="96" name="preferences_marketing_data_description" tools:ignore="UnusedResources">与我们的移动营销供应商 Leanplum 分享您使用 %1$s 的哪些功能。</string>
     <!-- Preference description for marketing data collection -->
     <string name="preferences_marketing_data_description2">与我们的移动营销服务商 Adjust 分享基本使用数据</string>
     <!-- Title for studies preferences -->
     <string name="preference_experiments_2">研究</string>
     <!-- Summary for studies preferences -->
-    <string name="preference_experiments_summary_2">允许 Mozilla 安装和运行研究</string>
+    <string name="preference_experiments_summary_2">允许 Decentr 安装和运行研究</string>
     <!-- Title for experiments preferences -->
     <string moz:removedIn="96" name="preference_experiments" tools:ignore="UnusedResources">实验</string>
     <!-- Summary for experiments preferences -->
-    <string moz:removedIn="96" name="preference_experiments_summary" tools:ignore="UnusedResources">允许 Mozilla 安装和收集实验性功能的数据</string>
+    <string moz:removedIn="96" name="preference_experiments_summary" tools:ignore="UnusedResources">允许 Decentr 安装和收集实验性功能的数据</string>
     <!-- Preference switch for crash reporter -->
     <string moz:removedIn="96" name="preferences_crash_reporter" tools:ignore="UnusedResources">崩溃报告器</string>
-    <!-- Preference switch for Mozilla location service -->
-    <string moz:removedIn="96" name="preferences_mozilla_location_service" tools:ignore="UnusedResources">Mozilla 位置服务</string>
+    <!-- Preference switch for Decentr location service -->
+    <string moz:removedIn="96" name="preferences_mozilla_location_service" tools:ignore="UnusedResources">Decentr 位置服务</string>
     <!-- Preference switch for app health report. The first parameter is the name of the application (For example: Fenix) -->
     <string moz:removedIn="96" name="preferences_fenix_health_report" tools:ignore="UnusedResources">%s 健康报告</string>
 
@@ -602,7 +602,7 @@
     <!-- Header of the Turn on Sync preference view -->
     <string name="preferences_sync">开启同步</string>
     <!-- Preference for pairing -->
-    <string moz:removedIn="95" name="preferences_sync_pair" tools:ignore="UnusedResources">扫描桌面 Firefox 中的配对二维码</string>
+    <string moz:removedIn="95" name="preferences_sync_pair" tools:ignore="UnusedResources">扫描桌面 Decentr 中的配对二维码</string>
     <!-- Preference for account login -->
     <string moz:removedIn="96" name="preferences_sync_sign_in" tools:ignore="UnusedResources">登录</string>
 
@@ -759,8 +759,8 @@
     <string name="studies_remove">移除</string>
     <!-- Title of the active section on the studies list -->
     <string name="studies_active">进行中</string>
-    <!-- Description for studies, it indicates why Firefox use studies -->
-    <string name="studies_description">Firefox 可能会不时地安装并运行一些研究项目。</string>
+    <!-- Description for studies, it indicates why Decentr use studies -->
+    <string name="studies_description">Decentr 可能会不时地安装并运行一些研究项目。</string>
     <!-- Learn more link for studies, links to an article for more information about studies. -->
     <string name="studies_learn_more">详细了解</string>
 
@@ -940,7 +940,7 @@
     <!-- Description text displayed on the tab crash page -->
     <string moz:removedIn="96" name="tab_crash_description" tools:ignore="UnusedResources">您可以尝试在下方恢复或关闭此标签页。</string>
     <!-- Send crash report checkbox text on the tab crash page -->
-    <string name="tab_crash_send_report">向 Mozilla 发送崩溃报告</string>
+    <string name="tab_crash_send_report">向 Decentr 发送崩溃报告</string>
     <!-- Close tab button text on the tab crash page -->
     <string name="tab_crash_close">关闭标签页</string>
     <!-- Restore tab button text on the tab crash page -->
@@ -1187,7 +1187,7 @@
     <!-- An option to connect additional devices -->
     <string name="sync_connect_device">连接其他设备</string>
     <!-- The dialog text shown when additional devices are not available -->
-    <string name="sync_connect_device_dialog">请在至少另一台设备上的 Firefox 登录才能发送标签页。</string>
+    <string name="sync_connect_device_dialog">请在至少另一台设备上的 Decentr 登录才能发送标签页。</string>
     <!-- Confirmation dialog button -->
     <string name="sync_confirmation_button">明白了</string>
 
@@ -1357,50 +1357,50 @@
     <string name="deleting_browsing_data_in_progress">正在删除浏览数据…</string>
 
     <!-- Tips -->
-    <!-- text for firefox preview moving tip header "Firefox Preview" and "Firefox Nightly" are intentionally hardcoded -->
-    <string name="tip_firefox_preview_moved_header">Firefox Preview 已迁移至 Firefox Nightly</string>
+    <!-- text for firefox preview moving tip header "Decentr Preview" and "Decentr Nightly" are intentionally hardcoded -->
+    <string name="tip_firefox_preview_moved_header">Decentr Preview 已迁移至 Decentr Nightly</string>
     <!-- text for firefox preview moving tip description -->
-    <string name="tip_firefox_preview_moved_description">Firefox Nightly 每日获得更新，包含实验性的新功能。
+    <string name="tip_firefox_preview_moved_description">Decentr Nightly 每日获得更新，包含实验性的新功能。
 但可能不够稳定，您可以下载我们的 Beta 版浏览器以获得更稳定的体验。</string>
 
-    <!-- text for firefox preview moving tip button. "Firefox for Android Beta" is intentionally hardcoded -->
-    <string name="tip_firefox_preview_moved_button_2">下载适用于 Android 的 Firefox Beta</string>
+    <!-- text for firefox preview moving tip button. "Decentr for Android Beta" is intentionally hardcoded -->
+    <string name="tip_firefox_preview_moved_button_2">下载适用于 Android 的 Decentr Beta</string>
 
-    <!-- text for firefox preview moving tip header. "Firefox Nightly" is intentionally hardcoded -->
-    <string name="tip_firefox_preview_moved_header_preview_installed">Firefox Nightly 版本更新</string>
+    <!-- text for firefox preview moving tip header. "Decentr Nightly" is intentionally hardcoded -->
+    <string name="tip_firefox_preview_moved_header_preview_installed">Decentr Nightly 版本更新</string>
     <!-- text for firefox preview moving tip description -->
     <string name="tip_firefox_preview_moved_description_preview_installed">此应用将不再接收安全更新。请切换到新版 Nightly，并停止使用本应用。
-        \n\n若需将书签、登录信息和历史记录转移至另一应用，请创建 Firefox 账户。</string>
+        \n\n若需将书签、登录信息和历史记录转移至另一应用，请创建 Decentr 账户。</string>
     <!-- text for firefox preview moving tip button  -->
     <string name="tip_firefox_preview_moved_button_preview_installed">切换到新版 Nightly</string>
 
-    <!-- text for firefox preview moving tip header. "Firefox Nightly" is intentionally hardcoded -->
-    <string name="tip_firefox_preview_moved_header_preview_not_installed">Firefox Nightly 版本更新</string>
+    <!-- text for firefox preview moving tip header. "Decentr Nightly" is intentionally hardcoded -->
+    <string name="tip_firefox_preview_moved_header_preview_not_installed">Decentr Nightly 版本更新</string>
     <!-- text for firefox preview moving tip description -->
     <string name="tip_firefox_preview_moved_description_preview_not_installed">此应用将不再接收安全更新。请下载新版 Nightly，并停止使用本应用。
-        \n\n若需将书签、登录信息和历史记录转移至另一应用，请创建 Firefox 账户。</string>
+        \n\n若需将书签、登录信息和历史记录转移至另一应用，请创建 Decentr 账户。</string>
     <!-- text for firefox preview moving tip button  -->
     <string name="tip_firefox_preview_moved_button_preview_not_installed">获取新版 Nightly</string>
 
     <!-- Onboarding -->
     <!-- Text for onboarding welcome message
-    The first parameter is the name of the app (e.g. Firefox Preview) -->
+    The first parameter is the name of the app (e.g. Decentr Preview) -->
     <string name="onboarding_header">欢迎使用 %s！</string>
-    <!-- text for the Firefox Accounts section header -->
+    <!-- text for the Decentr Accounts section header -->
     <string moz:removedIn="96" name="onboarding_fxa_section_header" tools:ignore="UnusedResources">已有账户？</string>
-    <!-- text for the Firefox account onboarding sign in card header. The word "Firefox" should not be translated -->
-    <string name="onboarding_account_sign_in_header_1">在设备之间同步 Firefox</string>
-    <!-- Text for the button to learn more about signing in to your Firefox account -->
+    <!-- text for the Decentr account onboarding sign in card header. The word "Decentr" should not be translated -->
+    <string name="onboarding_account_sign_in_header_1">在设备之间同步 Decentr</string>
+    <!-- Text for the button to learn more about signing in to your Decentr account -->
     <string name="onboarding_manual_sign_in_description">将书签、历史记录和密码同步到此设备。</string>
     <!-- text for the firefox account onboarding card header when we detect you're already signed in to
-        another Firefox browser. (The word `Firefox` should not be translated)
+        another Decentr browser. (The word `Decentr` should not be translated)
         The first parameter is the email of the detected user's account -->
-    <string moz:removedIn="96" name="onboarding_firefox_account_auto_signin_header_3" tools:ignore="UnusedResources">您已在此设备上的其他 Firefox 浏览器上以 %s 身份登录。也要使用此账号登录吗？</string>
+    <string moz:removedIn="96" name="onboarding_firefox_account_auto_signin_header_3" tools:ignore="UnusedResources">您已在此设备上的其他 Decentr 浏览器上以 %s 身份登录。也要使用此账号登录吗？</string>
     <!-- text for the button to confirm automatic sign-in -->
     <string moz:removedIn="96" name="onboarding_firefox_account_auto_signin_confirm" tools:ignore="UnusedResources">是的，我要登录</string>
     <!-- text for the automatic sign-in button while signing in is in process -->
     <string moz:removedIn="96" name="onboarding_firefox_account_signing_in" tools:ignore="UnusedResources">正在登录…</string>
-    <!-- text for the button to manually sign into Firefox account. -->
+    <!-- text for the button to manually sign into Decentr account. -->
     <string name="onboarding_firefox_account_sign_in_1">注册</string>
     <!-- text for the button to stay signed out when presented with an option to automatically sign-in. -->
     <string moz:removedIn="96" name="onboarding_firefox_account_stay_signed_out" tools:ignore="UnusedResources">不要登录</string>
@@ -1410,8 +1410,8 @@
     <string moz:removedIn="96" name="onboarding_firefox_account_automatic_signin_failed" tools:ignore="UnusedResources">登录失败</string>
     <!-- text for the tracking protection onboarding card header -->
     <string name="onboarding_tracking_protection_header_3">隐私与您同行</string>
-    <!-- text for the tracking protection card description. 'Firefox' intentionally hardcoded here -->
-    <string name="onboarding_tracking_protection_description_3">Firefox 会自动阻止大公司在网上偷偷跟踪您。</string>
+    <!-- text for the tracking protection card description. 'Decentr' intentionally hardcoded here -->
+    <string name="onboarding_tracking_protection_description_3">Decentr 会自动阻止大公司在网上偷偷跟踪您。</string>
     <!-- text for tracking protection radio button option for standard level of blocking -->
     <string name="onboarding_tracking_protection_standard_button_2">标准（默认）</string>
     <!-- text for standard blocking option button description -->
@@ -1429,7 +1429,7 @@
     <!-- text for the privacy notice onboarding card header -->
     <string name="onboarding_privacy_notice_header">您的隐私权</string>
     <!-- text for the privacy notice onboarding card description
-    The first parameter is the name of the app (e.g. Firefox Preview) Substitute %s for long browser name. -->
+    The first parameter is the name of the app (e.g. Decentr Preview) Substitute %s for long browser name. -->
     <string name="onboarding_privacy_notice_description2">%s 的设计旨在让您可以控制要在网上披露哪些内容，以及告诉我们哪些信息。</string>
     <!-- Text for the button to read the privacy notice -->
     <string name="onboarding_privacy_notice_read_button">阅读我们的隐私声明</string>
@@ -1462,18 +1462,18 @@
     <!-- Title of QR Pairing Fragment -->
     <string name="sync_scan_code">扫码</string>
     <!-- Instructions on how to access pairing -->
-    <string name="sign_in_instructions"><![CDATA[在计算机上使用 Firefox 打开 <b>https://firefox.com/pair</b>]]></string>
+    <string name="sign_in_instructions"><![CDATA[在计算机上使用 Decentr 打开 <b>https://firefox.com/pair</b>]]></string>
     <!-- Text shown for sign in pairing when ready -->
     <string name="sign_in_ready_for_scan">扫描就绪</string>
     <!-- Text shown for settings option for sign with pairing -->
     <string name="sign_in_with_camera">使用相机登录</string>
     <!-- Text shown for settings option for sign with email -->
     <string name="sign_in_with_email">改用电子邮件</string>
-    <!-- Text shown for settings option for create new account text.'Firefox' intentionally hardcoded here.-->
-    <string name="sign_in_create_account_text"><![CDATA[尚无账户？<u>立即创建</u>以在设备间同步 Firefox。]]></string>
+    <!-- Text shown for settings option for create new account text.'Decentr' intentionally hardcoded here.-->
+    <string name="sign_in_create_account_text"><![CDATA[尚无账户？<u>立即创建</u>以在设备间同步 Decentr。]]></string>
     <!-- Text shown in confirmation dialog to sign out of account -->
-    <string moz:removedIn="96" name="sign_out_confirmation_message" tools:ignore="UnusedResources">Firefox 将停止与您的账号的同步，但不会删除此设备上的任何浏览数据。</string>
-    <!-- Text shown in confirmation dialog to sign out of account. The first parameter is the name of the app (e.g. Firefox Preview) -->
+    <string moz:removedIn="96" name="sign_out_confirmation_message" tools:ignore="UnusedResources">Decentr 将停止与您的账号的同步，但不会删除此设备上的任何浏览数据。</string>
+    <!-- Text shown in confirmation dialog to sign out of account. The first parameter is the name of the app (e.g. Decentr Preview) -->
     <string name="sign_out_confirmation_message_2">%s 将停止与您的账户的同步，但不会删除您在这台设备上的任何上网数据。</string>
     <!-- Option to continue signing out of account shown in confirmation dialog to sign out of account -->
     <string name="sign_out_disconnect">断开连接</string>
@@ -1648,10 +1648,10 @@
     <!-- Preference option for never saving passwords in Fenix -->
     <string name="preferences_passwords_save_logins_never_save">总不保存</string>
 
-    <!-- Preference for autofilling saved logins in Firefox (in web content), %1$s will be replaced with the app name -->
+    <!-- Preference for autofilling saved logins in Decentr (in web content), %1$s will be replaced with the app name -->
     <string name="preferences_passwords_autofill2">在 %1$s 中自动填充</string>
 
-    <!-- Description for the preference for autofilling saved logins in Firefox (in web content), %1$s will be replaced with the app name -->
+    <!-- Description for the preference for autofilling saved logins in Decentr (in web content), %1$s will be replaced with the app name -->
     <string name="preferences_passwords_autofill_description">在使用 %1$s 时，填充和保存网页中的用户名和密码。</string>
     <!-- Preference for autofilling logins from Fenix in other apps (e.g. autofilling the Twitter app) -->
     <string name="preferences_android_autofill">在其他应用程序中自动填充</string>
@@ -1968,13 +1968,13 @@
     <string name="synced_tabs_connect_another_device">绑定其他设备</string>
     <!-- Text displayed asking user to re-authenticate -->
     <string name="synced_tabs_reauth">请重新验证。</string>
-    <!-- Text displayed when user has disabled tab syncing in Firefox Sync Account -->
+    <!-- Text displayed when user has disabled tab syncing in Decentr Sync Account -->
     <string name="synced_tabs_enable_tab_syncing">请启用标签页同步。</string>
     <!-- Text displayed when user has no tabs that have been synced -->
-    <string name="synced_tabs_no_tabs">您其他设备上的 Firefox 没有打开任何标签页。</string>
-    <!-- Text displayed in the synced tabs screen when a user is not signed in to Firefox Sync describing Synced Tabs -->
+    <string name="synced_tabs_no_tabs">您其他设备上的 Decentr 没有打开任何标签页。</string>
+    <!-- Text displayed in the synced tabs screen when a user is not signed in to Decentr Sync describing Synced Tabs -->
     <string name="synced_tabs_sign_in_message">查看您其他设备上的标签页列表。</string>
-    <!-- Text displayed on a button in the synced tabs screen to link users to sign in when a user is not signed in to Firefox Sync -->
+    <!-- Text displayed on a button in the synced tabs screen to link users to sign in when a user is not signed in to Decentr Sync -->
     <string name="synced_tabs_sign_in_button">登录同步服务</string>
 
     <!-- The text displayed when a synced device has no tabs to show in the list of Synced Tabs. -->
@@ -2016,7 +2016,7 @@
     <!-- The header text of the auto-close message when the user is asked if they want to turn on the auto-closing of inactive tabs. -->
     <string name="inactive_tabs_auto_close_message_header" tools:ignore="UnusedResources">要一个月后自动关闭吗？</string>
     <!-- A description below the header to notify the user what the inactive tabs auto-close feature is. -->
-    <string name="inactive_tabs_auto_close_message_description" tools:ignore="UnusedResources">Firefox 可自动关闭您一个月内未查看的标签页。</string>
+    <string name="inactive_tabs_auto_close_message_description" tools:ignore="UnusedResources">Decentr 可自动关闭您一个月内未查看的标签页。</string>
     <!-- A call to action below the description to allow the user to turn on the auto closing of inactive tabs. -->
     <string name="inactive_tabs_auto_close_message_action" tools:ignore="UnusedResources">启用自动关闭标签页功能</string>
 
@@ -2027,7 +2027,7 @@
     <!-- Header text for the inactive tabs survey asking for feedback to improve the inactive tabs feature. -->
     <string moz:removedIn="95" name="inactive_tabs_survey_header" tools:ignore="UnusedResources">请帮助我们改进</string>
     <!-- Header text for the inactive tabs survey asking for feedback to improve the inactive tabs feature. -->
-    <string name="inactive_tabs_survey_header_1">帮助改进 Firefox</string>
+    <string name="inactive_tabs_survey_header_1">帮助改进 Decentr</string>
 
     <!-- Content text for the inactive tabs survey asking the primary survey feedback question. -->
     <string name="inactive_tabs_survey_content">您为何想要关闭“休眠标签页”功能？</string>
@@ -2049,7 +2049,7 @@
     <string name="inactive_tabs_survey_close_button_content_description">关闭</string>
 
     <!-- Default browser experiment -->
-    <string name="default_browser_experiment_card_text">将网站、电子邮件及聊天工具中的链接设为在 Firefox 中自动打开。</string>
+    <string name="default_browser_experiment_card_text">将网站、电子邮件及聊天工具中的链接设为在 Decentr 中自动打开。</string>
 
     <!-- Content description for close button in collection placeholder. -->
     <string name="remove_home_collection_placeholder_content_description">移除</string>
@@ -2073,7 +2073,7 @@
     <!-- Title of an app feature. Smaller than a heading.-->
     <string name="pocket_stories_feature_title">由 Pocket 提供</string>
     <!-- Caption for describing a certain feature. The placeholder is for a clickable text (eg: Learn more) which will load an url in a new tab when clicked.  -->
-    <string name="pocket_stories_feature_caption">Firefox 系列产品。%s</string>
+    <string name="pocket_stories_feature_caption">Decentr 系列产品。%s</string>
     <!-- Clickable text for opening an external link for more information about Pocket. -->
     <string name="pocket_stories_feature_learn_more">详细了解</string>
 </resources>

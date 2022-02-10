@@ -6,8 +6,8 @@
         android:shape="rectangle">
     <gradient
             android:angle="45"
-            android:endColor="#AB71FF"
-            android:startColor="#7542E5"
+            android:endColor="@color/decentr_blue_hover_30"
+            android:startColor="@color/decentr_blue_hover_60"
             android:type="linear" />
     <size
             android:width="256dp"

@@ -20,12 +20,17 @@ import java.net.URLEncoder
 import java.util.Locale
 
 object SupportUtils {
+    const val DECENTR_EXPLORER = "https://explorer.decentr.net"
+    const val DECENTR_DISCORD = "https://discord.gg/VMUt7yw92B"
+    const val DECENTR_PRIVACY = "https://decentr.net/charon-privacy.html"
+    const val DECENTR_TERMS = "https://decentr.net/terms.html"
+
     const val RATE_APP_URL = "market://details?id=" + BuildConfig.APPLICATION_ID
     const val POCKET_TRENDING_URL = "https://getpocket.com/fenix-top-articles"
     const val WIKIPEDIA_URL = "https://www.wikipedia.org/"
     const val FENIX_PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=${BuildConfig.APPLICATION_ID}"
-    const val FIREFOX_BETA_PLAY_STORE_URL = "market://details?id=org.mozilla.firefox_beta"
-    const val FIREFOX_NIGHTLY_PLAY_STORE_URL = "market://details?id=org.mozilla.fenix"
+    const val FIREFOX_BETA_PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=${BuildConfig.APPLICATION_ID}"
+    const val FIREFOX_NIGHTLY_PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=${BuildConfig.APPLICATION_ID}"
     const val GOOGLE_URL = "https://www.google.com/"
     const val BAIDU_URL = "https://m.baidu.com/?from=1000969a"
     const val JD_URL = "https://union-click.jd.com/jdc" +
@@ -61,6 +66,18 @@ object SupportUtils {
         MANIFESTO("about/manifesto/")
     }
 
+    fun getDecentrDiscordURL(): String {
+        return DECENTR_DISCORD
+    }
+
+    fun getDecentrExplorerURL(): String {
+        return DECENTR_EXPLORER
+    }
+
+    fun getDecentrTerms(): String {
+        return DECENTR_TERMS
+    }
+
     /**
      * Gets a support page URL for the corresponding topic.
      */
@@ -94,7 +111,10 @@ object SupportUtils {
     fun getMozillaPageUrl(page: MozillaPage, locale: Locale = Locale.getDefault()): String {
         val path = page.path
         val langTag = getLanguageTag(locale)
-        return "https://www.mozilla.org/$langTag/$path"
+        when (page) {
+            MozillaPage.PRIVATE_NOTICE -> return DECENTR_PRIVACY
+            else -> return "https://www.mozilla.org/$langTag/$path"
+        }
     }
 
     fun getWhatsNewUrl(context: Context) = getSumoURLForTopic(context, SumoTopic.WHATS_NEW)

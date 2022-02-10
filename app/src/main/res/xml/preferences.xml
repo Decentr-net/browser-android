@@ -6,12 +6,12 @@
 <androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.preference.Preference
-        android:key="@string/pref_key_sign_in"
-        android:layout="@layout/sign_in_preference"
-        android:summary="@string/preferences_sign_in_description"
-        android:title="@string/preferences_sync"
-        app:allowDividerBelow="false" />
+<!--    <androidx.preference.Preference-->
+<!--        android:key="@string/pref_key_sign_in"-->
+<!--        android:layout="@layout/sign_in_preference"-->
+<!--        android:summary="@string/preferences_sign_in_description"-->
+<!--        android:title="@string/preferences_sync"-->
+<!--        app:allowDividerBelow="false" />-->
 
     <androidx.preference.SwitchPreference
         android:key="@string/pref_key_allow_domestic_china_fxa_server"
@@ -185,6 +185,11 @@
             android:key="@string/pref_key_rate"
             app:iconSpaceReserved="false"
             android:title="@string/preferences_rate" />
+
+        <androidx.preference.Preference
+            android:key="@string/pref_key_decentr_explorer"
+            app:iconSpaceReserved="false"
+            android:title="@string/preferences_decentr_explorer" />
 
         <androidx.preference.Preference
             android:key="@string/pref_key_about"

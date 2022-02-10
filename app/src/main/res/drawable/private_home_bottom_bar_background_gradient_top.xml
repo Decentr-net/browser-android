@@ -8,15 +8,15 @@
     <shape>
         <gradient
             android:angle="45"
-            android:startColor="#7529A7"
-            android:centerColor="#492E85"
-            android:endColor="#383372"
+            android:startColor="@color/decentr_blue_hover_60"
+            android:centerColor="@color/decentr_blue_hover_30"
+            android:endColor="@color/decentr_blue_hover"
             android:type="linear" />
     </shape>
 </item>
 <item android:top="-2dp" android:left="-2dp" android:right="-2dp">
     <shape>
-        <stroke android:width="1dp" android:color="#1AFFFFFF" />
+        <stroke android:width="1dp" android:color="@color/decentr_blue_hover_30" />
     </shape>
 </item>
 </layer-list>

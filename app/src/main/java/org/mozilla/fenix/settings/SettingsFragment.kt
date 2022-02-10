@@ -236,9 +236,9 @@ class SettingsFragment : PreferenceFragmentCompat() {
         recyclerView.isVerticalScrollBarEnabled = false
 
         val directions: NavDirections? = when (preference.key) {
-            resources.getString(R.string.pref_key_sign_in) -> {
-                SettingsFragmentDirections.actionSettingsFragmentToTurnOnSyncFragment()
-            }
+//            resources.getString(R.string.pref_key_sign_in) -> {
+//                SettingsFragmentDirections.actionSettingsFragmentToTurnOnSyncFragment()
+//            }
             resources.getString(R.string.pref_key_tabs) -> {
                 SettingsFragmentDirections.actionSettingsFragmentToTabsSettingsFragment()
             }
@@ -273,10 +273,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
             }
             resources.getString(R.string.pref_key_help) -> {
                 (activity as HomeActivity).openToBrowserAndLoad(
-                    searchTermOrURL = SupportUtils.getSumoURLForTopic(
-                        requireContext(),
-                        SupportUtils.SumoTopic.HELP
-                    ),
+                    searchTermOrURL = SupportUtils.getDecentrDiscordURL(),
                     newTab = true,
                     from = BrowserDirection.FromSettings
                 )
@@ -294,6 +291,14 @@ class SettingsFragment : PreferenceFragmentCompat() {
                         from = BrowserDirection.FromSettings
                     )
                 }
+                null
+            }
+            resources.getString(R.string.pref_key_decentr_explorer) -> {
+                (activity as HomeActivity).openToBrowserAndLoad(
+                    searchTermOrURL = SupportUtils.getDecentrExplorerURL(),
+                    newTab = true,
+                    from = BrowserDirection.FromSettings
+                )
                 null
             }
             resources.getString(R.string.pref_key_passwords) -> {

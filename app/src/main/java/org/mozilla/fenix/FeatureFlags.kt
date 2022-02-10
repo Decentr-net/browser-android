@@ -80,7 +80,7 @@ object FeatureFlags {
     /**
      * Enables showing the homescreen onboarding card.
      */
-    const val showHomeOnboarding = false
+    const val showHomeOnboarding = true
 
     /**
      * Enables showing the option to clear site data.

@@ -10,7 +10,7 @@
             <size
                 android:width="158dp"
                 android:height="36dp" />
-            <solid android:color="#312A65" />
+            <solid android:color="@color/decentr_blue" />
         </shape>
     </item>
 </layer-list>

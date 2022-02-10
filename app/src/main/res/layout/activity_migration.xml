@@ -37,7 +37,7 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@id/migration_welcome_title"
                 app:layout_constraintTop_toTopOf="@+id/migration_welcome_title"
-                app:srcCompat="@drawable/ic_firefox" />
+                app:srcCompat="@drawable/ic_launcher_foreground" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/migration_welcome_title"

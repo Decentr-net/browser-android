@@ -30,8 +30,8 @@ class AccountUiView(
     private val updateFxAAllowDomesticChinaServerMenu: () -> Unit
 ) {
 
-    private val preferenceSignIn =
-        fragment.requirePreference<Preference>(R.string.pref_key_sign_in)
+//    private val preferenceSignIn =
+//        fragment.requirePreference<Preference>(R.string.pref_key_sign_in)
     private val preferenceFirefoxAccount =
         fragment.requirePreference<AccountPreference>(R.string.pref_key_account)
     private val preferenceFirefoxAccountAuthError =
@@ -52,8 +52,9 @@ class AccountUiView(
         updateFxAAllowDomesticChinaServerMenu()
 
         // Signed-in, no problems.
+        //sign in disabled for decentr
         if (account != null && !accountManager.accountNeedsReauth()) {
-            preferenceSignIn.isVisible = false
+//            preferenceSignIn.isVisible = false
 
             avatarJob?.cancel()
             val avatarUrl = profile?.avatar?.url
@@ -67,7 +68,7 @@ class AccountUiView(
                 preferenceFirefoxAccount.icon = genericAvatar(context)
             }
 
-            preferenceSignIn.onPreferenceClickListener = null
+//            preferenceSignIn.onPreferenceClickListener = null
             preferenceFirefoxAccountAuthError.isVisible = false
             preferenceFirefoxAccount.isVisible = true
             accountPreferenceCategory.isVisible = true
@@ -81,14 +82,14 @@ class AccountUiView(
             preferenceFirefoxAccountAuthError.isVisible = true
             accountPreferenceCategory.isVisible = true
 
-            preferenceSignIn.isVisible = false
-            preferenceSignIn.onPreferenceClickListener = null
+//            preferenceSignIn.isVisible = false
+//            preferenceSignIn.onPreferenceClickListener = null
 
             preferenceFirefoxAccountAuthError.email = profile?.email
 
             // Signed-out.
         } else {
-            preferenceSignIn.isVisible = true
+//            preferenceSignIn.isVisible = true
             preferenceFirefoxAccount.isVisible = false
             preferenceFirefoxAccountAuthError.isVisible = false
             accountPreferenceCategory.isVisible = false
