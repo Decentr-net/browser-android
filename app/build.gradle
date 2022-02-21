@@ -51,7 +51,7 @@ android {
         applicationId 'net.decentr'
         minSdkVersion Config.minSdkVersion
         targetSdkVersion Config.targetSdkVersion
-        versionCode 3
+        versionCode 4
         versionName Config.generateDebugVersionName()
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -308,11 +308,11 @@ android.applicationVariants.all { variant ->
         buildConfigField 'boolean', 'CRASH_REPORTING', 'false'
     }
 
-    if (!isDebug) {
-        buildConfigField 'boolean', 'TELEMETRY', 'true'
-    } else {
+//    if (!isDebug) {
+//        buildConfigField 'boolean', 'TELEMETRY', 'true'
+//    } else {
         buildConfigField 'boolean', 'TELEMETRY', 'false'
-    }
+//    }
 
     def buildDate = Config.generateBuildDate()
     // Setting buildDate with every build changes the generated BuildConfig, which slows down the
@@ -420,6 +420,9 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
 }
 
 dependencies {
+//    implementation fileTree(include: ['*.jar'], dir: 'libs')
+//    implementation project(path: ':decentr-module')
+
     jnaForTest Deps.jna
     testImplementation files(configurations.jnaForTest.copyRecursive().files)
 
