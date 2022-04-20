@@ -12,16 +12,22 @@ import mozilla.components.browser.errorpages.ErrorPages
 import mozilla.components.browser.errorpages.ErrorType
 import mozilla.components.concept.engine.EngineSession
 import mozilla.components.concept.engine.request.RequestInterceptor
+import net.decentr.module_decentr.domain.models.PDV
+import net.decentr.module_decentr.domain.models.PDVHistory
+import org.mozilla.fenix.GleanMetrics.SearchShortcuts
 import org.mozilla.fenix.components.metrics.Event
 import org.mozilla.fenix.ext.components
 import org.mozilla.fenix.ext.isOnline
 import java.lang.ref.WeakReference
+import java.text.SimpleDateFormat
+import java.util.*
 
 class AppRequestInterceptor(
     private val context: Context
 ) : RequestInterceptor {
 
     private var navController: WeakReference<NavController>? = null
+    var onLoadPDVListener: ((String) -> Unit)? = null
 
     fun setNavigationController(navController: NavController) {
         this.navController = WeakReference(navController)
@@ -42,6 +48,7 @@ class AppRequestInterceptor(
             return response
         }
 
+        if (!isSubframeRequest) onLoadPDVListener?.invoke(uri)
         return context.components.services.appLinksInterceptor
             .onLoadRequest(
                 engineSession,

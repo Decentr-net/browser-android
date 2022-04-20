@@ -34,10 +34,14 @@ buildscript {
                 content {
                     // Improve performance: only check google maven for google deps.
                     includeGroupByRegex RepoMatching.androidx
+                    includeGroup "com.google.mlkit"
                     includeGroupByRegex RepoMatching.comGoogleAndroid
                     includeGroupByRegex RepoMatching.comGoogleFirebase
                     includeGroupByRegex RepoMatching.comGoogleTesting
                     includeGroupByRegex RepoMatching.comAndroid
+
+                    excludeGroup "cash.z.ecc.android"
+                    excludeGroup "org.bouncycastle"
                 }
             }
         }
@@ -54,9 +58,14 @@ buildscript {
                     // Improve security: don't search deps with known repos.
                     excludeGroupByRegex RepoMatching.mozilla
                     excludeGroupByRegex RepoMatching.androidx
+                    excludeGroup "com.google.mlkit"
                     excludeGroupByRegex RepoMatching.comGoogleAndroid
                     excludeGroupByRegex RepoMatching.comGoogleFirebase
                     excludeGroupByRegex RepoMatching.comAndroid
+
+                    includeGroup "cash.z.ecc.android"
+                    includeGroup "org.bouncycastle"
+
                 }
             }
         }
@@ -112,9 +121,13 @@ allprojects {
                 content {
                     // Improve performance: only check google maven for google deps.
                     includeGroupByRegex RepoMatching.androidx
+                    includeGroup "com.google.mlkit"
                     includeGroupByRegex RepoMatching.comGoogleAndroid
                     includeGroupByRegex RepoMatching.comGoogleFirebase
                     includeGroupByRegex RepoMatching.comAndroid
+
+                    excludeGroup "cash.z.ecc.android"
+                    excludeGroup "org.bouncycastle"
                 }
             }
         }
@@ -131,9 +144,13 @@ allprojects {
                     // Improve security: don't search deps with known repos.
                     excludeGroupByRegex RepoMatching.mozilla
                     excludeGroupByRegex RepoMatching.androidx
+                    excludeGroup "com.google.mlkit"
                     excludeGroupByRegex RepoMatching.comGoogleAndroid
                     excludeGroupByRegex RepoMatching.comGoogleFirebase
                     excludeGroupByRegex RepoMatching.comAndroid
+
+                    includeGroup "cash.z.ecc.android"
+                    includeGroup "org.bouncycastle"
                 }
             }
         }
@@ -141,7 +158,7 @@ allprojects {
 
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
         kotlinOptions.jvmTarget = "1.8"
-        kotlinOptions.allWarningsAsErrors = true
+        kotlinOptions.allWarningsAsErrors = false
         kotlinOptions.freeCompilerArgs += [
             "-Xopt-in=kotlin.RequiresOptIn"
         ]

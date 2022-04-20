@@ -56,7 +56,7 @@
     <string name="link_text_view_type_announcement" translatable="false">link</string>
 
     <!-- Name of the application for about page -->
-    <string name="daylight_app_name" translatable="false">About Decentr</string>
+    <string name="daylight_app_name" translatable="false">Decentr App</string>
 
     <!-- MP Migration -->
     <string name="mp_homescreen_tip_title">Looking for your logins?</string>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dec_blue">#4F80FF</color>
+    <color name="dec_blue_hover">#2B5DE0</color>
+    <color name="dec_blue_hover_30">#345ECD</color>
+    <color name="dec_blue_hover_60">#2D4995</color>
+
+    <color name="dec_green">#03B15E</color>
+    <color name="dec_green_50">#1A03B15E</color>
+    <color name="dec_red">#FA5454</color>
+    <color name="dec_red_50">#1AFA5454</color>
+
+    <color name="dec_black">#1C1D26</color>
+    <color name="dec_dark_grey">#494A52</color>
+    <color name="dec_grey">#929297</color>
+    <color name="dec_light_grey">#B6B7BA</color>
+    <color name="dec_outlines">#EDEDEE</color>
+    <color name="dec_background">#F6F6F7</color>
+    <color name="dec_white">#FFFFFF</color>
+</resources>

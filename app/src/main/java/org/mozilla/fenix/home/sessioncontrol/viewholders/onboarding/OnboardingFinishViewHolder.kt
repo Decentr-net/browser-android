@@ -15,7 +15,7 @@ import org.mozilla.fenix.home.sessioncontrol.OnboardingInteractor
 
 class OnboardingFinishViewHolder(
     view: View,
-    private val interactor: OnboardingInteractor
+    private val interactor: OnboardingInteractor,
 ) : RecyclerView.ViewHolder(view) {
 
     init {

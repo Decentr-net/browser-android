@@ -74,6 +74,7 @@ import mozilla.components.ui.tabcounter.TabCounterMenu
 import org.mozilla.fenix.BrowserDirection
 import org.mozilla.fenix.Config
 import org.mozilla.fenix.FeatureFlags
+import org.mozilla.fenix.FeatureFlags.recentBookmarksFeature
 import org.mozilla.fenix.HomeActivity
 import org.mozilla.fenix.R
 import org.mozilla.fenix.browser.BrowserAnimator.Companion.getToolbarNavOptions
@@ -934,14 +935,15 @@ class HomeFragment : Fragment() {
                         )
                     }
                     is HomeMenu.Item.SyncAccount -> {
-                        val directions = when (it.accountState) {
-                            AccountState.AUTHENTICATED ->
-                                BrowserFragmentDirections.actionGlobalAccountSettingsFragment()
-                            AccountState.NEEDS_REAUTHENTICATION ->
-                                BrowserFragmentDirections.actionGlobalAccountProblemFragment()
-                            AccountState.NO_ACCOUNT ->
-                                BrowserFragmentDirections.actionGlobalTurnOnSync()
-                        }
+//                        val directions = when (it.accountState) {
+//                            AccountState.AUTHENTICATED ->
+//                                BrowserFragmentDirections.actionGlobalAccountSettingsFragment()
+//                            AccountState.NEEDS_REAUTHENTICATION ->
+//                                BrowserFragmentDirections.actionGlobalAccountProblemFragment()
+//                            AccountState.NO_ACCOUNT ->
+//                                BrowserFragmentDirections.actionGlobalTurnOnSync()
+//                        }
+                        val directions = BrowserFragmentDirections.actionNavigateToDecentrLogin()
                         nav(
                             R.id.homeFragment,
                             directions

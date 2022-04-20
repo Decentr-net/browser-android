@@ -347,11 +347,11 @@ open class DefaultToolbarMenu(
     }
 
     private fun getSyncItemTitle() =
-        accountManager.accountProfileEmail ?: context.getString(R.string.sync_menu_sign_in)
+        accountManager.accountProfileEmail ?: context.getString(R.string.decentr_title)
 
     val syncMenuItem = BrowserMenuImageText(
         getSyncItemTitle(),
-        R.drawable.ic_signed_out,
+        R.drawable.ic_logo_monochrome_inverse,
         primaryTextColor()
     ) {
         onItemTapped.invoke(
@@ -370,7 +370,7 @@ open class DefaultToolbarMenu(
                 historyItem,
                 downloadsItem,
                 extensionsItem,
-//                syncMenuItem,
+                syncMenuItem,
                 BrowserMenuDivider(),
                 getSetDefaultBrowserItem(),
                 getSetDefaultBrowserItem()?.let { BrowserMenuDivider() },

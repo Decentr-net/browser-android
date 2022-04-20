@@ -15,12 +15,12 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/avatar_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:paddingEnd="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_onboarding_avatar_anonymous_large"
+        app:srcCompat="@drawable/ic_logo_monochrome_inverse"
         tools:ignore="RtlSymmetry" />
 
     <TextView
@@ -33,12 +33,13 @@
         app:layout_constraintStart_toStartOf="@id/avatar_icon"
         app:layout_constraintBottom_toBottomOf="@id/avatar_icon"
         android:layout_marginStart="52dp"
-        tools:text="@string/onboarding_account_sign_in_header_1" />
+        tools:text="@string/onboarding_decentr_account_sync_title" />
 
     <TextView
         android:id="@+id/description_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:layout_marginTop="14dp"
         android:text="@string/onboarding_manual_sign_in_description"
         android:textAppearance="@style/Body14TextStyle"

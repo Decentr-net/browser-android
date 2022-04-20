@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_decentr"
+    app:startDestination="@id/introLoginFragment">
+
+    <action
+        android:id="@+id/action_startup_login"
+        app:destination="@id/introLoginFragment" />
+
+    <action
+        android:id="@+id/action_scan_qr"
+        app:destination="@id/qrScanFragment"
+        app:popUpTo="@id/introLoginFragment"/>
+
+    <action
+        android:id="@+id/action_profile"
+        app:destination="@id/decentrProfileFragment"
+        app:launchSingleTop="true"
+        app:popUpToInclusive="true" />
+
+    <fragment
+        android:id="@+id/qrScanFragment"
+        android:name="net.decentr.module_decentr.presentation.login.barcode.QRLoginFragment"
+        tools:layout="@layout/fragment_qr_code" >
+
+        <action
+            android:id="@+id/action_qrScanFragment_to_signInPass"
+            app:destination="@id/signInPass" />
+        <action
+            android:id="@+id/action_qrScanFragment_to_signInSeedPhrase"
+            app:destination="@id/signInSeedPhrase" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/introLoginFragment"
+        android:name="net.decentr.module_decentr.presentation.login.IntroLoginFragment"
+        tools:layout="@layout/fragment_intro_login">
+
+        <action
+            android:id="@+id/action_introLoginFragment_to_qrScanFragment"
+            app:destination="@id/qrScanFragment" />
+        <action
+            android:id="@+id/action_introLoginFragment_to_signInSeedPhrase"
+            app:destination="@id/signInSeedPhrase" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/signInSeedPhrase"
+        android:name="net.decentr.module_decentr.presentation.login.SignInSeedPhraseFragment"
+        tools:layout="@layout/fragment_sign_in_seed_phrase">
+
+        <argument
+            android:name="seedString"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="screenType"
+            app:argType="string"
+            app:nullable="false" />
+
+        <action
+            android:id="@+id/action_signInSeedPhrase_to_signInEmail"
+            app:destination="@id/signInEmail" />
+        <action
+            android:id="@+id/action_signInSeedPhrase_to_decentrProfileFragment"
+            app:destination="@id/decentrProfileFragment"
+            app:popUpTo="@id/decentrProfileFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"/>
+
+        <action
+            android:id="@+id/action_signInSeedPhrase_to_qrScanFragment"
+            app:destination="@id/qrScanFragment" />
+        <action
+            android:id="@+id/action_signInSeedPhrase_to_decentrSetProfileFragment"
+            app:destination="@id/decentrSetProfileFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/signInPass"
+        android:name="net.decentr.module_decentr.presentation.login.SignInPasswordFragment"
+        tools:layout="@layout/fragment_sign_in_password">
+
+        <argument
+            android:name="cipherString"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+        <argument
+            android:name="screenType"
+            app:argType="string"
+            app:nullable="false" />
+
+        <argument
+            android:name="mnemonicString"
+            app:argType="string"
+            app:nullable="false" />
+
+        <action
+            android:id="@+id/action_signInPass_to_signInSeedPhrase"
+            app:destination="@id/signInSeedPhrase" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/decentrProfileFragment"
+        android:name="net.decentr.module_decentr.presentation.profile.ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+
+        <argument
+            android:name="profile"
+            app:nullable="false"
+            app:argType="net.decentr.module_decentr.domain.models.Profile"/>
+        <action
+            android:id="@+id/action_decentrProfileFragment_to_introLoginFragment"
+            app:destination="@id/introLoginFragment"
+            app:popUpTo="@id/introLoginFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/decentrSetProfileFragment"
+        android:name="net.decentr.module_decentr.presentation.profile.SetProfileFragment"
+        tools:layout="@layout/fragment_sign_in_credentials">
+
+        <argument
+            android:name="email"
+            app:argType="string"
+            app:nullable="true" />
+
+
+        <argument
+            android:name="address"
+            app:argType="string"
+            app:nullable="false" />
+
+        <action
+            android:id="@+id/action_decentrSetProfileFragment_to_decentrProfileFragment"
+            app:destination="@id/decentrProfileFragment"
+            app:popUpTo="@id/introLoginFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/signInEmail"
+        android:name="net.decentr.module_decentr.presentation.login.SignInEmailFragment"
+        tools:layout="@layout/fragment_sign_in_email">
+
+        <argument
+            android:name="address"
+            app:argType="string"
+            app:nullable="false" />
+
+        <action
+            android:id="@+id/action_signInEmail_to_decentrSetProfileFragment"
+            app:destination="@id/decentrSetProfileFragment" />
+
+    </fragment>
+
+</navigation>

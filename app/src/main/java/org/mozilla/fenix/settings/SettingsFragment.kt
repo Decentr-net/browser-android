@@ -236,9 +236,10 @@ class SettingsFragment : PreferenceFragmentCompat() {
         recyclerView.isVerticalScrollBarEnabled = false
 
         val directions: NavDirections? = when (preference.key) {
-//            resources.getString(R.string.pref_key_sign_in) -> {
-//                SettingsFragmentDirections.actionSettingsFragmentToTurnOnSyncFragment()
-//            }
+            resources.getString(R.string.pref_key_sign_in) -> {
+                //todo check sync in from settings for decentr
+                SettingsFragmentDirections.actionNavigateToDecentrLogin()
+            }
             resources.getString(R.string.pref_key_tabs) -> {
                 SettingsFragmentDirections.actionSettingsFragmentToTabsSettingsFragment()
             }

@@ -256,6 +256,40 @@ object Deps {
     const val junitEngine = "org.junit.jupiter:junit-jupiter-engine:${Versions.junit}"
 }
 
+object DecentrDeps {
+    const val dagger = "com.google.dagger:dagger:${DecentrDepsVersions.dagger}"
+    const val dagger_support = "com.google.dagger:dagger-android-support:${DecentrDepsVersions.dagger}"
+    const val dagger_kapt = "com.google.dagger:dagger-compiler:${DecentrDepsVersions.dagger}"
+    const val dagger_processor = "com.google.dagger:dagger-android-processor:${DecentrDepsVersions.dagger}"
+    const val gson = "com.google.code.gson:gson:${DecentrDepsVersions.gson}"
+    const val retrofit_gsonConverter = "com.squareup.retrofit2:converter-gson:${DecentrDepsVersions.retrofit}"
+    const val retrofit_retrofit = "com.squareup.retrofit2:retrofit:${DecentrDepsVersions.retrofit}"
+    const val retrofit_mock = "com.squareup.retrofit2:retrofit-mock:${DecentrDepsVersions.retrofit}"
+    const val okhttp_loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${DecentrDepsVersions.okhttp}"
+    const val okhttp_okhttp = "com.squareup.okhttp3:okhttp:${DecentrDepsVersions.okhttp}"
+    const val ml_barcode_scanning = "com.google.mlkit:barcode-scanning:${DecentrDepsVersions.ml_barcode_scanning}"
+    const val ml_barcode_common = "com.google.mlkit:object-detection:${DecentrDepsVersions.ml_barcode_common}"
+    const val android_annotations = "androidx.annotation:annotation:${DecentrDepsVersions.android_annotations}"
+    const val bip39 = "cash.z.ecc.android:kotlin-bip39:${DecentrDepsVersions.bip39}"
+    const val walletUtils = "org.bouncycastle:bcpkix-jdk15on:${DecentrDepsVersions.walletUtils}"
+    const val room_runtime =  "androidx.room:room-runtime:${DecentrDepsVersions.room}"
+    const val room_compiler = "androidx.room:room-compiler:${DecentrDepsVersions.room}"
+    const val room_ktx = "androidx.room:room-ktx:${DecentrDepsVersions.room}"
+}
+
+object DecentrDepsVersions {
+    const val dagger = "2.41"
+    const val retrofit = "2.8.0"
+    const val gson = "2.8.9"
+    const val okhttp = "4.9.3"
+    const val ml_barcode_scanning = "17.0.2"
+    const val ml_barcode_common = "17.0.0"
+    const val android_annotations = "1.3.0"
+    const val bip39 = "1.0.2"
+    const val walletUtils = "1.65"
+    const val room = "2.4.0-beta01"
+}
+
 /**
  * Functionality to limit specific dependencies to specific repositories. These are typically expected to be used by
  * dependency group name (i.e. with `include/excludeGroup`). For additional info, see:
@@ -269,6 +303,8 @@ object RepoMatching {
     const val comAndroid = "com\\.android.*"
     const val comGoogleFirebase = "com\\.google\\.firebase"
     const val comGoogleTesting = "com\\.google\\.testing\\..*"
+    const val comGoogleMLKit = "com\\.google\\.mlkit\\..*"
+//    const val comGoogleMLKitCommon = "com\\.google\\.mlkit\\:vision-common.*"
 
     /**
      * A matcher for com.google.android.* with one exception: the espresso-contrib dependency includes the

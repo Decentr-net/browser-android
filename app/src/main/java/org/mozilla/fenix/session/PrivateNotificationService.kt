@@ -45,7 +45,7 @@ class PrivateNotificationService : AbstractPrivateNotificationService() {
         )
         color = ContextCompat.getColor(
             this@PrivateNotificationService,
-            R.color.pbm_notification_color
+            R.color.dec_blue
         )
     }
 

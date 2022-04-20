@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dec_white">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/Medium.Bold.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            tools:text="Name Surname" />
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_bg_button_accent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                style="@style/Base.Regular.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/profile_balance_hint" />
+
+            <TextView
+                android:id="@+id/balance"
+                style="@style/Base.Regular.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/profile_balance_value_hint" />
+
+            <TextView
+                android:id="@+id/in_progress"
+                style="@style/Small.Regular.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/action_copy_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/shape_bg_button_grey"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="4dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="copy wallet address"
+                    android:src="@drawable/ic_wallet"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    style="@style/Base.Regular.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/profile_copy_address_button" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_bg_button_grey"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                style="@style/Base.Regular.Secondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/profile_bio_hint" />
+
+            <TextView
+                android:id="@+id/bio"
+                style="@style/Base.Regular.Primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="@string/profile_empty_fields_hint"
+                android:maxHeight="300dp"
+                android:scrollbars="vertical" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_bg_button_grey"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    style="@style/Base.Regular.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/profile_birth_hint" />
+
+                <TextView
+                    android:id="@+id/birth"
+                    style="@style/Base.Regular.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:hint="@string/profile_empty_fields_hint"
+                    tools:text="@string/sign_in_pass_hint" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="0dp" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_bg_button_grey"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    style="@style/Base.Regular.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/profile_gender_hint" />
+
+                <TextView
+                    android:id="@+id/gender"
+                    style="@style/Base.Regular.Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:hint="@string/profile_empty_fields_hint"
+                    tools:text="@string/sign_in_pass_hint" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Base.Regular.Secondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/profile_log_out_info" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/log_out"
+                style="@style/DecentrActionsButton"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shape_bg_button_grey"
+                android:text="@string/profile_log_out_button" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/action_go_to_browsing"
+            style="@style/DecentrActionsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/shape_bg_button_accent"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/profile_go_browsing_button"
+            android:textColor="@color/dec_white" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:minHeight="50dp"/>
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_decentr"
+            tools:ignore="ContentDescription" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</ScrollView>

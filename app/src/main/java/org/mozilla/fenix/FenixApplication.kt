@@ -16,6 +16,9 @@ import androidx.core.content.getSystemService
 import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.work.Configuration.Builder
 import androidx.work.Configuration.Provider
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasAndroidInjector
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
@@ -69,6 +72,8 @@ import mozilla.components.feature.autofill.AutofillUseCases
 import mozilla.components.feature.search.ext.buildSearchUrl
 import mozilla.components.feature.search.ext.waitForSelectedOrDefaultSearchEngine
 import mozilla.components.service.fxa.manager.SyncEnginesStorage
+import org.di.AppComponent
+import org.di.DaggerAppComponent
 import org.mozilla.experiments.nimbus.NimbusInterface
 import org.mozilla.experiments.nimbus.internal.EnrolledExperiment
 import org.mozilla.fenix.GleanMetrics.Addons
@@ -84,13 +89,19 @@ import org.mozilla.fenix.ext.isCustomEngine
 import org.mozilla.fenix.ext.isKnownSearchDomain
 import org.mozilla.fenix.perf.MarkersActivityLifecycleCallbacks
 import org.mozilla.fenix.utils.Settings
+import javax.inject.Inject
 
 /**
  *The main application class for Fenix. Records data to measure initialization performance.
  *  Installs [CrashReporter], initializes [Glean]  in fenix builds and setup Megazord in the main process.
  */
 @Suppress("Registered", "TooManyFunctions", "LargeClass")
-open class FenixApplication : LocaleAwareApplication(), Provider {
+open class FenixApplication : LocaleAwareApplication(), Provider, HasAndroidInjector {
+
+    companion object {
+        lateinit var appComponent: AppComponent
+    }
+
     init {
         recordOnInit() // DO NOT MOVE ANYTHING ABOVE HERE: the timing of this measurement is critical.
     }
@@ -102,12 +113,17 @@ open class FenixApplication : LocaleAwareApplication(), Provider {
     var visibilityLifecycleCallback: VisibilityLifecycleCallback? = null
         private set
 
+    @Inject
+    lateinit var dispatchAndroidInjector: DispatchingAndroidInjector<Any>
+
+    override fun androidInjector(): AndroidInjector<Any> = dispatchAndroidInjector
+
     override fun onCreate() {
         // We use start/stop instead of measure so we don't measure outside the main process.
         val completeMethodDurationTimerId = PerfStartup.applicationOnCreate.start() // DO NOT MOVE ANYTHING ABOVE HERE.
 
         super.onCreate()
-
+        DaggerAppComponent.builder().context(this.applicationContext).build().injectApp(this)
         setupInAllProcesses()
 
         if (!isMainProcess()) {

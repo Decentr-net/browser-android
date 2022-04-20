@@ -93,11 +93,11 @@ class HomeMenu(
     }
 
     private fun getSyncItemTitle(): String =
-        accountManager.accountProfileEmail ?: context.getString(R.string.sync_menu_sign_in)
+        accountManager.accountProfileEmail ?: context.getString(R.string.decentr_title)
 
     private val syncSignInMenuItem = BrowserMenuImageText(
         getSyncItemTitle(),
-        R.drawable.ic_synced_tabs,
+        R.drawable.ic_logo_monochrome_inverse,
         primaryTextColor
     ) {
         onItemTapped.invoke(Item.SyncAccount(accountManager.accountState))
@@ -202,7 +202,7 @@ class HomeMenu(
             historyItem,
             downloadsItem,
             extensionsItem,
-//            syncSignInMenuItem,
+            syncSignInMenuItem,
             accountAuthItem,
             BrowserMenuDivider(),
             desktopItem,

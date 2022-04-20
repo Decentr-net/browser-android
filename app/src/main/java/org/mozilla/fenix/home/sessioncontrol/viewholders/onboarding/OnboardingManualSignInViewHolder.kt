@@ -20,14 +20,16 @@ class OnboardingManualSignInViewHolder(view: View) : RecyclerView.ViewHolder(vie
         binding.fxaSignInButton.setOnClickListener {
             it.context.components.analytics.metrics.track(Event.OnboardingManualSignIn)
 
-            val directions = HomeFragmentDirections.actionGlobalTurnOnSync()
+                //todo recheck direction from ui logic
+//            val directions = HomeFragmentDirections.actionGlobalTurnOnSync()
+            val directions = HomeFragmentDirections.actionNavigateToDecentrLogin()
             Navigation.findNavController(view).navigate(directions)
         }
     }
 
     fun bind() {
         val context = itemView.context
-        binding.headerText.text = context.getString(R.string.onboarding_account_sign_in_header_1)
+        binding.headerText.text = context.getString(R.string.onboarding_decentr_account_sync_title)
     }
 
     companion object {

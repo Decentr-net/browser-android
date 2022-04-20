@@ -84,7 +84,7 @@
         app:layout_constraintWidth_percent="0.5"
         app:tabGravity="fill"
         app:tabIconTint="@color/tab_icon"
-        app:tabIndicatorColor="@color/accent_normal_theme"
+        app:tabIndicatorColor="@color/decentr_blue"
         app:tabMaxWidth="0dp"
         app:tabRippleColor="@android:color/transparent">
 

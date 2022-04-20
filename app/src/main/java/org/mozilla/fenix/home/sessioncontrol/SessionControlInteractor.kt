@@ -8,6 +8,7 @@ import mozilla.components.feature.tab.collections.Tab
 import mozilla.components.feature.tab.collections.TabCollection
 import mozilla.components.feature.top.sites.TopSite
 import mozilla.components.service.pocket.PocketRecommendedStory
+import net.decentr.module_decentr.presentation.login.DecentrInteractor
 import org.mozilla.fenix.browser.browsingmode.BrowsingMode
 import org.mozilla.fenix.components.tips.Tip
 import org.mozilla.fenix.home.HomeFragmentState
@@ -256,7 +257,9 @@ class SessionControlInteractor(
     RecentBookmarksInteractor,
     RecentVisitsInteractor,
     CustomizeHomeIteractor,
-    PocketStoriesInteractor {
+    PocketStoriesInteractor,
+    DecentrInteractor
+{
 
     override fun onCollectionAddTabTapped(collection: TabCollection) {
         controller.handleCollectionAddTabTapped(collection)
@@ -430,5 +433,13 @@ class SessionControlInteractor(
 
     override fun reportSessionMetrics(state: HomeFragmentState) {
         controller.handleReportSessionMetrics(state)
+    }
+
+    override fun onLoginOpen() {
+        controller.handleDecentrLogin()
+    }
+
+    override fun onLoginClose() {
+        controller.handleDecentrLoginClose()
     }
 }

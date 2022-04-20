@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/dec_white"
+    android:orientation="vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <TextView
+        android:id="@+id/info"
+        style="@style/Medium.Bold.Primary"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/sign_in_email_title" />
+
+    <TextView
+        android:id="@+id/description"
+        style="@style/Base.Regular.Primary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/sign_in_email_info" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/shape_bg_button_grey"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/hint_email"
+            style="@style/Base.Regular.Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_in_email_hint" />
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/input_email"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@null"
+                android:clickable="true"
+                android:ellipsize="end"
+                android:focusable="true"
+                android:inputType="textEmailAddress"
+                android:lines="1"
+                android:maxLines="1"
+                tools:text="aeaeq@mail.ru" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/container_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_bg_button_grey"
+        android:layout_marginTop="36dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:padding="16dp"
+        tools:visibility="visible">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_email"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/code_info"
+            style="@style/Base.Regular.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/sign_in_email_code_title" />
+
+        <TextView
+            android:id="@+id/code_description"
+            style="@style/Base.Regular.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_in_email_code_info" />
+
+            <net.decentr.module_decentr.presentation.login.views.otpview.OtpTextView
+                android:id="@+id/input_otp_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/dec_black"
+                android:layout_marginTop="10dp"
+                app:bar_enabled="false"
+                app:box_margin="4dp"
+                app:height="50dp"
+                app:length="6"
+                app:otp_box_background="@drawable/shape_bg_button_base"
+                app:otp_box_background_error="@drawable/shape_bg_button_red"
+                app:otp_box_background_success="@drawable/shape_bg_button_green"
+                app:otp_text_size="@dimen/font_size_pre_large"
+                app:width="40dp"/>
+
+        <TextView
+            android:id="@+id/resend_info"
+            style="@style/Base.Regular.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="@string/sign_in_email_resend_info" />
+
+        <TextView
+            android:id="@+id/action_resend"
+            style="@style/Base.Regular.Accent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/sign_in_email_resend_button" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/action_confirm_email"
+        style="@style/DecentrEnableDisableAccentButton"
+        android:layout_marginBottom="32dp"
+        android:enabled="false"
+        android:text="@string/sign_in_credentials_confirm_button" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

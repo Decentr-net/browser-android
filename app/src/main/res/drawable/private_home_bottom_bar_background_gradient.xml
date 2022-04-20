@@ -8,9 +8,9 @@
     <shape>
         <gradient
             android:angle="45"
-            android:startColor="@color/decentr_blue_hover"
-            android:centerColor="@color/decentr_blue_hover_30"
-            android:endColor="@color/decentr_blue_hover_60"
+            android:startColor="@color/decentr_blue_hover_1"
+            android:centerColor="@color/decentr_blue_hover_2"
+            android:endColor="@color/decentr_blue_hover_3"
             android:type="linear" />
     </shape>
 </item>

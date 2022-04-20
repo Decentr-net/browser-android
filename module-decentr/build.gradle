@@ -1,0 +1,105 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-kapt'
+}
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdk Config.compileSdkVersion
+
+    defaultConfig {
+        minSdk Config.minSdkVersion
+        targetSdk Config.targetSdkVersion
+
+        consumerProguardFiles 'consumer-rules.pro'
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            resValue "bool", "IS_DEBUG", "true"
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            resValue "bool", "IS_DEBUG", "false"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation Deps.kotlin_stdlib
+    implementation Deps.kotlin_coroutines
+    implementation Deps.kotlin_coroutines_android
+    implementation Deps.androidx_appcompat
+    implementation Deps.androidx_constraintlayout
+    implementation Deps.androidx_coordinatorlayout
+
+    debugImplementation Deps.leakcanary
+
+    implementation Deps.androidx_legacy
+    implementation Deps.androidx_biometric
+    implementation Deps.androidx_paging
+    implementation Deps.androidx_preference
+    implementation Deps.androidx_fragment
+    implementation Deps.androidx_navigation_fragment
+    implementation Deps.androidx_navigation_ui
+    implementation Deps.androidx_recyclerview
+    implementation Deps.androidx_lifecycle_common
+    implementation Deps.androidx_lifecycle_livedata
+    implementation Deps.androidx_lifecycle_process
+    implementation Deps.androidx_lifecycle_runtime
+    implementation Deps.androidx_lifecycle_viewmodel
+    implementation Deps.androidx_core
+    implementation Deps.androidx_core_ktx
+    implementation Deps.androidx_transition
+    implementation Deps.androidx_work_ktx
+    implementation Deps.androidx_datastore
+    implementation Deps.protobuf_javalite
+    implementation Deps.google_material
+
+    //decentr deps
+    implementation DecentrDeps.dagger
+    implementation DecentrDeps.dagger_support
+    kapt DecentrDeps.dagger_kapt
+    kapt DecentrDeps.dagger_processor
+    implementation DecentrDeps.gson
+    implementation DecentrDeps.retrofit_gsonConverter
+    implementation DecentrDeps.retrofit_mock
+    implementation DecentrDeps.retrofit_retrofit
+    implementation DecentrDeps.okhttp_okhttp
+    implementation DecentrDeps.okhttp_loggingInterceptor
+    implementation DecentrDeps.android_annotations
+    implementation DecentrDeps.ml_barcode_scanning
+    implementation DecentrDeps.ml_barcode_common
+//    // Custom model
+    implementation DecentrDeps.bip39
+    implementation DecentrDeps.walletUtils
+
+    api DecentrDeps.room_runtime
+    kapt DecentrDeps.room_compiler
+    implementation DecentrDeps.room_ktx
+}
+repositories {
+    mavenCentral()
+}

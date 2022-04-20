@@ -38,17 +38,8 @@ import org.mozilla.fenix.components.metrics.Event
 import org.mozilla.fenix.components.metrics.MetricController
 import org.mozilla.fenix.components.metrics.MetricsUtils
 import org.mozilla.fenix.components.tips.Tip
-import org.mozilla.fenix.ext.components
-import org.mozilla.fenix.ext.metrics
-import org.mozilla.fenix.ext.nav
-import org.mozilla.fenix.ext.openSetDefaultBrowserOption
-import org.mozilla.fenix.ext.settings
-import org.mozilla.fenix.home.HomeFragment
-import org.mozilla.fenix.home.HomeFragmentAction
-import org.mozilla.fenix.home.HomeFragmentDirections
-import org.mozilla.fenix.home.HomeFragmentState
-import org.mozilla.fenix.home.HomeFragmentStore
-import org.mozilla.fenix.home.Mode
+import org.mozilla.fenix.ext.*
+import org.mozilla.fenix.home.*
 import org.mozilla.fenix.settings.SupportUtils
 import org.mozilla.fenix.settings.SupportUtils.SumoTopic.PRIVATE_BROWSING_MYTHS
 import org.mozilla.fenix.utils.Settings
@@ -194,6 +185,10 @@ interface SessionControlController {
      * @see [SessionControlInteractor.reportSessionMetrics]
      */
     fun handleReportSessionMetrics(state: HomeFragmentState)
+
+    //decentr login
+    fun handleDecentrLogin()
+    fun handleDecentrLoginClose()
 }
 
 @Suppress("TooManyFunctions", "LargeClass")
@@ -612,5 +607,21 @@ class DefaultSessionControlController(
 
             track(Event.RecentBookmarkCount(state.recentBookmarks.size))
         }
+    }
+
+    override fun handleDecentrLogin() {
+        navController.nav(R.id.nav_decentr, HomeFragmentDirections.actionNavigateToDecentrLogin())
+//        navController.navigate(HomeFragmentDirections.actionNavigateToDecentrLogin())
+//            val intent = Intent(activity, LoginActivity::class.java)
+//            intent.putExtra(ProductActivity.KEY_PRODUCT_ID, product.id)
+//            activity.startActivity(intent)
+//            activity.classLoader
+    }
+
+    override fun handleDecentrLoginClose() {
+        navController.nav(
+            R.id.homeFragment,
+            HomeFragmentDirections.actionGlobalHome(focusOnAddressBar = false)
+        )
     }
 }

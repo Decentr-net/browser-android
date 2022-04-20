@@ -4,42 +4,42 @@
 
 package org.mozilla.fenix
 
+import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.Intent.ACTION_MAIN
 import android.content.Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
 import android.content.res.Configuration
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.StrictMode
 import android.os.SystemClock
+import android.text.SpannableString
 import android.text.format.DateUtils
 import android.util.AttributeSet
-import android.view.ActionMode
-import android.view.KeyEvent
-import android.view.LayoutInflater
-import android.view.MotionEvent
-import android.view.View
-import android.view.ViewConfiguration
+import android.util.Log
+import android.view.*
 import android.view.WindowManager.LayoutParams.FLAG_SECURE
 import androidx.annotation.CallSuper
 import androidx.annotation.IdRes
 import androidx.annotation.VisibleForTesting
 import androidx.annotation.VisibleForTesting.PROTECTED
 import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
-import kotlinx.coroutines.CoroutineScope
+import dagger.android.AndroidInjection
+import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import mozilla.appservices.places.BookmarkRoot
 import mozilla.components.browser.state.action.ContentAction
 import mozilla.components.browser.state.search.SearchEngine
@@ -60,6 +60,7 @@ import mozilla.components.support.base.feature.UserInteractionHandler
 import mozilla.components.support.ktx.android.arch.lifecycle.addObservers
 import mozilla.components.support.ktx.android.content.call
 import mozilla.components.support.ktx.android.content.email
+import mozilla.components.support.ktx.android.content.isPermissionGranted
 import mozilla.components.support.ktx.android.content.share
 import mozilla.components.support.ktx.kotlin.isUrl
 import mozilla.components.support.ktx.kotlin.toNormalizedUrl
@@ -67,6 +68,13 @@ import mozilla.components.support.locale.LocaleAwareAppCompatActivity
 import mozilla.components.support.utils.SafeIntent
 import mozilla.components.support.utils.toSafeIntent
 import mozilla.components.support.webextensions.WebExtensionPopupFeature
+import net.decentr.module_decentr.domain.models.PDV
+import net.decentr.module_decentr.domain.models.PDVHistory
+import net.decentr.module_decentr.presentation.base.BaseFragment
+import net.decentr.module_decentr.presentation.base.DecentrModuleHostActivity
+import net.decentr.module_decentr.presentation.injectViewModel
+import net.decentr.module_decentr.presentation.login.IntroLoginFragment
+import net.decentr.module_decentr.presentation.profile.ProfileFragment
 import org.mozilla.fenix.GleanMetrics.Metrics
 import org.mozilla.fenix.addons.AddonDetailsFragmentDirections
 import org.mozilla.fenix.addons.AddonPermissionsDetailsFragmentDirections
@@ -77,37 +85,20 @@ import org.mozilla.fenix.components.metrics.BreadcrumbsRecorder
 import org.mozilla.fenix.components.metrics.Event
 import org.mozilla.fenix.databinding.ActivityHomeBinding
 import org.mozilla.fenix.exceptions.trackingprotection.TrackingProtectionExceptionsFragmentDirections
-import org.mozilla.fenix.ext.alreadyOnDestination
-import org.mozilla.fenix.ext.breadcrumb
-import org.mozilla.fenix.ext.components
-import org.mozilla.fenix.ext.metrics
-import org.mozilla.fenix.ext.nav
-import org.mozilla.fenix.ext.setNavigationIcon
-import org.mozilla.fenix.ext.settings
+import org.mozilla.fenix.ext.*
 import org.mozilla.fenix.home.HomeFragmentDirections
-import org.mozilla.fenix.home.intent.CrashReporterIntentProcessor
-import org.mozilla.fenix.home.intent.DefaultBrowserIntentProcessor
-import org.mozilla.fenix.home.intent.OpenBrowserIntentProcessor
-import org.mozilla.fenix.home.intent.OpenSpecificTabIntentProcessor
-import org.mozilla.fenix.home.intent.SpeechProcessingIntentProcessor
-import org.mozilla.fenix.home.intent.StartSearchIntentProcessor
+import org.mozilla.fenix.home.intent.*
 import org.mozilla.fenix.library.bookmarks.BookmarkFragmentDirections
 import org.mozilla.fenix.library.bookmarks.DesktopFolders
 import org.mozilla.fenix.library.history.HistoryFragmentDirections
 import org.mozilla.fenix.library.historymetadata.HistoryMetadataGroupFragmentDirections
 import org.mozilla.fenix.library.recentlyclosed.RecentlyClosedFragmentDirections
 import org.mozilla.fenix.onboarding.DefaultBrowserNotificationWorker
-import org.mozilla.fenix.perf.MarkersActivityLifecycleCallbacks
-import org.mozilla.fenix.perf.MarkersFragmentLifecycleCallbacks
-import org.mozilla.fenix.perf.Performance
-import org.mozilla.fenix.perf.PerformanceInflater
-import org.mozilla.fenix.perf.ProfilerMarkers
-import org.mozilla.fenix.perf.StartupPathProvider
-import org.mozilla.fenix.perf.StartupTimeline
-import org.mozilla.fenix.perf.StartupTypeTelemetry
+import org.mozilla.fenix.perf.*
 import org.mozilla.fenix.search.SearchDialogFragmentDirections
 import org.mozilla.fenix.session.PrivateNotificationService
 import org.mozilla.fenix.settings.SettingsFragmentDirections
+import org.mozilla.fenix.settings.SupportUtils
 import org.mozilla.fenix.settings.TrackingProtectionFragmentDirections
 import org.mozilla.fenix.settings.about.AboutFragmentDirections
 import org.mozilla.fenix.settings.logins.fragment.LoginDetailFragmentDirections
@@ -124,6 +115,9 @@ import org.mozilla.fenix.trackingprotection.TrackingProtectionPanelDialogFragmen
 import org.mozilla.fenix.utils.BrowsersCache
 import org.mozilla.fenix.utils.Settings
 import java.lang.ref.WeakReference
+import java.text.SimpleDateFormat
+import java.util.*
+import javax.inject.Inject
 
 /**
  * The main activity of the application. The application is primarily a single Activity (this one)
@@ -133,7 +127,8 @@ import java.lang.ref.WeakReference
  */
 @OptIn(ExperimentalCoroutinesApi::class)
 @SuppressWarnings("TooManyFunctions", "LargeClass", "LongParameterList", "LongMethod")
-open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity {
+open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity,
+    DecentrModuleHostActivity {
     // DO NOT MOVE ANYTHING ABOVE THIS, GETTING INIT TIME IS CRITICAL
     // we need to store startup timestamp for warm startup. we cant directly store
     // inside AppStartupTelemetry since that class lives inside components and
@@ -163,7 +158,11 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity {
 
     private val externalSourceIntentProcessors by lazy {
         listOf(
-            SpeechProcessingIntentProcessor(this, components.core.store, components.analytics.metrics),
+            SpeechProcessingIntentProcessor(
+                this,
+                components.core.store,
+                components.analytics.metrics
+            ),
             StartSearchIntentProcessor(components.analytics.metrics),
             OpenBrowserIntentProcessor(this, ::getIntentSessionId),
             OpenSpecificTabIntentProcessor(this),
@@ -182,6 +181,10 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity {
     private val startupPathProvider = StartupPathProvider()
     private lateinit var startupTypeTelemetry: StartupTypeTelemetry
 
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+    private lateinit var viewModel: HomeDecentrViewModel
+
     final override fun onCreate(savedInstanceState: Bundle?) {
         // DO NOT MOVE ANYTHING ABOVE THIS getProfilerTime CALL.
         val startTimeProfiler = components.core.engine.profiler?.getProfilerTime()
@@ -193,7 +196,14 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity {
         components.strictMode.resetAfter(StrictMode.allowThreadDiskReads()) {
             // Theme setup should always be called before super.onCreate
             setupThemeAndBrowsingMode(getModeFromIntentOrLastKnown(intent))
+            try {
+                AndroidInjection.inject(this)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
             super.onCreate(savedInstanceState)
+            viewModel = injectViewModel(viewModelFactory)
+            viewModel.init()
         }
 
         // Checks if Activity is currently in PiP mode if launched from external intents, then exits it
@@ -271,9 +281,10 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity {
 
         startupTelemetryOnCreateCalled(intent.toSafeIntent())
         startupPathProvider.attachOnActivityOnCreate(lifecycle, intent)
-        startupTypeTelemetry = StartupTypeTelemetry(components.startupStateProvider, startupPathProvider).apply {
-            attachOnHomeActivityOnCreate(lifecycle)
-        }
+        startupTypeTelemetry =
+            StartupTypeTelemetry(components.startupStateProvider, startupPathProvider).apply {
+                attachOnHomeActivityOnCreate(lifecycle)
+            }
 
         components.core.requestInterceptor.setNavigationController(navHost.navController)
 
@@ -282,7 +293,9 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity {
         }
 
         components.core.engine.profiler?.addMarker(
-            MarkersActivityLifecycleCallbacks.MARKER_NAME, startTimeProfiler, "HomeActivity.onCreate"
+            MarkersActivityLifecycleCallbacks.MARKER_NAME,
+            startTimeProfiler,
+            "HomeActivity.onCreate"
         )
         StartupTimeline.onActivityCreateEndHome(this) // DO NOT MOVE ANYTHING BELOW HERE.
     }
@@ -345,6 +358,9 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity {
             message = "onStart()"
         )
 
+//        components.core.requestInterceptor.onLoadPDVListener = {
+//            saveDecentrPDV(it)
+//        }
         ProfilerMarkers.homeActivityOnStart(binding.rootContainer, components.core.engine.profiler)
         components.core.engine.profiler?.addMarker(
             MarkersActivityLifecycleCallbacks.MARKER_NAME, startProfilerTime, "HomeActivity.onStart"
@@ -353,7 +369,6 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity {
 
     override fun onStop() {
         super.onStop()
-
         // Diagnostic breadcrumb for "Display already aquired" crash:
         // https://github.com/mozilla-mobile/android-components/issues/7960
         breadcrumb(
@@ -433,6 +448,7 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity {
             )
         )
 
+//        components.core.requestInterceptor.onLoadPDVListener = null
         components.core.pocketStoriesService.stopPeriodicStoriesRefresh()
         privateNotificationObserver?.stop()
     }
@@ -521,6 +537,7 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity {
     }
 
     override fun onActionModeStarted(mode: ActionMode?) {
+
         actionMode = mode
         super.onActionModeStarted(mode)
     }
@@ -556,8 +573,20 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity {
 
     final override fun onBackPressed() {
         supportFragmentManager.primaryNavigationFragment?.childFragmentManager?.fragments?.forEach {
-            if (it is UserInteractionHandler && it.onBackPressed()) {
-                return
+            when (it) {
+                is IntroLoginFragment,
+                is ProfileFragment -> {
+                    closeDecentrModule()
+                    return
+                }
+                is BaseFragment -> {
+                    navHost.navController.popBackStack()
+                }
+                else -> {
+                    if (it is UserInteractionHandler && it.onBackPressed()) {
+                        return
+                    }
+                }
             }
         }
         super.onBackPressed()
@@ -741,7 +770,15 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity {
         historyMetadata: HistoryMetadataKey? = null
     ) {
         openToBrowser(from, customTabSessionId)
-        load(searchTermOrURL, newTab, engine, forceSearch, flags, requestDesktopMode, historyMetadata)
+        load(
+            searchTermOrURL,
+            newTab,
+            engine,
+            forceSearch,
+            flags,
+            requestDesktopMode,
+            historyMetadata
+        )
     }
 
     fun openToBrowser(from: BrowserDirection, customTabSessionId: String? = null) {
@@ -809,6 +846,7 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity {
      * @param historyMetadata The [HistoryMetadataKey] of the new tab in case this tab
      * was opened from history.
      */
+    @SuppressLint("SimpleDateFormat")
     private fun load(
         searchTermOrURL: String,
         newTab: Boolean,
@@ -818,6 +856,16 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity {
         requestDesktopMode: Boolean = false,
         historyMetadata: HistoryMetadataKey? = null
     ) {
+        val pdv = PDVHistory(
+            id = 0,
+            address = viewModel.getAddress(),
+            type = PDV.PDVType.TYPE_HISTORY,
+            query = searchTermOrURL,
+            engine = engine?.name?.lowercase() ?: String(),
+            domain = engine?.resultsUrl.toString().substringAfter("://").substringBefore("/"),
+            timestamp = SimpleDateFormat(viewModel.timespampPattern).apply { timeZone = TimeZone.getTimeZone("GMT") }.format(Date())
+        )
+        saveDecentrPDV(pdv)
         val startTime = components.core.engine.profiler?.getProfilerTime()
         val mode = browsingModeManager.mode
 
@@ -872,6 +920,14 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity {
                 "newTab: $newTab"
             )
         }
+    }
+
+    private fun saveDecentrPDV(pdv: PDV) {
+        viewModel.savePDV(listOf(pdv))
+    }
+
+    private fun saveDecentrPDV(url: String) {
+        viewModel.savePDV(url)
     }
 
     internal fun handleRequestDesktopMode(tabId: String) {
@@ -978,7 +1034,9 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity {
                 metrics.track(Event.ChangedToDefaultBrowser)
             }
 
-            DefaultBrowserNotificationWorker.setDefaultBrowserNotificationIfNeeded(applicationContext)
+            DefaultBrowserNotificationWorker.setDefaultBrowserNotificationIfNeeded(
+                applicationContext
+            )
         }
     }
 
@@ -987,9 +1045,9 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity {
         // First time opening this activity in the task.
         // Cold start / start from Recents after back press.
         return activityIcicle == null &&
-            // Activity was restarted from Recents after it was destroyed by Android while in background
-            // in cases of memory pressure / "Don't keep activities".
-            startingIntent.flags and Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY == 0
+                // Activity was restarted from Recents after it was destroyed by Android while in background
+                // in cases of memory pressure / "Don't keep activities".
+                startingIntent.flags and Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY == 0
     }
 
     /**
@@ -1012,13 +1070,54 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity {
 
     private fun shouldNavigateToBrowserOnColdStart(savedInstanceState: Bundle?): Boolean {
         return isActivityColdStarted(intent, savedInstanceState) &&
-            !externalSourceIntentProcessors.any {
-                it.process(
-                    intent,
-                    navHost.navController,
-                    this.intent
-                )
+                !externalSourceIntentProcessors.any {
+                    it.process(
+                        intent,
+                        navHost.navController,
+                        this.intent
+                    )
+                }
+    }
+
+    override fun permissionNeeded() {
+        if (!this.isPermissionGranted(Manifest.permission.CAMERA)) {
+            buildDialogPermissions().show()
+        }
+        this.settings().setCameraPermissionNeededState = false
+    }
+
+    private fun buildDialogPermissions(): AlertDialog.Builder {
+        return AlertDialog.Builder(this).apply {
+            val spannableText = SpannableString(
+                this@HomeActivity.resources.getString(R.string.camera_permissions_needed_message)
+            )
+            setMessage(spannableText)
+            setNegativeButton(R.string.camera_permissions_needed_negative_button_text) { dialog: DialogInterface, _ ->
+                dialog.cancel()
             }
+            setPositiveButton(R.string.camera_permissions_needed_positive_button_text) { dialog: DialogInterface, _ ->
+                val intent: Intent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+                } else {
+                    SupportUtils.createCustomTabIntent(
+                        this@HomeActivity,
+                        SupportUtils.getSumoURLForTopic(
+                            this@HomeActivity,
+                            SupportUtils.SumoTopic.QR_CAMERA_ACCESS
+                        )
+                    )
+                }
+                val uri = Uri.fromParts("package", this@HomeActivity.packageName, null)
+                intent.data = uri
+                dialog.cancel()
+                this@HomeActivity.startActivity(intent)
+            }
+            create()
+        }
+    }
+
+    override fun closeDecentrModule() {
+        navHost.navController.navigate(NavGraphDirections.actionCloseDecentrLogin())
     }
 
     companion object {

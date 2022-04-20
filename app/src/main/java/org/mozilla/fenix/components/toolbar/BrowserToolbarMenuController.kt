@@ -224,14 +224,16 @@ class DefaultBrowserToolbarMenuController(
                 navController.nav(R.id.browserFragment, directions)
             }
             is ToolbarMenu.Item.SyncAccount -> {
-                val directions = when (item.accountState) {
-                    AccountState.AUTHENTICATED ->
-                        BrowserFragmentDirections.actionGlobalAccountSettingsFragment()
-                    AccountState.NEEDS_REAUTHENTICATION ->
-                        BrowserFragmentDirections.actionGlobalAccountProblemFragment()
-                    AccountState.NO_ACCOUNT ->
-                        BrowserFragmentDirections.actionGlobalTurnOnSync()
-                }
+                //todo add states
+//                val directions = when (item.accountState) {
+//                    AccountState.AUTHENTICATED ->
+//                        BrowserFragmentDirections.actionGlobalAccountSettingsFragment()
+//                    AccountState.NEEDS_REAUTHENTICATION ->
+//                        BrowserFragmentDirections.actionGlobalAccountProblemFragment()
+//                    AccountState.NO_ACCOUNT ->
+//                        BrowserFragmentDirections.actionGlobalTurnOnSync()
+//                }
+                val directions = BrowserFragmentDirections.actionNavigateToDecentrLogin()
                 browserAnimator.captureEngineViewAndDrawStatically {
                     navController.nav(
                         R.id.browserFragment,

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="profile_title">Profile</string>
+    <string name="profile_bio_hint">BIO</string>
+    <string name="profile_balance_hint">Balance</string>
+    <string name="profile_balance_value_hint">… PDV | … DEC</string>
+    <string name="profile_balance_value_formatter">%1$s PDV | %2$s DEC</string>
+    <string name="profile_pdv_in_progress_value_formatter">In progress %s PDV</string>
+    <string name="profile_birth_hint">Birthday</string>
+    <string name="profile_gender_hint">Gender</string>
+    <string name="profile_log_out_info">Clear all local storages and keys</string>
+    <string name="profile_log_out_button">Log out</string>
+    <string name="profile_go_browsing_button">Go to Decentr Browser</string>
+    <string name="profile_copy_address_button">Copy wallet address</string>
+    <string name="profile_empty_fields_hint">N/A</string>
+</resources>

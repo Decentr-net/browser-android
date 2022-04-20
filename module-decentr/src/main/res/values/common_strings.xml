@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="copied_to_clipboard_toast">Copied to Clipboard</string>
+    <string name="common_loading">Loading…</string>
+    <string name="common_processing">Processing…</string>
+</resources>

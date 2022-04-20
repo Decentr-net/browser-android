@@ -5,6 +5,10 @@
     <color name="decentr_blue_hover_30">#345ECD</color>
     <color name="decentr_blue_hover_60">#2D4995</color>
 
+    <color name="decentr_blue_hover_1">#BC5D84ED</color>
+    <color name="decentr_blue_hover_2">#5379DF</color>
+    <color name="decentr_blue_hover_3">#4467C3</color>
+
     <color name="decentr_green">#40C988</color>
     <color name="decentr_red">#FF7070</color>
 

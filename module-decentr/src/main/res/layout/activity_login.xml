@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/activity_decentr_login"
+    tools:context=".presentation.login.LoginActivity">
+
+    <ViewStub
+        android:id="@+id/navigationToolbarStub"
+        android:inflatedId="@id/navigationToolbar"
+        android:layout="@layout/navigation_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp" />
+
+    <fragment
+        android:id="@+id/container"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_decentr" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

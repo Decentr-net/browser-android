@@ -18,7 +18,7 @@
         android:id="@+id/imageView"
         android:layout_width="72dp"
         android:layout_height="72dp"
-        app:srcCompat="@drawable/ic_fx_accounts_avatar"
+        app:srcCompat="@drawable/ic_launcher_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -6,6 +6,7 @@ package org.mozilla.fenix.home.sessioncontrol
 
 import android.view.View
 import androidx.annotation.VisibleForTesting
+import androidx.compose.ui.res.integerArrayResource
 import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -132,7 +133,7 @@ private fun onboardingAdapterItems(onboardingState: OnboardingState): List<Adapt
         when (onboardingState) {
             OnboardingState.SignedOutNoAutoSignIn -> {
                 listOf(
-//                    AdapterItem.OnboardingManualSignIn
+                    AdapterItem.OnboardingManualSignIn
                 )
             }
             OnboardingState.SignedIn -> listOf()

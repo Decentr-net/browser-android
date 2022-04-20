@@ -124,3 +124,38 @@
 # Keep Android Lifecycle methods
 # https://bugzilla.mozilla.org/show_bug.cgi?id=1596302
 -keep class androidx.lifecycle.** { *; }
+
+# Kotlin
+-dontwarn kotlin.**
+-keep class kotlin.Metadata { *; }
+-keepclassmembers class **$WhenMappings {
+    <fields>;
+}
+
+# Enumes
+-keepclassmembers enum * { *; }
+
+# Retrofit2
+-dontnote retrofit2.Platform
+-dontwarn retrofit2.Platform$Java8
+-keepattributes Signature
+-dontwarn okio.**
+
+-keepclassmembers class net.decentr.module_decentr.** {
+    public synthetic <methods>;
+    <fields>;
+}
+
+# OkHttp
+-dontwarn okhttp3.**
+-dontwarn okio.**
+-dontwarn javax.annotation.**
+-dontwarn org.conscrypt.**
+-keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
+
+# Gson
+-keep class com.google.gson.** { *; }
+-keepattributes Signature
+-keep class * implements com.google.gson.TypeAdapterFactory
+-keep class * implements com.google.gson.JsonSerializer
+-keep class * implements com.google.gson.JsonDeserializer

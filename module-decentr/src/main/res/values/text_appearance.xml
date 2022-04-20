@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Medium">
+        <item name="android:textSize">@dimen/font_size_super_large</item>
+    </style>
+
+    <style name="Medium.Regular">
+        <item name="fontFamily">@font/metropolis_regular</item>
+    </style>
+
+    <style name="Medium.Bold">
+        <item name="fontFamily">@font/metropolis_semibold</item>
+    </style>
+
+    <style name="Medium.Regular.Primary">
+        <item name="android:textColor">@color/dec_black</item>
+    </style>
+
+    <style name="Medium.Bold.Primary">
+        <item name="android:textColor">@color/dec_black</item>
+    </style>
+
+    <style name="Base">
+        <item name="android:textSize">@dimen/font_size_pre_large</item>
+    </style>
+
+    <style name="Base.Regular">
+        <item name="fontFamily">@font/metropolis_regular</item>
+    </style>
+
+    <style name="Base.Regular.Primary">
+        <item name="android:textColor">@color/dec_black</item>
+    </style>
+
+    <style name="Base.Regular.White">
+        <item name="android:textColor">@color/dec_white</item>
+    </style>
+
+    <style name="Base.Regular.Secondary">
+        <item name="android:textColor">@color/dec_grey</item>
+    </style>
+
+    <style name="Base.Regular.Red">
+        <item name="android:textColor">@color/dec_red</item>
+    </style>
+
+    <style name="Base.Regular.Revers">
+        <item name="android:textColor">@color/dec_white</item>
+    </style>
+
+
+    <style name="Base.Regular.Accent">
+        <item name="android:textColor">@color/dec_blue</item>
+    </style>
+
+
+
+    <style name="Small">
+        <item name="android:textSize">@dimen/font_size_middle_small</item>
+    </style>
+
+    <style name="Small.Regular">
+        <item name="fontFamily">@font/metropolis_regular</item>
+    </style>
+
+    <style name="Small.Regular.Primary">
+        <item name="android:textColor">@color/dec_black</item>
+    </style>
+
+    <style name="Small.Regular.White">
+        <item name="android:textColor">@color/dec_white</item>
+    </style>
+
+    <style name="Small.Regular.Secondary">
+        <item name="android:textColor">@color/dec_grey</item>
+    </style>
+
+    <style name="Small.Regular.Revers">
+        <item name="android:textColor">@color/dec_white</item>
+    </style>
+
+</resources>

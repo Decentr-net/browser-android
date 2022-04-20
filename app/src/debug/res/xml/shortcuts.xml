@@ -11,8 +11,8 @@
         android:shortcutShortLabel="@string/home_screen_shortcut_open_new_tab_2"
         android:shortcutLongLabel="@string/home_screen_shortcut_open_new_tab_2">
         <intent
-            android:action="org.mozilla.fenix.OPEN_TAB"
-            android:targetPackage="org.mozilla.fenix.debug"
+            android:action="net.decentr.browser.OPEN_TAB"
+            android:targetPackage="net.decentr.browser.debug"
             android:targetClass="org.mozilla.fenix.IntentReceiverActivity" />
     </shortcut>
     <shortcut
@@ -22,8 +22,8 @@
         android:shortcutShortLabel="@string/home_screen_shortcut_open_new_private_tab_2"
         android:shortcutLongLabel="@string/home_screen_shortcut_open_new_private_tab_2">
         <intent
-            android:action="org.mozilla.fenix.OPEN_PRIVATE_TAB"
-            android:targetPackage="org.mozilla.fenix.debug"
+            android:action="net.decentr.browser.OPEN_PRIVATE_TAB"
+            android:targetPackage="net.decentr.browser.debug"
             android:targetClass="org.mozilla.fenix.IntentReceiverActivity" />
     </shortcut>
 </shortcuts>

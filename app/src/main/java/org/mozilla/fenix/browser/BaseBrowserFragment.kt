@@ -235,7 +235,6 @@ abstract class BaseBrowserFragment :
                 BrowserFragmentState()
             )
         }
-
         // DO NOT MOVE ANYTHING BELOW THIS addMarker CALL!
         requireComponents.core.engine.profiler?.addMarker(
             MarkersFragmentLifecycleCallbacks.MARKER_NAME, profilerStartTime, "BaseBrowserFragment.onCreateView",
