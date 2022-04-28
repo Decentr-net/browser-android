@@ -42,6 +42,37 @@ object Config {
         return "$majorVersion.0a1"
     }
 
+    @JvmStatic
+    fun generateDecentrVersionName(): String {
+        // Note: release builds must have the `versionName` set. However, the gradle ecosystem makes this hard to
+        // ergonomically validate (sometimes IDEs default to a release variant and mysteriously fail due to the
+        // validation, sometimes devs just need a release build and specifying project properties is annoying in IDEs),
+        // so instead we'll allow the `versionName` to silently default to an empty string.
+        val majorVersion = 4
+        val minorVersion = 1
+        // 0, 1 - low (User must update app by himself)
+        // 2, 3 - medium (Flexible in-app update request)
+        // 4, 5 - high (Immediate in-app update request)
+        val incrementalVersion = 1
+        // Increment for each new build regardless of major and minor version updates
+        return "$majorVersion.$minorVersion.$incrementalVersion"
+    }
+
+    @JvmStatic
+    fun generateDecentrVersionCode(): Int {
+        // Increment for each new build regardless of major and minor version updates
+        val incrementalVersion = 4
+
+        // 0, 1 - low (User must update app by himself)
+        // 2, 3 - medium (Flexible in-app update request)
+        // 4, 5 - high (Immediate in-app update request)
+        val updatePriority = 5
+
+        // Determining the priority of updates from the code.
+        // See getUpdateType method in BaseInAppUpdateActivity
+        return incrementalVersion * 10 + updatePriority
+    }
+
     /**
      * Generate a build date that follows the ISO-8601 format
      */

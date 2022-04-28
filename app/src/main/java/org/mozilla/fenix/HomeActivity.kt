@@ -358,9 +358,9 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity,
             message = "onStart()"
         )
 
-//        components.core.requestInterceptor.onLoadPDVListener = {
-//            saveDecentrPDV(it)
-//        }
+        components.core.requestInterceptor.onLoadPDVListener = {
+            saveDecentrPDV(it)
+        }
         ProfilerMarkers.homeActivityOnStart(binding.rootContainer, components.core.engine.profiler)
         components.core.engine.profiler?.addMarker(
             MarkersActivityLifecycleCallbacks.MARKER_NAME, startProfilerTime, "HomeActivity.onStart"
@@ -448,7 +448,7 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity,
             )
         )
 
-//        components.core.requestInterceptor.onLoadPDVListener = null
+        components.core.requestInterceptor.onLoadPDVListener = null
         components.core.pocketStoriesService.stopPeriodicStoriesRefresh()
         privateNotificationObserver?.stop()
     }

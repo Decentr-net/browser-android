@@ -66,7 +66,7 @@
         <activity-alias
             android:name="org.mozilla.gecko.BrowserApp"
             android:exported="true"
-            android:targetActivity=".IntentReceiverActivity"></activity-alias>
+            android:targetActivity=".IntentReceiverActivity"/>
 
         <!-- Activity alias from Fennec used by PWA launchers on the home screen -->
         <activity-alias
@@ -254,7 +254,7 @@
             android:name=".migration.MigrationProgressActivity"
             android:exported="false"
             android:launchMode="singleInstance"
-            android:noHistory="true"></activity>
+            android:noHistory="true"/>
 
         <activity
             android:name=".crashes.CrashListActivity"

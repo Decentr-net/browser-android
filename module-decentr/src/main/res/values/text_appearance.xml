@@ -55,7 +55,6 @@
     </style>
 
 
-
     <style name="Small">
         <item name="android:textSize">@dimen/font_size_middle_small</item>
     </style>

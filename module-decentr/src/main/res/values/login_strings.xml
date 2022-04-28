@@ -1,65 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Intro login fragment -->
-    <string name="login_intro_sign_in_button" translatable="false">Sign in as existing user</string>
-    <string name="login_intro_register_button" translatable="false">Sign up as new user</string>
-    <string name="login_intro_skip_button" translatable="false">Continue as Guest</string>
+    <string name="login_intro_sign_in_button" translatable="false">Sign in as an existing user</string>
+    <string name="login_intro_register_button" translatable="false">Sign up as a new user</string>
+    <string name="login_intro_skip_button" translatable="false">Continue as a guest</string>
 
     <!-- QrCode fragment -->
-    <string name="qr_code_enter_seed_button" translatable="false">Enter seed phrase</string>
-    <string name="qr_code_description" translatable="false">To find QR code go to user settings in Decentr or enter seed phrase manually.</string>
-    <string name="qr_code_title" translatable="false">Sign in as existing user</string>
+    <string name="qr_code_enter_seed_button" translatable="false">Enter your seed phrase</string>
+    <string name="qr_code_description" translatable="false">To find your QR code, navigate to user settings on the Decentr desktop browser, or you can enter your seed phrase manually</string>
+    <string name="qr_code_title" translatable="false">Sign in as an existing user</string>
 
     <!-- SignIn/signup import seed fragment -->
-    <string name="sign_in_seed_title" translatable="false">Sign in as existing user</string>
+    <string name="sign_in_seed_title" translatable="false">Sign in as an existing user</string>
     <string name="sign_in_seed_auth_info" translatable="false">Import with seed phrase</string>
     <string name="sign_in_seed_register_info" translatable="false">Create new account</string>
-    <string name="sign_in_seed_description" translatable="false">Enter all the words from you seed phrase dividing it with spaces.</string>
+    <string name="sign_in_seed_description" translatable="false">Enter all the words from your seed phrase, making sure to include spaces between words</string>
     <string name="sign_in_seed_hint" translatable="false">Your seed phrase</string>
-    <string name="sign_in_seed_import_button" translatable="false">Import User</string>
+    <string name="sign_in_seed_import_button" translatable="false">Import user</string>
     <string name="sign_in_generate_seed_button" translatable="false">Generate seed</string>
     <string name="sign_in_seed_scan_qr_code_button" translatable="false">Scan QR code</string>
 
 
-    <string name="sign_up_info_title" translatable="false">Store safe and never share your seed phrase</string>
-    <string name="sign_up_info_text" translatable="false">Anyone with this phrase can take your Decs forever.\nWe won’t be able to recover it or return your account and wallet to you.</string>
-    <string name="sign_up_info_text_2" translatable="false">If you’ll lose the seed phrase you’ll lose your account forever.</string>
-    <string name="sign_up_info_text_3" translatable="false">Tip: Clear the Clipboard after copying your phrase by copying another text. Or it will erase in 1 hour.</string>
-    <string name="sign_up_seed_copy_button" translatable="false">Copy to Clipboard</string>
-    <string name="create_by_seed_button" translatable="false">Create User</string>
+    <string name="sign_up_info_title" translatable="false">Store your seed phrase somewhere safe and don\'t share it with anyone</string>
+    <string name="sign_up_info_text" translatable="false">Anyone with this seed phrase could login to your wallet and steal your DEC, and it would be impossible to recover</string>
+    <string name="sign_up_info_text_2" translatable="false">If you lose your seed phrase, your wallet will be unrecoverable</string>
+    <string name="sign_up_info_text_3" translatable="false">Tip: Clear your clipboard after saving your seed phrase, by copying different text, ensuring you don\'t paste your seed phrase somewhere else by accident</string>
+    <string name="sign_up_seed_copy_button" translatable="false">Copy to clipboard</string>
+    <string name="create_by_seed_button" translatable="false">Create user</string>
 
     <!-- SignIn password fragment -->
-    <string name="sign_in_pass_title" translatable="false">Sign in as existing user</string>
+    <string name="sign_in_pass_title" translatable="false">Sign in as an existing user</string>
     <string name="sign_in_pass_info" translatable="false">Create a new password</string>
-    <string name="sign_in_pass_description" translatable="false">At least 8 symbols that you’ll use to log in to your account.</string>
+    <string name="sign_in_pass_description" translatable="false">Your password must contain a minimum of 8 characters, including 1 uppercase letter, 1 lowercase letter, 1 digit and 1 special character</string>
     <string name="sign_in_pass_hint" translatable="false">Password</string>
     <string name="sign_in_pass_repeat_hint" translatable="false">Repeat password</string>
     <string name="sign_in_pass_save_button" translatable="false">Save password</string>
 
     <!-- SignIn email fragment -->
-    <string name="sign_in_email_title" translatable="false">Connect your email</string>
-    <string name="sign_in_email_code_title" translatable="false">Please confirm your email</string>
-    <string name="sign_in_email_info" translatable="false">We’ll use this email to send the confirmation code, so be sure you have access for it.</string>
-    <string name="sign_in_email_code_info" translatable="false">We’ve sent you the confirmation letter to email.</string>
+    <string name="sign_in_email_title" translatable="false">Connect your email address</string>
+    <string name="sign_in_email_code_title" translatable="false">Please confirm your email address</string>
+    <string name="sign_in_email_info" translatable="false">We\'ll send a confirmation code to this email address, so make sure you have access to it</string>
+    <string name="sign_in_email_code_info" translatable="false">We’ve sent you a confirmation code to your email address</string>
     <string name="sign_in_email_hint" translatable="false">Email</string>
     <string name="sign_in_email_resend_button" translatable="false">Resend confirmation code</string>
-    <string name="sign_in_email_resend_info" translatable="false">Didn’t get the code or couldn’t find it?</string>
-    <string name="sign_in_email_resend_timer" translatable="false">%s seconds left to use resend.</string>
+    <string name="sign_in_email_resend_info" translatable="false">Didn\'t receive the code or you couldn\'t find it?</string>
+    <string name="sign_in_email_resend_timer" translatable="false">%s seconds left before you can resend</string>
     <string name="sign_in_email_confirmation_sent" translatable="false">Confirmation code was sent.</string>
 
     <string name="sign_in_credentials_title" translatable="false">Personal info</string>
-    <string name="sign_in_credentials_info" translatable="false">Something that will allow others to identify you better than a simple image.</string>
+    <string name="sign_in_credentials_info" translatable="false">A few words to describe yourself</string>
     <string name="sign_in_credentials_firstname_hint" translatable="false">First name</string>
     <string name="sign_in_credentials_lastname_hint" translatable="false">Last name</string>
     <string name="sign_in_credentials_bio_hint" translatable="false">Your bio</string>
-    <string name="sign_in_credentials_bio_input_hint" translatable="false">Something that represents you best and allows others to form some opinion about who you are or who you want to be.</string>
+    <string name="sign_in_credentials_bio_input_hint" translatable="false">Something that represents you best and allows others to form some opinion about who you are or who you want to be</string>
     <string name="sign_in_credentials_referral_hint" translatable="false">Referral code</string>
     <string name="sign_in_credentials_gender_hint" translatable="false">Gender</string>
     <string name="sign_in_credentials_birthday_hint" translatable="false">Birthday</string>
     <string name="sign_in_credentials_choose_date_hint" translatable="false">Choose date</string>
-    <string name="sign_in_credentials_choose_gender_hint" translatable="false">Choose from list</string>
+    <string name="sign_in_credentials_choose_gender_hint" translatable="false">Choose from the list</string>
     <string name="sign_in_credentials_confirm_button" translatable="false">Confirm</string>
-    <string name="sign_in_credentials_set_profile" translatable="false">Set Profile</string>
+    <string name="sign_in_credentials_set_profile" translatable="false">Set profile</string>
     <string name="sign_in_credentials_save_date" translatable="false">Save</string>
 
     <string-array name="gender">
@@ -77,7 +77,8 @@
     <string name="cd_flash_button" translatable="false">Toggle camera flash</string>
     <string name="product_search_button" translatable="false">Search object</string>
     <string name="prompt_point_at_a_barcode" translatable="false">Point your camera at a barcode</string>
-    <string name="prompt_hold_camera_steady" translatable="false">Keep camera still for a moment</string>
+    <string name="prompt_point_at_a_bird" translatable="false">Point your camera at a bird</string>
+    <string name="prompt_hold_camera_steady" translatable="false">Keep your camera still for a moment</string>
     <string name="prompt_move_camera_closer" translatable="false">Move closer to search</string>
     <string name="prompt_searching" translatable="false">Searching&#8230;</string>
 

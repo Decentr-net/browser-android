@@ -55,26 +55,27 @@
                 android:id="@+id/input_seed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
+                android:layout_weight="1"
                 android:background="@null"
-                android:minHeight="100dp"
+                android:fontFamily="@font/metropolis_regular"
                 android:gravity="start|top"
-                android:inputType="textMultiLine"
+                android:inputType="textPassword|textMultiLine"
+                android:minHeight="100dp"
                 tools:text="wqeiuoiqe
             uoiqweuoiqwue
             ioquwioeuqwoie
             uioqweuoiqweuoiqweuoiwquo
             ieqwuoiqwe" />
 
-<!--            <ImageView-->
-<!--                android:id="@+id/action_show_seed"-->
-<!--                android:layout_width="30dp"-->
-<!--                android:layout_height="30dp"-->
-<!--                android:padding="4dp"-->
-<!--                android:src="@drawable/ic_eye_disabled"-->
-<!--                tools:ignore="ContentDescription" />-->
+            <ImageView
+                android:id="@+id/action_show_seed"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="4dp"
+                android:src="@drawable/ic_eye_disabled"
+                tools:ignore="ContentDescription" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

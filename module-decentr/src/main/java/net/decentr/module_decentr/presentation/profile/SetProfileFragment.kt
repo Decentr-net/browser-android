@@ -2,6 +2,7 @@ package net.decentr.module_decentr.presentation.profile
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.text.SpannableStringBuilder
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -47,6 +48,7 @@ class SetProfileFragment : BaseFragment(R.layout.fragment_sign_in_credentials) {
     private val MAX_LENGTH_NAME = 20
     private val MAX_LENGTH_BIO = 70
     private val MIN_DATE = Triple(1901, 1, 1)
+    private val MAX_DAY_DECEMBER = 31
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -149,17 +151,20 @@ class SetProfileFragment : BaseFragment(R.layout.fragment_sign_in_credentials) {
                 }
             }
 
-            val currentDate = Date().time
             val minDate = Calendar.getInstance().apply {
-                set(MIN_DATE.first, MIN_DATE.second - 1, MIN_DATE.third)
+                set(
+                    MIN_DATE.first,
+                    MIN_DATE.second - 1,
+                    MIN_DATE.third)
             }
             val maxDate = Calendar.getInstance().apply {
                 set(
-                    this.get(Calendar.YEAR),
-                    this.get(Calendar.MONTH),
-                    this.get(Calendar.DAY_OF_MONTH)
+                    this.get(Calendar.YEAR) - 1,
+                    Calendar.DECEMBER,
+                    MAX_DAY_DECEMBER
                 )
             }
+            val currentDate = localBirthDateTime?.time ?: maxDate.timeInMillis
             arguments =
                 DateSelectorDialog.getArgs(minDate.timeInMillis, maxDate.timeInMillis, currentDate)
         }

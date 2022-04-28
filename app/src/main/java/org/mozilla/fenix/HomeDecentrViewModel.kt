@@ -1,14 +1,20 @@
 package org.mozilla.fenix
 
+import android.annotation.SuppressLint
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import net.decentr.module_decentr.domain.models.PDV
+import net.decentr.module_decentr.domain.models.PDVHistory
 import net.decentr.module_decentr.domain.usecases.pdv.*
 import net.decentr.module_decentr.domain.usecases.signin.GetProfileFlowUseCase
+import org.mozilla.fenix.ext.isKnownSearchDomain
+import java.text.SimpleDateFormat
+import java.util.*
 import javax.inject.Inject
+import kotlin.collections.ArrayList
 
 class HomeDecentrViewModel @Inject constructor(
     private val savePDVUseCase: SavePDVUseCase,
@@ -23,6 +29,7 @@ class HomeDecentrViewModel @Inject constructor(
     private fun getPDVConfig(): Int {
         return MAX_PDV_COUNT
     }
+
     val timespampPattern = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
     private var address: String? = null
 
@@ -52,7 +59,8 @@ class HomeDecentrViewModel @Inject constructor(
                         val partitionByAddress = allPDV.partition {
                             it.type == PDV.PDVType.TYPE_HISTORY && (it.address == address || it.address.isNullOrEmpty())
                         }
-                        val smallerLists: List<List<PDV>> = chopped(partitionByAddress.first.reversed(), MAX_PDV_COUNT)
+                        val smallerLists: List<List<PDV>> =
+                            chopped(partitionByAddress.first.reversed(), MAX_PDV_COUNT)
                         val listToSend = smallerLists.first()
                         if (listToSend.isNotEmpty()) {
                             val result = sendPDVUseCase.invoke(listToSend)
@@ -66,20 +74,24 @@ class HomeDecentrViewModel @Inject constructor(
         }
     }
 
+    @SuppressLint("SimpleDateFormat")
     fun savePDV(url: String) {
-        Log.d("URL", url)
-//        val domain = url.substringAfter("://").substringBefore("/")
-//        val query = url.substringAfter("$domain/").substringAfter("=")
-//        val pdv = PDVHistory(
-//            address = address,
-//            type = PDV.PDVType.TYPE_HISTORY,
-//            query = query,
-//            engine = domain.substringBeforeLast('.').substringAfter('.'),
-//            domain = domain,
-//            timestamp = SimpleDateFormat(timespampPattern).format(Date())
-//        )
-//        savePDV(listOf(pdv))
+        val domain = url.substringAfter("://").substringBefore("/")
+        if (url.isKnownSearchDomain()) {
+            val query = url.substringAfter("$domain/").substringAfter("=").substringBefore("&")
+            val pdv = PDVHistory(
+                id = 0,
+                address = address,
+                type = PDV.PDVType.TYPE_HISTORY,
+                query = query,
+                engine = domain.substringBeforeLast('.').substringAfter('.'),
+                domain = domain,
+                timestamp = SimpleDateFormat(timespampPattern).apply { timeZone = TimeZone.getTimeZone("GMT") }.format(Date())
+            )
+            savePDV(listOf(pdv))
+        }
     }
+
 
     private fun <T> chopped(list: List<T>, L: Int): List<List<T>> {
         val parts: MutableList<List<T>> = ArrayList()

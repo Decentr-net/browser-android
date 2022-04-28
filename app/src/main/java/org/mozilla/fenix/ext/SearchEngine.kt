@@ -31,3 +31,6 @@ fun SearchEngine.isCustomEngine(): Boolean =
  */
 fun SearchEngine.isKnownSearchDomain(): Boolean =
     this.resultUrls[0].findAnyOf(wellKnownSearchDomains, 0, true) != null
+
+fun String.isKnownSearchDomain(): Boolean =
+    this.findAnyOf(wellKnownSearchDomains, 0, true) != null

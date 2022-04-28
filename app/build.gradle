@@ -25,20 +25,6 @@ import static org.gradle.api.tasks.testing.TestResult.ResultType
 apply from: 'benchmark.gradle'
 
 android {
-    signingConfigs {
-        debug {
-            storeFile file('/Users/alexeyp/Library/Mobile Documents/com~apple~CloudDocs/Documents/ключи/key_store_decentr')
-            storePassword 'decentr'
-            keyPassword 'decentr'
-            keyAlias 'key_decentr'
-        }
-        release {
-            storeFile file('/Users/alexeyp/Library/Mobile Documents/com~apple~CloudDocs/Documents/ключи/key_store_decentr')
-            storePassword 'decentr'
-            keyPassword 'decentr'
-            keyAlias 'key_decentr'
-        }
-    }
     compileSdkVersion Config.compileSdkVersion
 
     project.maybeConfigForJetpackBenchmark(it)
@@ -52,8 +38,8 @@ android {
         applicationId 'net.decentr'
         minSdkVersion Config.minSdkVersion
         targetSdkVersion Config.targetSdkVersion
-        versionCode 4
-        versionName Config.generateDebugVersionName()
+        versionCode Config.generateDecentrVersionCode()
+        versionName Config.generateDecentrVersionName()
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         testInstrumentationRunnerArguments clearPackageData: 'true'
@@ -260,7 +246,7 @@ android.applicationVariants.all { variant ->
 
     def isDebug = variant.buildType.resValues['IS_DEBUG']?.value ?: false
     def useReleaseVersioning = variant.buildType.buildConfigFields['USE_RELEASE_VERSIONING']?.value ?: false
-    def versionName = variant.buildType.name == 'nightly' ? Config.nightlyVersionName() : Config.releaseVersionName(project)
+    def versionName = Config.generateDecentrVersionName()
 
     println("----------------------------------------------")
     println("Variant name:      " + variant.name)

@@ -1,6 +1,8 @@
 package net.decentr.module_decentr.presentation.login
 
 import android.os.Bundle
+import android.text.InputType
+import android.text.method.PasswordTransformationMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,6 +20,7 @@ import net.decentr.module_decentr.presentation.extensions.onTextChanged
 import net.decentr.module_decentr.presentation.extensions.show
 import net.decentr.module_decentr.presentation.injectViewModel
 import net.decentr.module_decentr.presentation.toast
+import net.decentr.module_decentr.presentation.utils.PasswordTransform
 import javax.inject.Inject
 
 class SignInSeedPhraseFragment : BaseFragment(R.layout.fragment_sign_in_seed_phrase) {
@@ -57,6 +60,7 @@ class SignInSeedPhraseFragment : BaseFragment(R.layout.fragment_sign_in_seed_phr
         when (args.screenType) {
             TYPE_AUTH -> {
                 binding.info.text = getString(R.string.sign_in_seed_auth_info)
+                binding.description.show()
                 binding.inputSeed.setText(args.seedString)
                 binding.actionScanQrCode.show()
                 binding.registrationInfo.gone()
@@ -66,6 +70,7 @@ class SignInSeedPhraseFragment : BaseFragment(R.layout.fragment_sign_in_seed_phr
             }
             TYPE_REGISTER -> {
                 viewModel.generateMnemonic()
+                binding.description.gone()
                 binding.info.text = getString(R.string.sign_in_seed_register_info)
                 binding.actionScanQrCode.gone()
                 binding.registrationInfo.show()
@@ -104,19 +109,18 @@ class SignInSeedPhraseFragment : BaseFragment(R.layout.fragment_sign_in_seed_phr
         binding.actionCopyAddress.setOnClickListener {
             context?.copyToClipboard(binding.inputSeed.text.toString())
         }
-
-//        binding.actionShowSeed.setOnClickListener {
-//            showSeed = !showSeed
-//            if (showSeed) {
-////                binding.inputSeed.transformationMethod = PasswordTransformationMethod.getInstance()
-//                binding.inputSeed.inputType = InputType.TYPE_TEXT_FLAG_MULTI_LINE
-//                binding.actionShowSeed.setImageResource(R.drawable.ic_eye_enabled)
-//            } else {
-//                binding.inputSeed.inputType = InputType.TYPE_TEXT_VARIATION_PASSWORD or InputType.TYPE_TEXT_FLAG_MULTI_LINE
-//                binding.actionShowSeed.setImageResource(R.drawable.ic_eye_disabled)
-//                binding.inputSeed.setSelection(binding.inputSeed.text?.length ?: 0)
-//            }
-//        }
+        binding.inputSeed.transformationMethod = PasswordTransform()
+        binding.actionShowSeed.setOnClickListener {
+            showSeed = !showSeed
+            if (showSeed) {
+                binding.inputSeed.transformationMethod = null
+                binding.actionShowSeed.setImageResource(R.drawable.ic_eye_enabled)
+            } else {
+                binding.inputSeed.transformationMethod = PasswordTransform()
+                binding.actionShowSeed.setImageResource(R.drawable.ic_eye_disabled)
+            }
+            binding.inputSeed.setSelection(binding.inputSeed.text?.length ?: 0)
+        }
     }
 
     private fun initViewModel() {

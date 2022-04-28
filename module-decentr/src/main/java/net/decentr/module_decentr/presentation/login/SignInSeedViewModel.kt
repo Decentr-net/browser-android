@@ -72,6 +72,7 @@ class SignInSeedViewModel @Inject constructor(
                         if (address.isNullOrEmpty()) {
                             _profileLiveData.postValue(Result.Error(errorHandler.invoke(e)))
                         } else {
+                            storeKeys(privKey, pubKey)
                             _setProfileLiveData.postValue(address)
                         }
                     }
