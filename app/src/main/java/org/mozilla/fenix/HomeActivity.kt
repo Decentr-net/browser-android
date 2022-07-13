@@ -857,16 +857,21 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity,
         requestDesktopMode: Boolean = false,
         historyMetadata: HistoryMetadataKey? = null
     ) {
-        val pdv = PDVHistory(
-            id = 0,
-            address = viewModel.getAddress(),
-            type = PDV.PDVType.TYPE_HISTORY,
-            query = searchTermOrURL,
-            engine = engine?.name?.lowercase() ?: String(),
-            domain = engine?.resultsUrl.toString().substringAfter("://").substringBefore("/"),
-            timestamp = SimpleDateFormat(viewModel.timespampPattern).apply { timeZone = TimeZone.getTimeZone("GMT") }.format(Date())
-        )
-        saveDecentrPDV(pdv)
+        if ((engine?.name?.lowercase() ?: String()).isNotEmpty()) {
+            val pdv = PDVHistory(
+                id = 0,
+                address = viewModel.getAddress(),
+                type = PDV.PDVType.TYPE_HISTORY,
+                query = searchTermOrURL,
+                engine = engine?.name?.lowercase() ?: String(),
+                domain = engine?.resultsUrl.toString().substringAfter("://").substringBefore("/"),
+                timestamp = SimpleDateFormat(viewModel.timespampPattern).apply {
+                    timeZone = TimeZone.getTimeZone("GMT")
+                }.format(Date())
+            )
+            saveDecentrPDV(pdv)
+        }
+
         val startTime = components.core.engine.profiler?.getProfilerTime()
         val mode = browsingModeManager.mode
 

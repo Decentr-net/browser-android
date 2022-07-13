@@ -77,7 +77,9 @@ class HomeDecentrViewModel @Inject constructor(
     @SuppressLint("SimpleDateFormat")
     fun savePDV(url: String) {
         val domain = url.substringAfter("://").substringBefore("/")
-        if (url.isKnownSearchDomain()) {
+        if (url.isKnownSearchDomain()
+            && domain.substringBeforeLast('.').substringAfter('.').isNotEmpty()
+            && (domain.isNotEmpty() && domain != "null")) {
             val query = url.substringAfter("$domain/").substringAfter("=").substringBefore("&")
             val pdv = PDVHistory(
                 id = 0,
