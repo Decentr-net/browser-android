@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="hub_decentr">Decentr</string>
+    <string name="hub_profile">Profile</string>
+    <string name="hub_staking">Staking</string>
+
     <string name="profile_title">Profile</string>
     <string name="profile_bio_hint">Bio</string>
     <string name="profile_balance_hint">Balance</string>

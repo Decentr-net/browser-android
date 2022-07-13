@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_staking"
+    app:startDestination="@id/pagerFragment">
+
+    <action
+        android:id="@+id/action_startup_staking"
+        app:destination="@id/pagerFragment"
+        app:popUpTo="@id/pagerFragment"
+        app:popUpToInclusive="true"
+        app:launchSingleTop="true" />
+
+    <fragment
+        android:id="@+id/pagerFragment"
+        android:name="net.decentr.module_decentr_staking.presentation.staking.StakingViewPagerFragment"
+        tools:layout="@layout/fragment_staking_pager">
+        <action
+            android:id="@+id/action_pagerFragment_to_validatorProfileFragment"
+            app:destination="@id/validatorProfileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="net.decentr.module_decentr_staking.presentation.staking.ValidatorActionResult"
+        tools:layout="@layout/fragment_action_validator_result">
+
+        <argument
+            android:name="result"
+            app:argType="net.decentr.module_decentr_staking.presentation.staking.viewstates.ResultViewState"
+            app:nullable="false" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/validatorsFragment"
+        android:name="net.decentr.module_decentr_staking.presentation.staking.ValidatorsFragment"
+        tools:layout="@layout/fragment_validators"/>
+
+    <fragment
+        android:id="@+id/validatorProfileFragment"
+        android:name="net.decentr.module_decentr_staking.presentation.staking.ValidatorProfileFragment"
+        tools:layout="@layout/fragment_profile_validator">
+
+        <argument
+            android:name="validator"
+            app:argType="net.decentr.module_decentr_staking.presentation.staking.viewstates.ValidatorViewState"
+            app:nullable="false" />
+
+        <action
+            android:id="@+id/action_validatorProfileFragment_to_validatorActionsFragment"
+            app:destination="@id/validatorActionsFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/validatorActionsFragment"
+        android:name="net.decentr.module_decentr_staking.presentation.staking.ValidatorActionsFragment"
+        tools:layout="@layout/fragment_actions_validator">
+
+        <argument
+            android:name="validator"
+            app:argType="net.decentr.module_decentr_staking.presentation.staking.viewstates.ValidatorViewState"
+            app:nullable="false" />
+
+        <argument
+            android:name="screenType"
+            app:argType="string"
+            app:nullable="false" />
+        <action
+            android:id="@+id/action_validatorActionsFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/rewardsFragment"
+        android:name="net.decentr.module_decentr_staking.presentation.staking.RewardsFragment"
+        tools:layout="@layout/fragment_rewards">
+    </fragment>
+
+</navigation>

@@ -1,0 +1,146 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-kapt'
+    id 'com.google.protobuf'
+}
+
+android {
+    compileSdk Config.compileSdkVersion
+
+    defaultConfig {
+        minSdk Config.minSdkVersion
+        targetSdk Config.targetSdkVersion
+
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            resValue "bool", "IS_DEBUG", "true"
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            resValue "bool", "IS_DEBUG", "false"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+
+    sourceSets {
+        debug {
+            java.srcDirs += 'src/main/proto'
+            java.srcDirs += "build/generated/source/proto/debug/grpckt"
+            java.srcDirs += "build/generated/source/proto/debug/grpc"
+        }
+        release {
+            java.srcDirs += 'src/main/proto'
+            java.srcDirs += "build/generated/source/proto/release/grpckt"
+            java.srcDirs += "build/generated/source/proto/release/grpc"
+        }
+    }
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    mustRunAfter tasks.withType(com.google.protobuf.gradle.GenerateProtoTask)
+}
+
+protobuf {
+    protoc {
+        if (osdetector.os == "osx") {
+            artifact = "${Deps.protobuf_compiler}:osx-x86_64"
+        } else {
+            artifact = Deps.protobuf_compiler
+        }
+    }
+
+    plugins {
+        grpc {
+            if (osdetector.os == "osx") {
+                artifact = "${DecentrDeps.grpcGenJava}:osx-x86_64"
+            } else {
+                artifact = DecentrDeps.grpcGenJava
+            }
+        }
+        grpckt {
+            artifact = DecentrDeps.grpcGenKotlin
+        }
+    }
+    generateProtoTasks {
+        all().each { task ->
+            task.plugins {
+                java { option "lite" }
+                grpc { option "lite" }
+                grpckt { option "lite" }
+            }
+            task.builtins {
+                kotlin
+            }
+        }
+    }
+}
+
+dependencies {
+    api project(":module-decentr-common")
+    api project(":module-decentr-domain")
+    api project(":module-decentr-db")
+
+    implementation Deps.kotlin_stdlib
+    implementation Deps.kotlin_coroutines
+    implementation Deps.kotlin_coroutines_android
+    implementation Deps.androidx_appcompat
+    implementation Deps.androidx_constraintlayout
+    implementation Deps.androidx_coordinatorlayout
+
+    implementation Deps.androidx_legacy
+    implementation Deps.androidx_biometric
+    implementation Deps.androidx_paging
+    implementation Deps.androidx_preference
+    implementation Deps.androidx_fragment
+    implementation Deps.androidx_navigation_fragment
+    implementation Deps.androidx_navigation_ui
+    implementation Deps.androidx_recyclerview
+    implementation Deps.androidx_lifecycle_common
+    implementation Deps.androidx_lifecycle_livedata
+    implementation Deps.androidx_lifecycle_process
+    implementation Deps.androidx_lifecycle_runtime
+    implementation Deps.androidx_lifecycle_viewmodel
+    implementation Deps.androidx_core
+    implementation Deps.androidx_core_ktx
+    implementation Deps.androidx_transition
+    implementation Deps.androidx_work_ktx
+    implementation Deps.androidx_datastore
+    implementation Deps.protobuf_javalite
+    implementation Deps.google_material
+
+    debugImplementation Deps.leakcanary
+
+    //decentr deps
+    implementation DecentrDeps.dagger
+    implementation DecentrDeps.dagger_support
+    kapt DecentrDeps.dagger_kapt
+    kapt DecentrDeps.dagger_processor
+
+    //proto
+    api DecentrDeps.grpcKotlin
+    api DecentrDeps.grpcProtobuf, {
+        exclude group: 'com.google.protobuf'
+    }
+    implementation DecentrDeps.grpcOkHttp
+}
+repositories {
+    mavenCentral()
+}

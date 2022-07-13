@@ -5,11 +5,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import net.decentr.module_decentr.domain.errors.ErrorHandler
+import net.decentr.module_decentr_domain.errors.ErrorHandler
 import javax.inject.Inject
-import net.decentr.module_decentr.domain.state.Result
-import net.decentr.module_decentr.domain.usecases.register.ConfirmUseCase
-import net.decentr.module_decentr.domain.usecases.register.RegisterUseCase
+import net.decentr.module_decentr_domain.state.Result
+import net.decentr.module_decentr_domain.usecases.register.ConfirmUseCase
+import net.decentr.module_decentr_domain.usecases.register.RegisterUseCase
 
 class SignInEmailViewModel @Inject constructor(
     private val registerUseCase: RegisterUseCase,

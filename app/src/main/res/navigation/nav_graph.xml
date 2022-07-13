@@ -6,18 +6,29 @@
     app:startDestination="@id/startupFragment">
 
     <include app:graph="@navigation/nav_decentr" />
+    <include app:graph="@navigation/nav_staking" />
 
     <action
         android:id="@+id/action_navigate_to_decentr_login"
         app:destination="@id/nav_decentr" />
 
     <action
-        android:id="@+id/action_close_decentr_login"
+        android:id="@+id/action_navigate_to_decentr_staking"
+        app:destination="@id/nav_staking" />
+
+    <action
+        android:id="@+id/action_close_decentr"
         app:destination="@id/homeFragment"
         app:launchSingleTop="true"
         app:popUpTo="@id/homeFragment"
         app:popUpToInclusive="true"/>
 
+    <action
+        android:id="@+id/action_close_decentr_staking"
+        app:destination="@id/homeFragment"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="true"/>
 
     <action
         android:id="@+id/action_startup_home"

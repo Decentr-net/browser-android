@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/dec_white"
+    android:orientation="horizontal"
+    android:padding="4dp">
+
+    <Space
+        android:layout_width="6dp"
+        android:layout_height="0dp" />
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/Base.Regular.Primary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="test" />
+
+    <Space
+        android:layout_width="6dp"
+        android:layout_height="0dp" />
+
+    <TextView
+        android:id="@+id/voting_power"
+        style="@style/Base.Regular.Primary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="test" />
+
+    <Space
+        android:layout_width="6dp"
+        android:layout_height="0dp" />
+
+    <TextView
+        android:id="@+id/status"
+        style="@style/Base.Regular.Primary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="test" />
+
+    <Space
+        android:layout_width="6dp"
+        android:layout_height="0dp" />
+
+    <TextView
+        android:id="@+id/comission"
+        style="@style/Base.Regular.Primary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="test" />
+
+    <Space
+        android:layout_width="6dp"
+        android:layout_height="0dp" />
+
+    <TextView
+        android:id="@+id/amount"
+        style="@style/Base.Regular.Primary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="test" />
+
+    <Space
+        android:layout_width="6dp"
+        android:layout_height="0dp" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

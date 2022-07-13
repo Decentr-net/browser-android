@@ -1,5 +1,6 @@
 package net.decentr.module_decentr.presentation.profile
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,14 +10,15 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import net.decentr.module_decentr.R
 import net.decentr.module_decentr.databinding.FragmentProfileBinding
-import net.decentr.module_decentr.domain.models.Profile
-import net.decentr.module_decentr.domain.state.Result
+import net.decentr.module_decentr_domain.models.Profile
+import net.decentr.module_decentr_domain.state.Result
 import net.decentr.module_decentr.presentation.base.BaseFragment
 import net.decentr.module_decentr.presentation.base.DecentrModuleHostActivity
 import net.decentr.module_decentr.presentation.extensions.copyToClipboard
 import net.decentr.module_decentr.presentation.extensions.show
 import net.decentr.module_decentr.presentation.injectViewModel
-import net.decentr.module_decentr.presentation.toast
+import net.decentr.module_decentr.presentation.mappers.toViewState
+import net.decentr.module_decentr.presentation.viewstates.ProfileViewState
 import java.text.DecimalFormat
 import javax.inject.Inject
 
@@ -35,7 +37,7 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -63,7 +65,8 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
         }
     }
 
-    private fun setProfile(profile: Profile) {
+    @SuppressLint("SetTextI18n")
+    private fun setProfile(profile: ProfileViewState) {
         with(profile) {
             viewModel.getBalances(address)
 
@@ -96,8 +99,13 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
             }
         }
         viewModel.profileLiveData.observe(viewLifecycleOwner) {
-            it?.let { setProfile(it) }
+            it?.let { setProfile(it.toViewState()) }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

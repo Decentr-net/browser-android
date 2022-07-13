@@ -1,0 +1,15 @@
+syntax = "proto3";
+package token;
+
+import "3rdparty/gogoproto/gogo.proto";
+import "3rdparty/cosmos/base/v1beta1/coin.proto";
+
+option go_package = "github.com/Decentr-net/decentr/x/token/types";
+option java_package = "net.decentr.module_decentr_staking";
+option java_outer_classname = "TokenGenesisProto";
+option java_multiple_files = true;
+
+message TokenGenesisState {
+  map<string, cosmos.base.v1beta1.DecProto> balances = 1
+      [ (gogoproto.nullable) = false ];
+}

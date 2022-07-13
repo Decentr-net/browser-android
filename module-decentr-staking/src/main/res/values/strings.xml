@@ -1,0 +1,8 @@
+<resources>
+    <string name="copied_to_clipboard_toast">Copied to Clipboard</string>
+    <string name="common_loading">Loading…</string>
+    <string name="common_ok">OK</string>
+    <string name="common_processing">Processing…</string>
+    <string name="common_empty_list">Empty list</string>
+    <string name="common_star">*</string>
+</resources>

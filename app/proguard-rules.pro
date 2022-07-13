@@ -146,6 +146,11 @@
     <fields>;
 }
 
+#-keepclassmembers class net.decentr.module_decentr_stacking.** {
+#    public synthetic <methods>;
+#    <fields>;
+#}
+
 # OkHttp
 -dontwarn okhttp3.**
 -dontwarn okio.**

@@ -49,11 +49,8 @@ object Config {
         // validation, sometimes devs just need a release build and specifying project properties is annoying in IDEs),
         // so instead we'll allow the `versionName` to silently default to an empty string.
         val majorVersion = 4
-        val minorVersion = 1
-        // 0, 1 - low (User must update app by himself)
-        // 2, 3 - medium (Flexible in-app update request)
-        // 4, 5 - high (Immediate in-app update request)
-        val incrementalVersion = 1
+        val minorVersion = 2
+        val incrementalVersion = 0
         // Increment for each new build regardless of major and minor version updates
         return "$majorVersion.$minorVersion.$incrementalVersion"
     }
@@ -61,7 +58,7 @@ object Config {
     @JvmStatic
     fun generateDecentrVersionCode(): Int {
         // Increment for each new build regardless of major and minor version updates
-        val incrementalVersion = 4
+        val incrementalVersion = 5
 
         // 0, 1 - low (User must update app by himself)
         // 2, 3 - medium (Flexible in-app update request)

@@ -2,7 +2,6 @@ package net.decentr.module_decentr.presentation.profile
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.text.SpannableStringBuilder
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,14 +11,15 @@ import androidx.navigation.fragment.navArgs
 import net.decentr.module_decentr.NavDecentrDirections
 import net.decentr.module_decentr.R
 import net.decentr.module_decentr.databinding.FragmentSignInCredentialsBinding
-import net.decentr.module_decentr.domain.models.PDV
-import net.decentr.module_decentr.domain.models.PDVProfile
-import net.decentr.module_decentr.domain.state.Result
+import net.decentr.module_decentr_domain.models.PDV
+import net.decentr.module_decentr_domain.models.PDVProfile
+import net.decentr.module_decentr_domain.state.Result
 import net.decentr.module_decentr.presentation.base.BaseFragment
 import net.decentr.module_decentr.presentation.extensions.gone
 import net.decentr.module_decentr.presentation.extensions.onTextChanged
 import net.decentr.module_decentr.presentation.extensions.show
 import net.decentr.module_decentr.presentation.injectViewModel
+import net.decentr.module_decentr.presentation.mappers.toViewState
 import net.decentr.module_decentr.presentation.profile.views.DateSelectorDialog
 import net.decentr.module_decentr.presentation.profile.views.DropdownStringView
 import net.decentr.module_decentr.presentation.toast
@@ -54,7 +54,7 @@ class SetProfileFragment : BaseFragment(R.layout.fragment_sign_in_credentials) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentSignInCredentialsBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -131,7 +131,7 @@ class SetProfileFragment : BaseFragment(R.layout.fragment_sign_in_credentials) {
                 is Result.Error -> toast(it.exception.message)
                 Result.Loading -> toast(getString(R.string.common_loading))
                 is Result.Success -> {
-                    view?.findNavController()?.navigate(NavDecentrDirections.actionProfile(it.data))
+                    view?.findNavController()?.navigate(NavDecentrDirections.actionProfile(it.data.toViewState()))
                 }
             }
         }
@@ -198,6 +198,11 @@ class SetProfileFragment : BaseFragment(R.layout.fragment_sign_in_credentials) {
 
     private fun isEmailValid(email: String): Boolean {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:background="@color/dec_white"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/result"
+        style="@style/Medium.Bold.Primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Transaction succeeded" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"/>
+
+    <TextView
+        android:id="@+id/info"
+        style="@style/Base.Regular.Secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        tools:text="from: address \n to: address \n delegated: 30 DEC" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_rewards_checked"
+        tools:ignore="ContentDescription" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/action"
+        style="@style/AccentActionButton"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/common_ok" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

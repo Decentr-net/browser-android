@@ -189,6 +189,9 @@ interface SessionControlController {
     //decentr login
     fun handleDecentrLogin()
     fun handleDecentrLoginClose()
+
+    fun handleDecentrStaking()
+    fun handleDecentrStakingClose()
 }
 
 @Suppress("TooManyFunctions", "LargeClass")
@@ -619,6 +622,17 @@ class DefaultSessionControlController(
     }
 
     override fun handleDecentrLoginClose() {
+        navController.nav(
+            R.id.homeFragment,
+            HomeFragmentDirections.actionGlobalHome(focusOnAddressBar = false)
+        )
+    }
+
+    override fun handleDecentrStaking() {
+        navController.nav(R.id.nav_staking, HomeFragmentDirections.actionNavigateToDecentrStaking())
+    }
+
+    override fun handleDecentrStakingClose() {
         navController.nav(
             R.id.homeFragment,
             HomeFragmentDirections.actionGlobalHome(focusOnAddressBar = false)

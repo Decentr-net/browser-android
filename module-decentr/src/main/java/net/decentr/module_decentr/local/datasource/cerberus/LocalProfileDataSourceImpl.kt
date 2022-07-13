@@ -4,11 +4,11 @@ import androidx.room.withTransaction
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.transform
 import net.decentr.module_decentr.data.datasource.cerberus.ProfileDataSource
-import net.decentr.module_decentr.domain.models.Profile
-import net.decentr.module_decentr.local.database.ProjectDatabase
-import net.decentr.module_decentr.local.database.dao.ProfileDao
-import net.decentr.module_decentr.local.database.mapper.toDomain
-import net.decentr.module_decentr.local.database.mapper.toEntity
+import net.decentr.module_decentr.local.mapper.toDomain
+import net.decentr.module_decentr.local.mapper.toEntity
+import net.decentr.module_decentr_db.ProjectDatabase
+import net.decentr.module_decentr_db.dao.ProfileDao
+import net.decentr.module_decentr_domain.models.Profile
 import javax.inject.Inject
 
 class LocalProfileDataSourceImpl @Inject constructor(

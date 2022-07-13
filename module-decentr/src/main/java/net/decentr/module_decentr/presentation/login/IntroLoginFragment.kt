@@ -23,6 +23,7 @@ import net.decentr.module_decentr.presentation.extensions.gone
 import net.decentr.module_decentr.presentation.extensions.show
 import net.decentr.module_decentr.presentation.injectViewModel
 import net.decentr.module_decentr.presentation.login.SignInSeedPhraseFragment.Companion.TYPE_REGISTER
+import net.decentr.module_decentr.presentation.mappers.toViewState
 import javax.inject.Inject
 
 class IntroLoginFragment: BaseFragment(R.layout.fragment_intro_login) {
@@ -48,7 +49,7 @@ class IntroLoginFragment: BaseFragment(R.layout.fragment_intro_login) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentIntroLoginBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -77,7 +78,7 @@ class IntroLoginFragment: BaseFragment(R.layout.fragment_intro_login) {
         viewModel.progressLiveData.observe(viewLifecycleOwner) {
             if (it != null) {
                 view?.postDelayed(500) {
-                    view?.findNavController()?.navigate(NavDecentrDirections.actionProfile(it))
+                    view?.findNavController()?.navigate(IntroLoginFragmentDirections.actionIntroLoginFragmentToHubFragment(it.toViewState()))
                 }
             } else {
                 binding.login.show()
@@ -106,6 +107,11 @@ class IntroLoginFragment: BaseFragment(R.layout.fragment_intro_login) {
         } else {
             view?.findNavController()?.navigate(IntroLoginFragmentDirections.actionIntroLoginFragmentToQrScanFragment())
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

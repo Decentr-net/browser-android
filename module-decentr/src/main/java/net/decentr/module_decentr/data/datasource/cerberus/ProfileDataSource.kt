@@ -1,7 +1,7 @@
 package net.decentr.module_decentr.data.datasource.cerberus
 
 import kotlinx.coroutines.flow.Flow
-import net.decentr.module_decentr.domain.models.Profile
+import net.decentr.module_decentr_domain.models.Profile
 
 interface ProfileDataSource {
     suspend fun getProfile(address: String?): Profile?

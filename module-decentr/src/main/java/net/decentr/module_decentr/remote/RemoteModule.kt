@@ -6,16 +6,15 @@ import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
 import net.decentr.module_decentr.BuildConfig
-import net.decentr.module_decentr.data.provider.KeysProvider
 import net.decentr.module_decentr.di.qualifier.CerberusApiClient
 import net.decentr.module_decentr.di.qualifier.DecentrApiClient
 import net.decentr.module_decentr.di.qualifier.VulcanApiClient
 import net.decentr.module_decentr.remote.interceptors.DefaultInterceptor
-import net.decentr.module_decentr.remote.interceptors.ServerInterceptor
 import net.decentr.module_decentr.remote.interceptors.SignatureInterceptor
 import net.decentr.module_decentr.remote.services.CerberusService
 import net.decentr.module_decentr.remote.services.DecentrService
 import net.decentr.module_decentr.remote.services.VulcanService
+import net.decentr.module_decentr_common.data.provider.KeysProvider
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Converter
@@ -104,7 +103,6 @@ object RemoteModule {
     @CerberusApiClient
     fun providesCerberusApiOkHttpClient(
         signatureInterceptor: SignatureInterceptor,
-        serverInterceptor: ServerInterceptor,
         defaultInterceptor: DefaultInterceptor
     ): OkHttpClient {
         val okHttpClientBuilder: OkHttpClient.Builder = OkHttpClient.Builder()
@@ -116,7 +114,6 @@ object RemoteModule {
 
         okHttpClientBuilder
             .addInterceptor(signatureInterceptor)
-            .addInterceptor(serverInterceptor)
             .addInterceptor(defaultInterceptor)
             .connectTimeout(NETWORK_TIMEOUT, TimeUnit.SECONDS)
             .writeTimeout(NETWORK_TIMEOUT, TimeUnit.SECONDS)
@@ -129,7 +126,6 @@ object RemoteModule {
     @Singleton
     @VulcanApiClient
     fun providesVulcanApiOkHttpClient(
-        serverInterceptor: ServerInterceptor,
         defaultInterceptor: DefaultInterceptor
     ): OkHttpClient {
         val okHttpClientBuilder: OkHttpClient.Builder = OkHttpClient.Builder()
@@ -140,7 +136,6 @@ object RemoteModule {
         }
 
         okHttpClientBuilder
-            .addInterceptor(serverInterceptor)
             .addInterceptor(defaultInterceptor)
             .connectTimeout(NETWORK_TIMEOUT, TimeUnit.SECONDS)
             .writeTimeout(NETWORK_TIMEOUT, TimeUnit.SECONDS)
@@ -153,7 +148,6 @@ object RemoteModule {
     @Singleton
     @DecentrApiClient
     fun providesDecentrApiOkHttpClient(
-        serverInterceptor: ServerInterceptor,
         defaultInterceptor: DefaultInterceptor
     ): OkHttpClient {
         val okHttpClientBuilder: OkHttpClient.Builder = OkHttpClient.Builder()
@@ -164,7 +158,6 @@ object RemoteModule {
         }
 
         okHttpClientBuilder
-            .addInterceptor(serverInterceptor)
             .addInterceptor(defaultInterceptor)
             .connectTimeout(NETWORK_TIMEOUT, TimeUnit.SECONDS)
             .writeTimeout(NETWORK_TIMEOUT, TimeUnit.SECONDS)

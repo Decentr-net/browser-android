@@ -4,17 +4,17 @@ import android.annotation.SuppressLint
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import net.decentr.module_decentr.domain.models.PDV
-import net.decentr.module_decentr.domain.models.PDVHistory
-import net.decentr.module_decentr.domain.usecases.pdv.*
-import net.decentr.module_decentr.domain.usecases.signin.GetProfileFlowUseCase
+import net.decentr.module_decentr_domain.models.PDV
+import net.decentr.module_decentr_domain.models.PDVHistory
+import net.decentr.module_decentr_domain.usecases.pdv.*
+import net.decentr.module_decentr_domain.usecases.signin.GetProfileFlowUseCase
 import org.mozilla.fenix.ext.isKnownSearchDomain
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
 import kotlin.collections.ArrayList
+import kotlinx.coroutines.flow.collect
 
 class HomeDecentrViewModel @Inject constructor(
     private val savePDVUseCase: SavePDVUseCase,
@@ -38,7 +38,7 @@ class HomeDecentrViewModel @Inject constructor(
     fun init() {
         viewModelScope.launch {
             try {
-                getProfileFlowUseCase.invoke().collect { profile ->
+                getProfileFlowUseCase().collect { profile ->
                     address = profile?.address
                 }
             } catch (e: Exception) {

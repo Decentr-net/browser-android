@@ -1,6 +1,6 @@
 package net.decentr.module_decentr.data.datasource.cerberus
 
-import net.decentr.module_decentr.domain.models.PDV
+import net.decentr.module_decentr_domain.models.PDV
 
 interface PDVDataSource {
     suspend fun sendPDV(pdv: List<PDV>): Int

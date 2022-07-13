@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <!-- fonts-->
+    <!-- region deprecated -->
+    <dimen name="font_size_huge">30sp</dimen>
+    <dimen name="font_size_huge_small">27sp</dimen>
+    <dimen name="font_size_super_large">22sp</dimen>
+    <dimen name="font_size_large">17sp</dimen>
+    <dimen name="font_size_pre_large">16sp</dimen>
+    <dimen name="font_size_normal">14sp</dimen>
+    <dimen name="font_size_pre_normal">13sp</dimen>
+    <dimen name="font_size_middle_small">11sp</dimen>
+    <dimen name="font_size_huge_small_dp">27dp</dimen>
+    <!-- endregion -->
+
+    <!-- region Font sizes -->
+    <dimen name="font_size_38_40">38dp</dimen>
+    <dimen name="font_size_30_32">30dp</dimen>
+    <dimen name="font_size_24_30">24dp</dimen>
+    <dimen name="font_size_20_24">20dp</dimen>
+    <dimen name="font_size_16_20">16dp</dimen>
+    <dimen name="font_size_14_16">14dp</dimen>
+    <dimen name="font_size_12_14">12dp</dimen>
+    <dimen name="font_size_10_12">10dp</dimen>
+    <!-- endregion -->
+
+    <dimen name="shadow_size">8dip</dimen>
+
+    <!--dimens for validators table-->
+<!--    <dimen name="header_validators">120dp</dimen>-->
+<!--    <dimen name="header_validators">120dp</dimen>-->
+<!--    <dimen name="header_validators">120dp</dimen>-->
+<!--    <dimen name="header_validators">120dp</dimen>-->
+<!--    <dimen name="header_validators">120dp</dimen>-->
+<!--    <dimen name="header_validators">120dp</dimen>-->
+</resources>

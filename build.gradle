@@ -34,14 +34,19 @@ buildscript {
                 content {
                     // Improve performance: only check google maven for google deps.
                     includeGroupByRegex RepoMatching.androidx
-                    includeGroup "com.google.mlkit"
                     includeGroupByRegex RepoMatching.comGoogleAndroid
                     includeGroupByRegex RepoMatching.comGoogleFirebase
                     includeGroupByRegex RepoMatching.comGoogleTesting
                     includeGroupByRegex RepoMatching.comAndroid
+                    includeGroup "com.google.mlkit"
+                    includeGroup "com.google.gson"
 
+                    excludeGroup "org.bitcoinj"
                     excludeGroup "cash.z.ecc.android"
                     excludeGroup "org.bouncycastle"
+                    excludeGroup "javax.inject"
+                    excludeGroup "org.jetbrains.kotlinx"
+                    excludeGroup "io.grpc"
                 }
             }
         }
@@ -58,14 +63,18 @@ buildscript {
                     // Improve security: don't search deps with known repos.
                     excludeGroupByRegex RepoMatching.mozilla
                     excludeGroupByRegex RepoMatching.androidx
-                    excludeGroup "com.google.mlkit"
                     excludeGroupByRegex RepoMatching.comGoogleAndroid
                     excludeGroupByRegex RepoMatching.comGoogleFirebase
                     excludeGroupByRegex RepoMatching.comAndroid
+                    excludeGroup "com.google.mlkit"
+                    excludeGroup "com.google.gson"
 
+                    includeGroup "org.bitcoinj"
                     includeGroup "cash.z.ecc.android"
                     includeGroup "org.bouncycastle"
-
+                    includeGroup "javax.inject"
+                    includeGroup "org.jetbrains.kotlinx"
+                    includeGroup "io.grpc"
                 }
             }
         }
@@ -79,6 +88,7 @@ buildscript {
         classpath Deps.osslicenses_plugin
 
         classpath "org.mozilla.components:tooling-glean-gradle:${Versions.mozilla_android_components}"
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.17'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -121,13 +131,18 @@ allprojects {
                 content {
                     // Improve performance: only check google maven for google deps.
                     includeGroupByRegex RepoMatching.androidx
-                    includeGroup "com.google.mlkit"
                     includeGroupByRegex RepoMatching.comGoogleAndroid
                     includeGroupByRegex RepoMatching.comGoogleFirebase
                     includeGroupByRegex RepoMatching.comAndroid
+                    includeGroup "com.google.mlkit"
+                    includeGroup "com.google.gson"
 
+                    excludeGroup "org.bitcoinj"
                     excludeGroup "cash.z.ecc.android"
                     excludeGroup "org.bouncycastle"
+                    excludeGroup "javax.inject"
+                    excludeGroup "org.jetbrains.kotlinx"
+                    excludeGroup "io.grpc"
                 }
             }
         }
@@ -144,13 +159,18 @@ allprojects {
                     // Improve security: don't search deps with known repos.
                     excludeGroupByRegex RepoMatching.mozilla
                     excludeGroupByRegex RepoMatching.androidx
-                    excludeGroup "com.google.mlkit"
                     excludeGroupByRegex RepoMatching.comGoogleAndroid
                     excludeGroupByRegex RepoMatching.comGoogleFirebase
                     excludeGroupByRegex RepoMatching.comAndroid
+                    excludeGroup "com.google.mlkit"
+                    excludeGroup "com.google.gson"
 
+                    includeGroup "org.bitcoinj"
                     includeGroup "cash.z.ecc.android"
                     includeGroup "org.bouncycastle"
+                    includeGroup "javax.inject"
+                    includeGroup "org.jetbrains.kotlinx"
+                    includeGroup "io.grpc"
                 }
             }
         }

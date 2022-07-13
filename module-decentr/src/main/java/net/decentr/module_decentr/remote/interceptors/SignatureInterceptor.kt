@@ -1,17 +1,16 @@
 package net.decentr.module_decentr.remote.interceptors
 
-import net.decentr.module_decentr.data.provider.KeysProvider
-import net.decentr.module_decentr.data.utils.etheriumkit.*
-import net.decentr.module_decentr.data.utils.hdwalletkit.ECKey
-import net.decentr.module_decentr.data.utils.hdwalletkit.UtilConverter
-import net.decentr.module_decentr.data.utils.hdwalletkit.toSha256
+import net.decentr.module_decentr_common.data.utils.etheriumkit.CryptoUtils
+import net.decentr.module_decentr_common.data.utils.etheriumkit.hexClearEmptyBytesEnd
+import net.decentr.module_decentr_common.data.utils.etheriumkit.hexStringWithoutStripToBigIntegerOrNull
+import net.decentr.module_decentr_common.data.utils.etheriumkit.toRawHexString
+import net.decentr.module_decentr_common.data.utils.hdwalletkit.toSha256
+import net.decentr.module_decentr_common.data.provider.KeysProvider
 import okhttp3.Interceptor
 import okhttp3.Request
 import okhttp3.Response
 import java.io.IOException
-import java.math.BigInteger
 import java.nio.charset.Charset
-import java.util.*
 import javax.inject.Inject
 
 class SignatureInterceptor @Inject constructor(private val keysProvider: KeysProvider) :

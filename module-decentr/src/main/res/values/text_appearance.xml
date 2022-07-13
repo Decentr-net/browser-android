@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="Huge">
+        <item name="android:textSize">@dimen/font_size_huge_small</item>
+    </style>
+
+    <style name="Huge.Bold">
+        <item name="fontFamily">@font/metropolis_semibold</item>
+    </style>
+
+    <style name="Huge.Bold.Primary">
+        <item name="android:textColor">@color/dec_black</item>
+    </style>
+
     <style name="Medium">
         <item name="android:textSize">@dimen/font_size_super_large</item>
     </style>
@@ -19,6 +31,10 @@
 
     <style name="Medium.Bold.Primary">
         <item name="android:textColor">@color/dec_black</item>
+    </style>
+
+    <style name="Medium.Bold.Secondary">
+        <item name="android:textColor">@color/dec_grey</item>
     </style>
 
     <style name="Base">

@@ -1,0 +1,22 @@
+syntax = "proto3";
+package community;
+
+import "3rdparty/gogoproto/gogo.proto";
+import "decentr/community/community.proto";
+
+option go_package = "github.com/Decentr-net/decentr/x/community/types";
+option java_package = "net.decentr.module_decentr_staking";
+option java_outer_classname = "CommunityGenesisProto";
+option java_multiple_files = true;
+
+message CommunityGenesisState {
+  message AddressList {
+    repeated string address = 1;
+  }
+
+  // params defines all the paramaters of the module.
+  CommunityParams params = 1;
+  repeated Post posts = 2 [ (gogoproto.nullable) = false ];
+  repeated Like likes = 3 [ (gogoproto.nullable) = false ];
+  map<string, AddressList> following = 4 [ (gogoproto.nullable) = false ];
+}

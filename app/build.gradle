@@ -2,7 +2,7 @@ import org.mozilla.fenix.gradle.tasks.ApkSizeTask
 
 plugins {
     id "com.jetbrains.python.envs" version "0.0.26"
-    id "com.google.protobuf" version "0.8.17"
+    id "com.google.protobuf"
 }
 
 apply plugin: 'com.android.application'
@@ -407,12 +407,14 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(path: ':module-decentr-common')
     implementation project(path: ':module-decentr')
+    implementation project(path: ':module-decentr-staking')
 
     jnaForTest Deps.jna
     testImplementation files(configurations.jnaForTest.copyRecursive().files)
 
-    implementation  Deps.mozilla_browser_engine_gecko
+    implementation Deps.mozilla_browser_engine_gecko
 
     implementation Deps.kotlin_stdlib
     implementation Deps.kotlin_coroutines

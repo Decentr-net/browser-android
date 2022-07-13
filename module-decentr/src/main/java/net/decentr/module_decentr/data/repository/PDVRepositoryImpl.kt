@@ -4,8 +4,8 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import net.decentr.module_decentr.data.datasource.cerberus.PDVDataSource
-import net.decentr.module_decentr.domain.models.PDV
-import net.decentr.module_decentr.domain.repository.PDVRepository
+import net.decentr.module_decentr_domain.models.PDV
+import net.decentr.module_decentr_domain.repository.PDVRepository
 import javax.inject.Inject
 
 class PDVRepositoryImpl @Inject constructor(

@@ -1,6 +1,6 @@
 package net.decentr.module_decentr.data.loger
 
-import net.decentr.module_decentr.domain.logger.Logger
+import net.decentr.module_decentr_domain.logger.Logger
 import javax.inject.Inject
 import javax.inject.Singleton
 

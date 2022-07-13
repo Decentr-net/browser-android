@@ -5,7 +5,6 @@ plugins {
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-kapt'
 }
-apply plugin: 'kotlin-android'
 
 android {
     compileSdk Config.compileSdkVersion
@@ -48,6 +47,10 @@ android {
 }
 
 dependencies {
+    api project(":module-decentr-common")
+    api project(":module-decentr-domain")
+    api project(":module-decentr-db")
+
     implementation Deps.kotlin_stdlib
     implementation Deps.kotlin_coroutines
     implementation Deps.kotlin_coroutines_android
@@ -92,12 +95,7 @@ dependencies {
     implementation DecentrDeps.android_annotations
     implementation DecentrDeps.ml_barcode_scanning
     implementation DecentrDeps.ml_barcode_common
-    // Custom model
-    implementation DecentrDeps.bip39
-    implementation DecentrDeps.walletUtils
 
-    api DecentrDeps.room_runtime
-    kapt DecentrDeps.room_compiler
     implementation DecentrDeps.room_ktx
 }
 repositories {

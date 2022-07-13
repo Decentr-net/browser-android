@@ -20,7 +20,6 @@ import android.os.SystemClock
 import android.text.SpannableString
 import android.text.format.DateUtils
 import android.util.AttributeSet
-import android.util.Log
 import android.view.*
 import android.view.WindowManager.LayoutParams.FLAG_SECURE
 import androidx.annotation.CallSuper
@@ -68,13 +67,14 @@ import mozilla.components.support.locale.LocaleAwareAppCompatActivity
 import mozilla.components.support.utils.SafeIntent
 import mozilla.components.support.utils.toSafeIntent
 import mozilla.components.support.webextensions.WebExtensionPopupFeature
-import net.decentr.module_decentr.domain.models.PDV
-import net.decentr.module_decentr.domain.models.PDVHistory
+import net.decentr.module_decentr_domain.models.PDV
+import net.decentr.module_decentr_domain.models.PDVHistory
 import net.decentr.module_decentr.presentation.base.BaseFragment
 import net.decentr.module_decentr.presentation.base.DecentrModuleHostActivity
 import net.decentr.module_decentr.presentation.injectViewModel
 import net.decentr.module_decentr.presentation.login.IntroLoginFragment
 import net.decentr.module_decentr.presentation.profile.ProfileFragment
+import net.decentr.module_decentr_staking.presentation.staking.StakingViewPagerFragment
 import org.mozilla.fenix.GleanMetrics.Metrics
 import org.mozilla.fenix.addons.AddonDetailsFragmentDirections
 import org.mozilla.fenix.addons.AddonPermissionsDetailsFragmentDirections
@@ -574,6 +574,7 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity,
     final override fun onBackPressed() {
         supportFragmentManager.primaryNavigationFragment?.childFragmentManager?.fragments?.forEach {
             when (it) {
+                is StakingViewPagerFragment,
                 is IntroLoginFragment,
                 is ProfileFragment -> {
                     closeDecentrModule()
@@ -1117,7 +1118,11 @@ open class HomeActivity : LocaleAwareAppCompatActivity(), NavHostActivity,
     }
 
     override fun closeDecentrModule() {
-        navHost.navController.navigate(NavGraphDirections.actionCloseDecentrLogin())
+        navHost.navController.navigate(NavGraphDirections.actionCloseDecentr())
+    }
+
+    override fun openStakingModule() {
+        navHost.navController.navigate(NavGraphDirections.actionNavigateToDecentrStaking())
     }
 
     companion object {

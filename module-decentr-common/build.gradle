@@ -1,0 +1,43 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdk Config.compileSdkVersion
+
+    defaultConfig {
+        minSdk Config.minSdkVersion
+        targetSdk Config.targetSdkVersion
+
+        consumerProguardFiles 'consumer-rules.pro'
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation Deps.kotlin_stdlib
+
+    api Deps.androidx_fragment
+    api Deps.androidx_appcompat
+    api Deps.androidx_lifecycle_common
+    api Deps.androidx_lifecycle_livedata
+    api Deps.androidx_lifecycle_process
+    api Deps.androidx_lifecycle_runtime
+    api Deps.androidx_lifecycle_viewmodel
+    api Deps.androidx_core
+    api Deps.androidx_core_ktx
+
+    implementation DecentrDeps.walletUtils
+    implementation DecentrDeps.guava
+
+    implementation DecentrDeps.dagger
+}
+repositories {
+    mavenCentral()
+}

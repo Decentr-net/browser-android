@@ -5,10 +5,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
 import net.decentr.module_decentr.data.datasource.cerberus.ProfileDataSource
-import net.decentr.module_decentr.data.provider.KeysProvider
-import net.decentr.module_decentr.domain.models.Profile
-import net.decentr.module_decentr.domain.provider.MnemonicProvider
-import net.decentr.module_decentr.domain.repository.SignInRepository
+import net.decentr.module_decentr_common.data.provider.KeysProvider
+import net.decentr.module_decentr_domain.models.Profile
+import net.decentr.module_decentr_domain.provider.MnemonicProvider
+import net.decentr.module_decentr_domain.repository.SignInRepository
 import javax.inject.Inject
 
 class SignInRepositoryImpl @Inject constructor(

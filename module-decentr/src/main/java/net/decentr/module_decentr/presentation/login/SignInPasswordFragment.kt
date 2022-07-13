@@ -13,7 +13,7 @@ import net.decentr.module_decentr.NavDecentrDirections
 import net.decentr.module_decentr.R
 import net.decentr.module_decentr.data.utils.AESHelper
 import net.decentr.module_decentr.databinding.FragmentSignInPasswordBinding
-import net.decentr.module_decentr.domain.state.Result
+import net.decentr.module_decentr_domain.state.Result
 import net.decentr.module_decentr.presentation.base.BaseFragment
 import net.decentr.module_decentr.presentation.extensions.gone
 import net.decentr.module_decentr.presentation.extensions.onTextChanged
@@ -44,7 +44,7 @@ class SignInPasswordFragment: BaseFragment(R.layout.fragment_sign_in_password) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentSignInPasswordBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -140,5 +140,10 @@ class SignInPasswordFragment: BaseFragment(R.layout.fragment_sign_in_password) {
                 return false
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

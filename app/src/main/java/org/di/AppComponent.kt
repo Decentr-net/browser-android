@@ -5,6 +5,7 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import net.decentr.module_decentr.di.ModelModule
+import net.decentr.module_decentr_staking.di.StakingModelModule
 import org.mozilla.fenix.FenixApplication
 import org.mozilla.fenix.HomeActivity
 import javax.inject.Singleton
@@ -13,6 +14,7 @@ import javax.inject.Singleton
 @Component(modules = [
     AndroidInjectionModule::class,
     ModelModule::class,
+    StakingModelModule::class,
     ExtendedFenixModule::class
 //    LoggerModule::class
 ])

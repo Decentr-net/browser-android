@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dec_white"
+    android:orientation="vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="24dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/shape_bg_grey_rounded"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/action_type_hint"
+            style="@style/Small.Regular.Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="@string/validator_actions_delegated_amount_hint" />
+
+        <TextView
+            android:id="@+id/balance"
+            style="@style/Small.Regular.Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            tools:text="Balance: 0.003708 DEC" />
+
+        <TextView
+            android:id="@+id/operation_fee"
+            style="@style/Small.Regular.Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            tools:text="Fee: 0.003498 DEC" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/operation_amount"
+            style="@style/Base.Regular.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:clickable="true"
+            android:ellipsize="end"
+            android:focusable="true"
+            android:gravity="end"
+            android:maxLength="8"
+            android:inputType="numberDecimal"
+            android:lines="1"
+            android:maxLines="1"
+            android:text="0.01" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/error_message"
+        style="@style/Small.Regular.Red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="2dp"
+        android:visibility="invisible"
+        tools:text="Insufficient funds" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="12dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/shape_bg_grey_rounded"
+        android:padding="16dp">
+
+        <TextView
+            style="@style/Small.Regular.Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="@string/validator_actions_to_validator" />
+
+        <TextView
+            android:id="@+id/withdraw_comission"
+            style="@style/Small.Regular.Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            tools:text="Withdrawal comission 5%" />
+        
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/validator_name_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+            
+            <TextView
+                android:id="@+id/validator_name"
+                style="@style/Base.Regular.Primary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:text="DeCentroid" />
+            
+            <ImageView
+                android:id="@+id/icon_spinner"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_dropdown_collapse"
+                tools:ignore="ContentDescription" />
+            
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        
+    </FrameLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="24dp" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/info_undelegate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_bg_accent_10_rounded"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="12dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_redelegate"
+            tools:ignore="ContentDescription" />
+
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="0dp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Small.Bold.Primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/validator_undelegate_info_title" />
+
+            <TextView
+                style="@style/Small.Regular.Primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/validator_undelegate_info_description" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/info_delegate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_bg_red_50_rounded"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="12dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_lock"
+            tools:ignore="ContentDescription" />
+
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="0dp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Small.Bold.Primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/validator_delegate_info_title" />
+
+            <TextView
+                style="@style/Small.Regular.Primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/validator_delegate_info_description" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <LinearLayout
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <TextView
+            style="@style/Base.Regular.Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="14dp"
+            android:text="@string/common_loading" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/action"
+        style="@style/AccentActionButton"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:enabled="false"
+        tools:text="Action" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

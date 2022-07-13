@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/refresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dec_white"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/name"
+                        style="@style/Huge.Bold.Primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="20dp"
+                        tools:text="validator.network |   Security first. Highly available." />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/container_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/shape_bg_green_50_rounded"
+                            android:gravity="center"
+                            android:minHeight="20dp"
+                            android:paddingStart="16dp"
+                            android:paddingTop="8dp"
+                            android:paddingEnd="16dp"
+                            android:paddingBottom="8dp"
+                            android:visibility="invisible">
+
+                            <ImageView
+                                android:id="@+id/image_status"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                tools:ignore="ContentDescription"
+                                tools:src="@drawable/ic_status_bonded" />
+
+                            <TextView
+                                android:id="@+id/text_status"
+                                style="@style/Base.Bold.Primary"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                tools:text="Bonded" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/jailed_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/shape_bg_red_50_rounded"
+                            android:gravity="center"
+                            android:minHeight="20dp"
+                            android:paddingStart="16dp"
+                            android:paddingTop="8dp"
+                            android:paddingEnd="16dp"
+                            android:paddingBottom="8dp"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <ImageView
+                                android:id="@+id/image_jailed"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/ic_lock"
+                                tools:ignore="ContentDescription"/>
+
+                            <TextView
+                                android:id="@+id/text_jailed"
+                                style="@style/Base.Regular.Primary"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:text="@string/validator_jailed" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <TextView
+                        android:id="@+id/description"
+                        style="@style/Base.Regular.Primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:visibility="visible"
+                        tools:text="We are the leading staking service provider for blockchain projects. Join our community to help secure networks and earn rewards. We know staking." />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/dec_outlines" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Small.Regular.Secondary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/validator_operator_hint" />
+
+                    <TextView
+                        android:id="@+id/address"
+                        style="@style/Base.Bold.Primary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="decentrvaloper1v5y0tg0jllvxf5c3afml8s3awue0ymju89frut" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/dec_outlines" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Small.Regular.Secondary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/validator_website_hint" />
+
+                    <TextView
+                        android:id="@+id/website"
+                        style="@style/Base.Bold.Primary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="microsoftonline.com" />
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="16dp" />
+
+                    <TextView
+                        style="@style/Small.Regular.Secondary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/header_staking_commision" />
+
+                    <TextView
+                        android:id="@+id/comission"
+                        style="@style/Base.Regular.Primary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="5%" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/dec_outlines" />
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Base.Regular.Primary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/validator_delegated_hint" />
+
+                    <TextView
+                        android:id="@+id/delegated_amount"
+                        style="@style/Base.Regular.Secondary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        tools:text="0 DEC" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </ScrollView>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="32dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/action_undelegate"
+                style="@style/AccentActionButton"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:text="@string/validator_undelegate_action" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/action_redelegate"
+                style="@style/AccentActionButton"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:text="@string/validator_redelegate_action" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/action_delegate"
+                style="@style/AccentActionButton"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:text="@string/validator_delegate_action" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

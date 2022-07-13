@@ -2,7 +2,7 @@ package net.decentr.module_decentr.local.provider
 
 import android.content.Context
 import androidx.core.content.edit
-import net.decentr.module_decentr.data.provider.KeysProvider
+import net.decentr.module_decentr_common.data.provider.KeysProvider
 import javax.inject.Inject
 
 private const val PRIV_KEY = "PRIV_KEY"

@@ -257,6 +257,7 @@ object Deps {
 }
 
 object DecentrDeps {
+    const val javaXInject = "javax.inject:javax.inject:${DecentrDepsVersions.javaXInject}"
     const val dagger = "com.google.dagger:dagger:${DecentrDepsVersions.dagger}"
     const val dagger_support = "com.google.dagger:dagger-android-support:${DecentrDepsVersions.dagger}"
     const val dagger_kapt = "com.google.dagger:dagger-compiler:${DecentrDepsVersions.dagger}"
@@ -275,9 +276,22 @@ object DecentrDeps {
     const val room_runtime =  "androidx.room:room-runtime:${DecentrDepsVersions.room}"
     const val room_compiler = "androidx.room:room-compiler:${DecentrDepsVersions.room}"
     const val room_ktx = "androidx.room:room-ktx:${DecentrDepsVersions.room}"
+    const val google_material = "com.google.android.material:material:${DecentrDepsVersions.google_material}"
+    const val guava = "com.google.guava:guava:${DecentrDepsVersions.guava}"
+
+
+    //proto
+    const val grpcKotlin = "io.grpc:grpc-kotlin-stub:${DecentrDepsVersions.grpcKotlin}"
+    const val grpcOkHttp = "io.grpc:grpc-okhttp:${DecentrDepsVersions.grpc}"
+    const val grpcProtobuf = "io.grpc:grpc-protobuf-lite:${DecentrDepsVersions.grpc}"
+    const val googleProtobuf = "com.google.protobuf:protobuf-kotlin:${DecentrDepsVersions.protobufVersion}"
+
+    const val grpcGenJava = "io.grpc:protoc-gen-grpc-java:${DecentrDepsVersions.grpc}"
+    const val grpcGenKotlin = "io.grpc:protoc-gen-grpc-kotlin:${DecentrDepsVersions.grpcKotlin}:jdk8@jar"
 }
 
 object DecentrDepsVersions {
+    const val javaXInject = "1"
     const val dagger = "2.41"
     const val retrofit = "2.8.0"
     const val gson = "2.8.9"
@@ -288,6 +302,14 @@ object DecentrDepsVersions {
     const val bip39 = "1.0.2"
     const val walletUtils = "1.65"
     const val room = "2.4.0-beta01"
+    const val google_material = "1.5.0"
+    const val guava = "24.1-jre"
+
+    //proto
+    const val grpcKotlin = "1.3.0"
+    const val grpc = "1.47.0"
+    const val grpcVersion = "1.45.0"
+    const val protobufVersion = "3.21.0"
 }
 
 /**

@@ -5,16 +5,12 @@ import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat.animate
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
-import kotlinx.coroutines.delay
-import net.decentr.module_decentr.NavDecentrDirections
 import net.decentr.module_decentr.R
 import net.decentr.module_decentr.databinding.FragmentSignInEmailBinding
-import net.decentr.module_decentr.domain.state.Result
+import net.decentr.module_decentr_domain.state.Result
 import net.decentr.module_decentr.presentation.base.BaseFragment
 import net.decentr.module_decentr.presentation.extensions.onTextChanged
 import net.decentr.module_decentr.presentation.extensions.show
@@ -43,7 +39,7 @@ class SignInEmailFragment : BaseFragment(R.layout.fragment_sign_in_email) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentSignInEmailBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -143,5 +139,7 @@ class SignInEmailFragment : BaseFragment(R.layout.fragment_sign_in_email) {
     override fun onDestroyView() {
         countDownTimer?.cancel()
         super.onDestroyView()
+        _binding = null
+
     }
 }

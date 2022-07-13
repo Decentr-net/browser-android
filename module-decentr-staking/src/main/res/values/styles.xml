@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AccentActionButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">@drawable/selector_enable_disable_button_bg</item>
+        <item name="android:textAppearance">@style/Base.Regular.White</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+</resources>

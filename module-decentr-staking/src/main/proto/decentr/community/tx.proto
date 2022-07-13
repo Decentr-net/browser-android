@@ -1,0 +1,63 @@
+syntax = "proto3";
+package community;
+
+import "3rdparty/gogoproto/gogo.proto";
+import "decentr/community/community.proto";
+
+option go_package = "github.com/Decentr-net/decentr/x/community/types";
+option java_package = "net.decentr.module_decentr_staking";
+option java_outer_classname = "CommunityTxProto";
+option java_multiple_files = true;
+
+// Msg defines the Msg service.
+service CommunityMsg {
+  rpc CreatePost(MsgCreatePost) returns (MsgCreatePostResponse);
+  rpc DeletePost(MsgDeletePost) returns (MsgDeletePostResponse);
+  rpc SetLike(MsgSetLike) returns (MsgSetLikeResponse);
+  rpc Follow(MsgFollow) returns (MsgFollowResponse);
+  rpc Unfollow(MsgUnfollow) returns (MsgUnfollowResponse);
+}
+
+message MsgCreatePost {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  Post post = 1 [ (gogoproto.nullable) = false ];
+}
+message MsgCreatePostResponse {}
+
+message MsgDeletePost {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  string post_owner = 1;
+  string post_uuid = 2;
+  string owner = 3;
+}
+message MsgDeletePostResponse {}
+
+message MsgSetLike {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  Like like = 1 [ (gogoproto.nullable) = false ];
+}
+message MsgSetLikeResponse {}
+
+message MsgFollow {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  string owner = 1;
+  string whom = 2;
+}
+message MsgFollowResponse {}
+
+message MsgUnfollow {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+
+  string owner = 1;
+  string whom = 2;
+}
+message MsgUnfollowResponse {}

@@ -1,8 +1,11 @@
 include ':app'
 
+include ':module-decentr-domain', ':module-decentr-db', ':module-decentr-common'
 include ':module-decentr'
+include ':module-decentr-staking'
 include ':mozilla-detekt-rules'
 include ':mozilla-lint-rules'
+
 def log(message) {
     logger.lifecycle("[settings] ${message}")
 }

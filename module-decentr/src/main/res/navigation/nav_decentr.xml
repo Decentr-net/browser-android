@@ -44,6 +44,9 @@
         <action
             android:id="@+id/action_introLoginFragment_to_signInSeedPhrase"
             app:destination="@id/signInSeedPhrase" />
+        <action
+            android:id="@+id/action_introLoginFragment_to_hubFragment"
+            app:destination="@id/hubFragment" />
 
     </fragment>
 
@@ -117,7 +120,7 @@
         <argument
             android:name="profile"
             app:nullable="false"
-            app:argType="net.decentr.module_decentr.domain.models.Profile"/>
+            app:argType="net.decentr.module_decentr.presentation.viewstates.ProfileViewState"/>
         <action
             android:id="@+id/action_decentrProfileFragment_to_introLoginFragment"
             app:destination="@id/introLoginFragment"
@@ -165,6 +168,18 @@
         <action
             android:id="@+id/action_signInEmail_to_decentrSetProfileFragment"
             app:destination="@id/decentrSetProfileFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/hubFragment"
+        android:name="net.decentr.module_decentr.presentation.hub.HubFragment"
+        tools:layout="@layout/fragment_hub">
+
+        <argument
+            android:name="profile"
+            app:nullable="false"
+            app:argType="net.decentr.module_decentr.presentation.viewstates.ProfileViewState"/>
 
     </fragment>
 

@@ -6,16 +6,17 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import net.decentr.module_decentr.data.utils.etheriumkit.removeLeadingZeros
-import net.decentr.module_decentr.data.utils.hdwalletkit.HDWallet
-import net.decentr.module_decentr.data.utils.hdwalletkit.Mnemonic
-import net.decentr.module_decentr.data.utils.hdwalletkit.UtilConverter
-import net.decentr.module_decentr.domain.state.Result
-import net.decentr.module_decentr.domain.usecases.signin.StoreKeysUseCase
+import net.decentr.module_decentr_common.data.utils.etheriumkit.removeLeadingZeros
+import net.decentr.module_decentr_common.data.utils.hdwalletkit.HDWallet
+import net.decentr.module_decentr_common.data.utils.hdwalletkit.Mnemonic
+import net.decentr.module_decentr_common.data.utils.hdwalletkit.UtilConverter
+import net.decentr.module_decentr_domain.state.Result
+import net.decentr.module_decentr_domain.usecases.signin.StoreKeysUseCase
 import javax.inject.Inject
 
 class SignInPasswordViewModel @Inject constructor(
-    private val storeKeysUseCase: StoreKeysUseCase): ViewModel() {
+    private val storeKeysUseCase: StoreKeysUseCase
+): ViewModel() {
 
     private val _keysWithAddressLiveData by lazy { MutableLiveData<Result<Triple<String, String, String>>>() }
     val keysWithAddressLiveData: LiveData<Result<Triple<String, String, String>>> = _keysWithAddressLiveData

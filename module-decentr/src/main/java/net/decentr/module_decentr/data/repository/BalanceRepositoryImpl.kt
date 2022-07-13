@@ -4,9 +4,9 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import net.decentr.module_decentr.data.datasource.cerberus.BalancesDataSource
-import net.decentr.module_decentr.domain.models.BalanceDEC
-import net.decentr.module_decentr.domain.models.BalancePDV
-import net.decentr.module_decentr.domain.repository.BalanceRepository
+import net.decentr.module_decentr_domain.models.BalanceDEC
+import net.decentr.module_decentr_domain.models.BalancePDV
+import net.decentr.module_decentr_domain.repository.BalanceRepository
 import javax.inject.Inject
 
 class BalanceRepositoryImpl @Inject constructor(

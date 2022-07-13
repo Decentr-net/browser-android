@@ -5,13 +5,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import net.decentr.module_decentr.domain.errors.ErrorHandler
-import net.decentr.module_decentr.domain.models.PDVProfile
-import net.decentr.module_decentr.domain.models.Profile
-import net.decentr.module_decentr.domain.state.Result
-import net.decentr.module_decentr.domain.usecases.pdv.SendPDVUseCase
-import net.decentr.module_decentr.domain.usecases.signin.GetProfileUseCase
-import net.decentr.module_decentr.domain.usecases.signin.SaveProfileUseCase
+import net.decentr.module_decentr_domain.errors.ErrorHandler
+import net.decentr.module_decentr_domain.models.PDVProfile
+import net.decentr.module_decentr_domain.models.Profile
+import net.decentr.module_decentr_domain.state.Result
+import net.decentr.module_decentr_domain.usecases.pdv.SendPDVUseCase
+import net.decentr.module_decentr_domain.usecases.signin.SaveProfileUseCase
 import javax.inject.Inject
 
 class SetProfileViewModel @Inject constructor(

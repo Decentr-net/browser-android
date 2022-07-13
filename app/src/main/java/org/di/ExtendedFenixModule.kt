@@ -5,7 +5,7 @@ import dagger.Binds
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import dagger.multibindings.IntoMap
-import net.decentr.module_decentr.di.keys.ViewModelKey
+import net.decentr.module_decentr_common.di.keys.keys.ViewModelKey
 import org.mozilla.fenix.HomeActivity
 import org.mozilla.fenix.HomeDecentrViewModel
 import org.mozilla.fenix.customtabs.ExternalAppBrowserActivity

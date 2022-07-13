@@ -1,0 +1,14 @@
+syntax = "proto3";
+package operations;
+
+import "decentr/operations/operations.proto";
+
+option go_package = "github.com/Decentr-net/decentr/x/operations/types";
+option java_package = "net.decentr.module_decentr_staking";
+option java_outer_classname = "OperationsGenesisProto";
+option java_multiple_files = true;
+
+message OperationsGenesisState {
+  // params defines all the paramaters of the module.
+  OperationsParams params = 1;
+}

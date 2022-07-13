@@ -1,0 +1,37 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdk Config.compileSdkVersion
+
+    defaultConfig {
+        minSdk Config.minSdkVersion
+        targetSdk Config.targetSdkVersion
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation Deps.kotlin_stdlib
+    implementation Deps.kotlin_coroutines
+
+    implementation DecentrDeps.gson
+    implementation DecentrDeps.retrofit_gsonConverter
+
+    api DecentrDeps.room_runtime
+    kapt DecentrDeps.room_compiler
+    implementation DecentrDeps.room_ktx
+    api DecentrDeps.javaXInject
+}
+
+repositories {
+    mavenCentral()
+    google()
+}

@@ -6,15 +6,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import net.decentr.module_decentr.data.utils.etheriumkit.removeLeadingZeros
-import net.decentr.module_decentr.data.utils.hdwalletkit.HDWallet
-import net.decentr.module_decentr.data.utils.hdwalletkit.Mnemonic
-import net.decentr.module_decentr.data.utils.hdwalletkit.UtilConverter
-import net.decentr.module_decentr.domain.errors.ErrorHandler
-import net.decentr.module_decentr.domain.models.Profile
-import net.decentr.module_decentr.domain.state.Result
-import net.decentr.module_decentr.domain.usecases.register.TrackInstallUseCase
-import net.decentr.module_decentr.domain.usecases.signin.*
+import net.decentr.module_decentr_common.data.utils.etheriumkit.removeLeadingZeros
+import net.decentr.module_decentr_common.data.utils.hdwalletkit.HDWallet
+import net.decentr.module_decentr_common.data.utils.hdwalletkit.Mnemonic
+import net.decentr.module_decentr_common.data.utils.hdwalletkit.UtilConverter
+import net.decentr.module_decentr_domain.errors.ErrorHandler
+import net.decentr.module_decentr_domain.models.Profile
+import net.decentr.module_decentr_domain.state.Result
+import net.decentr.module_decentr_domain.usecases.register.TrackInstallUseCase
+import net.decentr.module_decentr_domain.usecases.signin.*
 import javax.inject.Inject
 
 class SignInSeedViewModel @Inject constructor(

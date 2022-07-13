@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_pager_validators">Validators</string>
+    <string name="title_pager_rewards">Rewards</string>
+
+    <string name="header_staking_validator">Validator</string>
+    <string name="header_staking_voting_power">Voting power</string>
+    <string name="header_staking_status">Status</string>
+    <string name="header_staking_commision">Commission</string>
+    <string name="header_staking_dec_amount">Delegated, tDEC</string>
+
+    <string name="rewards_withdraw_action">Withdraw</string>
+    <string name="rewards_legend_withdraw">Withdraw: %s tDEC of %s tDEC available</string>
+    <string name="rewards_legend_fee">Fee: %s tDEC</string>
+
+    <string name="title_validator">Validator</string>
+
+    <string name="validator_operator_hint">Operator address</string>
+    <string name="validator_website_hint">Website</string>
+    <string name="validator_commission_hint">Commission</string>
+    <string name="validator_delegated_hint">Delegated:</string>
+    <string name="validator_jailed">Jailed</string>
+
+    <string name="validator_not_loaded_website_hint">Could not load validator website</string>
+    <string name="validator_not_loaded_description_hint">Could not load validator description</string>
+
+    <string name="validator_status_unspecified">Unspecified</string>
+    <string name="validator_status_bonded">Bonded</string>
+    <string name="validator_status_not_bonded">Not bonded</string>
+    <string name="validator_status_bonding">Bonding</string>
+    <string name="validator_status_unbonding">Unbonding</string>
+
+    <string name="validator_delegate_action">Delegate</string>
+    <string name="validator_undelegate_action">Undelegate</string>
+    <string name="validator_redelegate_action">Redelegate</string>
+
+    <string name="validator_actions_withdraw_commission">Withdraw commission: %s%%</string>
+    <string name="validator_actions_to_validator">To validator</string>
+    <string name="validator_actions_balance">Balance: %s tDEC</string>
+    <string name="validator_actions_available">Available: %s tDEC</string>
+    <string name="validator_actions_fee">Fee: %s tDEC</string>
+    <string name="validator_actions_delegated_amount_hint">Delegate amount</string>
+    <string name="validator_actions_delegated_amount_value">%s tDEC</string>
+    <string name="validator_actions_redelegated_amount_hint">Redelegate amount</string>
+    <string name="validator_actions_undelegated_amount_hint">Undelegate amount</string>
+    <string name="validator_actions_error">Insufficient funds</string>
+    <string name="validator_actions_amount_error">Amount is required</string>
+    <string name="validator_actions_amount_min_error">Minimum value is 0.000001</string>
+
+    <string name="validator_undelegate_info_title">Trying to switch validators?</string>
+    <string name="validator_undelegate_info_description">Use the ‘Redelegate’ feature to instantly stake your assets to another validator.</string>
+
+    <string name="validator_delegate_info_title">Staking will lock your funds</string>
+    <string name="validator_delegate_info_description">You will need to undelegate in order for your staked assets to be liquid again.</string>
+
+    <string name="validator_result_delegate_success">Delegation succeeded</string>
+    <string name="validator_result_redelegate_success">Redelegation succeeded</string>
+    <string name="validator_result_undelegate_success">Undelegation succeeded</string>
+
+    <string name="validator_result_delegate_info">To: %s\nAmount: %s tDEC</string>
+    <string name="validator_result_undelegate_info">From: %s\nAmount: %s tDEC</string>
+    <string name="validator_result_redelegate_info">From: %s\nTo: %s\nAmount: %s tDEC</string>
+</resources>

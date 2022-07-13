@@ -1,8 +1,6 @@
 package net.decentr.module_decentr.remote.model
 
 import com.google.gson.annotations.Expose
-import net.decentr.module_decentr.domain.models.PDV
-import java.util.*
 
 data class PDVRequest(
     @Expose

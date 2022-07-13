@@ -4,7 +4,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import net.decentr.module_decentr.data.datasource.cerberus.RegisterDataSource
-import net.decentr.module_decentr.domain.repository.RegisterRepository
+import net.decentr.module_decentr_domain.repository.RegisterRepository
 import javax.inject.Inject
 
 class RegisterRepositoryImpl @Inject constructor(

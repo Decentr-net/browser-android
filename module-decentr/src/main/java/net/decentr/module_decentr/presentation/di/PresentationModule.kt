@@ -7,6 +7,8 @@ import net.decentr.module_decentr.di.FragmentFactory
 import net.decentr.module_decentr.di.ViewModelFactory
 
 @Module(includes = [
+    HubModule::class,
+    ProfileModule::class,
     LoginModule::class
 ])
 interface PresentationModule {

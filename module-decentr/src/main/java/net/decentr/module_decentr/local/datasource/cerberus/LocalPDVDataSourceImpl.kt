@@ -1,12 +1,12 @@
 package net.decentr.module_decentr.local.datasource.cerberus
 
 import net.decentr.module_decentr.data.datasource.cerberus.PDVDataSource
-import net.decentr.module_decentr.domain.models.PDV
-import net.decentr.module_decentr.domain.models.PDVHistory
-import net.decentr.module_decentr.local.database.ProjectDatabase
-import net.decentr.module_decentr.local.database.dao.PDVDao
-import net.decentr.module_decentr.local.database.mapper.toDomain
-import net.decentr.module_decentr.local.database.mapper.toEntity
+import net.decentr.module_decentr.local.mapper.toDomain
+import net.decentr.module_decentr.local.mapper.toEntity
+import net.decentr.module_decentr_db.ProjectDatabase
+import net.decentr.module_decentr_db.dao.PDVDao
+import net.decentr.module_decentr_domain.models.PDV
+import net.decentr.module_decentr_domain.models.PDVHistory
 import javax.inject.Inject
 
 class LocalPDVDataSourceImpl @Inject constructor(

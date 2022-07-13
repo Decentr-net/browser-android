@@ -1,8 +1,6 @@
 package net.decentr.module_decentr.presentation.login
 
 import android.os.Bundle
-import android.text.InputType
-import android.text.method.PasswordTransformationMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,13 +10,14 @@ import androidx.navigation.fragment.navArgs
 import net.decentr.module_decentr.NavDecentrDirections
 import net.decentr.module_decentr.R
 import net.decentr.module_decentr.databinding.FragmentSignInSeedPhraseBinding
-import net.decentr.module_decentr.domain.state.Result
+import net.decentr.module_decentr_domain.state.Result
 import net.decentr.module_decentr.presentation.base.BaseFragment
 import net.decentr.module_decentr.presentation.extensions.copyToClipboard
 import net.decentr.module_decentr.presentation.extensions.gone
 import net.decentr.module_decentr.presentation.extensions.onTextChanged
 import net.decentr.module_decentr.presentation.extensions.show
 import net.decentr.module_decentr.presentation.injectViewModel
+import net.decentr.module_decentr.presentation.mappers.toViewState
 import net.decentr.module_decentr.presentation.toast
 import net.decentr.module_decentr.presentation.utils.PasswordTransform
 import javax.inject.Inject
@@ -140,7 +139,7 @@ class SignInSeedPhraseFragment : BaseFragment(R.layout.fragment_sign_in_seed_phr
                 Result.Loading -> toast(getString(R.string.common_loading))
                 is Result.Success -> {
                     view?.findNavController()
-                        ?.navigate(NavDecentrDirections.actionProfile(profile = it.data))
+                        ?.navigate(NavDecentrDirections.actionProfile(profile = it.data.toViewState()))
                 }
             }
         }
@@ -166,5 +165,10 @@ class SignInSeedPhraseFragment : BaseFragment(R.layout.fragment_sign_in_seed_phr
                 )
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

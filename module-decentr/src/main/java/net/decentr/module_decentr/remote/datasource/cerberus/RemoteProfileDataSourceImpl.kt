@@ -2,8 +2,7 @@ package net.decentr.module_decentr.remote.datasource.cerberus
 
 import kotlinx.coroutines.flow.Flow
 import net.decentr.module_decentr.data.datasource.cerberus.ProfileDataSource
-import net.decentr.module_decentr.domain.mappers.toDomain
-import net.decentr.module_decentr.domain.models.Profile
+import net.decentr.module_decentr.remote.mapper.toDomain
 import net.decentr.module_decentr.remote.services.CerberusService
 import net.decentr.module_decentr.remote.services.DecentrService
 import javax.inject.Inject
@@ -13,7 +12,7 @@ class RemoteProfileDataSourceImpl @Inject constructor(
     private val decentrService: DecentrService
 ): ProfileDataSource {
 
-    override suspend fun getProfile(address: String?): Profile? {
+    override suspend fun getProfile(address: String?): net.decentr.module_decentr_domain.models.Profile? {
         return address?.let { cerberusService.getProfile(it).first()?.toDomain() }
     }
 
@@ -21,11 +20,11 @@ class RemoteProfileDataSourceImpl @Inject constructor(
         return decentrService.checkAddressInBlockchain(address).account != null
     }
 
-    override suspend fun getProfileFlow(): Flow<Profile> {
+    override suspend fun getProfileFlow(): Flow<net.decentr.module_decentr_domain.models.Profile> {
         throw IllegalStateException("You cannot get user flow in remote")
     }
 
-    override suspend fun saveProfile(profile: Profile) {
+    override suspend fun saveProfile(profile: net.decentr.module_decentr_domain.models.Profile) {
         throw IllegalStateException("You cannot update user in remote")
     }
 
