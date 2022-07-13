@@ -9,6 +9,8 @@ interface PDVUseCasesModule {
     @Binds
     fun bindSendPDVUseCase(useCase: SendPDVUseCaseImpl): SendPDVUseCase
     @Binds
+    fun bindValidatePDVUseCase(useCase: ValidatePDVUseCaseImpl): ValidatePDVUseCase
+    @Binds
     fun bindSavePDVUseCase(useCase: SavePDVUseCaseImpl): SavePDVUseCase
     @Binds
     fun bindRemovePDVUseCase(useCase: RemovePDVUseCaseImpl): RemovePDVUseCase

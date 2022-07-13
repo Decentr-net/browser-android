@@ -22,8 +22,14 @@ class ErrorHandlerImpl @Inject constructor(private val gson: Gson) :
                 val code = throwable.code()
                 convertErrorBody(throwable)?.let {
                     when (it.code) {
-                        5 -> return DecException(
+                        PROFILE_NOT_FOUND -> return DecException(
                             "Profile not found by this address",
+                            throwable,
+                            code
+                        )
+                        PDV_INVALID_CODE,
+                        PDV_FRAUD_OR_BANNED -> return DecException(
+                            throwable.message(),
                             throwable,
                             code
                         )

@@ -20,6 +20,12 @@ class PDVRepositoryImpl @Inject constructor(
         }
     }
 
+    override suspend fun validatePDV(pdv: List<PDV>): Pair<Boolean, List<Int>?> {
+        return withContext(ioDispatcher) {
+            remotePDVDataSource.validatePDV(pdv)
+        }
+    }
+
     override suspend fun savePDV(pdv: List<PDV>): Int {
         return withContext(ioDispatcher) {
             localPDVDataSource.savePDV(pdv)

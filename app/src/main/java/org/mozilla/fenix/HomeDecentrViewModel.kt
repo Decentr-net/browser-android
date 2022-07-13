@@ -15,17 +15,23 @@ import java.util.*
 import javax.inject.Inject
 import kotlin.collections.ArrayList
 import kotlinx.coroutines.flow.collect
+import net.decentr.module_decentr_domain.errors.DecException
+import net.decentr.module_decentr_domain.errors.ErrorHandler
 
 class HomeDecentrViewModel @Inject constructor(
     private val savePDVUseCase: SavePDVUseCase,
+    private val validatePDVUseCase: ValidatePDVUseCase,
     private val sendPDVUseCase: SendPDVUseCase,
     private val getAllPDVUseCase: GetAllPDVUseCase,
     private val removePDVUseCase: RemovePDVUseCase,
     private val checkUnicPDVUseCase: CheckUnicPDVUseCase,
-    private val getProfileFlowUseCase: GetProfileFlowUseCase
+    private val getProfileFlowUseCase: GetProfileFlowUseCase,
+    private val errorHandler: ErrorHandler
 ) : ViewModel() {
 
     private val MAX_PDV_COUNT = 60
+    private val PDV_INVALID_CODE = 400
+    private val PDV_FRAUD = 403
     private fun getPDVConfig(): Int {
         return MAX_PDV_COUNT
     }
@@ -69,7 +75,33 @@ class HomeDecentrViewModel @Inject constructor(
                     }
                 }
             } catch (e: Exception) {
+                validatePDV(errorHandler(e))
                 Log.e("DATABASE", e.message.toString())
+            }
+        }
+    }
+
+    private fun validatePDV(e: DecException) {
+        viewModelScope.launch {
+            try {
+                if (e.code == PDV_INVALID_CODE || e.code == PDV_FRAUD) {
+                    val allPDV = getAllPDVUseCase.invoke()
+                    val partitionByAddress = allPDV.partition {
+                        it.type == PDV.PDVType.TYPE_HISTORY && (it.address == address || it.address.isNullOrEmpty())
+                    }
+                    val smallerLists: List<List<PDV>> =
+                        chopped(partitionByAddress.first.reversed(), MAX_PDV_COUNT)
+                    val listToSend = smallerLists.first()
+                    val (isValid, listOfInvalidIndexes) = validatePDVUseCase.invoke(listToSend)
+                    if (!isValid && !listOfInvalidIndexes.isNullOrEmpty()) {
+                        val listToRemove = listToSend.filterIndexed { index, pdv ->
+                            listOfInvalidIndexes.contains(index)
+                        }
+                        removePDVUseCase.invoke(listToRemove)
+                    }
+                }
+            } catch (e: DecException) {
+                Log.e("Validate Error", e.message.toString())
             }
         }
     }

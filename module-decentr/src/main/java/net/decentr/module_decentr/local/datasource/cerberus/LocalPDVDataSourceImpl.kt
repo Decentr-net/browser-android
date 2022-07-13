@@ -18,6 +18,10 @@ class LocalPDVDataSourceImpl @Inject constructor(
         throw IllegalStateException("You cannot send pdv local")
     }
 
+    override suspend fun validatePDV(pdv: List<PDV>): Pair<Boolean, List<Int>> {
+        throw IllegalStateException("You cannot validate pdv local")
+    }
+
     override suspend fun savePDV(pdv: List<PDV>): Int {
         pdvDao.insertPDVList(pdv.map { it.toEntity() })
         return pdvDao.getPDVCount(pdv.first().address!!) ?: 0
