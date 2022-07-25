@@ -108,18 +108,23 @@ class TxService @Inject constructor() {
         )
         val authResponse = getAuthResponse(accountAddress)
         val fee = Fee.newBuilder().addAmount(Coin.newBuilder().setAmount("0").setDenom(TOKEN_DEC).build()).build()
-        val simulationRequest = Signer.getSignSimulTx(
-            authResponse,
-            Signer.getReDelegateMsg(accountAddress, fromValidatorAddress, toValidatorAddress, isValidateDelegateAmount(redelegateAmount)),
-            fee,
-            memoSimulation,
-            ecKey,
-            chainId,
-            publicKey
-        )
-        val response = simulateTx(simulationRequest?.txBytes)
 
-        return Signer.adjustGas(response.gasInfo.gasUsed to response.gasInfo.gasWanted)
+        try {
+            val simulationRequest = Signer.getSignSimulTx(
+                authResponse,
+                Signer.getReDelegateMsg(accountAddress, fromValidatorAddress, toValidatorAddress, isValidateDelegateAmount(redelegateAmount)),
+                fee,
+                memoSimulation,
+                ecKey,
+                chainId,
+                publicKey
+            )
+            val response = simulateTx(simulationRequest?.txBytes)
+
+            return Signer.adjustGas(response.gasInfo.gasUsed to response.gasInfo.gasWanted)
+        } catch (e: Exception) {
+            throw e
+        }
     }
 
     suspend fun redelegate(privateKey: String, publicKey: String, accountAddress: String, fromValidatorAddress: String, toValidatorAddress: String, redelegateAmount: String, fee: Double): String {
@@ -130,18 +135,22 @@ class TxService @Inject constructor() {
         val authResponse = getAuthResponse(accountAddress)
         val feeObj = Fee.newBuilder().addAmount(Coin.newBuilder().setAmount(Signer.reAdjustGas(fee)).setDenom(TOKEN_DEC).build()).build()
 
-        val broadcastTxRequest: BroadcastTxRequest = Signer.getSignTx(
-            authResponse,
-            Signer.getReDelegateMsg(accountAddress, fromValidatorAddress, toValidatorAddress, isValidateDelegateAmount(redelegateAmount)),
-            feeObj,
-            memoTarget,
-            ecKey,
-            chainId,
-            publicKey
-        ) ?: throw IllegalStateException("broadcast cannot be null")
-        val response = broadcastTx(broadcastTxRequest)
+        try {
+            val broadcastTxRequest: BroadcastTxRequest = Signer.getSignTx(
+                authResponse,
+                Signer.getReDelegateMsg(accountAddress, fromValidatorAddress, toValidatorAddress, isValidateDelegateAmount(redelegateAmount)),
+                feeObj,
+                memoTarget,
+                ecKey,
+                chainId,
+                publicKey
+            ) ?: throw IllegalStateException("broadcast cannot be null")
+            val response = broadcastTx(broadcastTxRequest)
 
-        return response.txResponse.txhash
+            return response.txResponse.txhash
+        } catch (e: Exception) {
+            throw e
+        }
     }
 
     suspend fun simulationDelegate(privateKey: String, publicKey: String, accountAddress: String, toValidatorAddress: String, delegateAmount: String): Pair<Double, Double> {
@@ -151,18 +160,23 @@ class TxService @Inject constructor() {
         )
         val authResponse = getAuthResponse(accountAddress)
         val fee = Fee.newBuilder().addAmount(Coin.newBuilder().setAmount("0").setDenom(TOKEN_DEC).build()).build()
-        val simulationRequest = Signer.getSignSimulTx(
-            authResponse,
-            Signer.getDelegateMsg(accountAddress, toValidatorAddress, isValidateDelegateAmount(delegateAmount)),
-            fee,
-            memoSimulation,
-            ecKey,
-            chainId,
-            publicKey
-        )
-        val response = simulateTx(simulationRequest?.txBytes)
 
-        return Signer.adjustGas(response.gasInfo.gasUsed to response.gasInfo.gasWanted)
+        try {
+            val simulationRequest = Signer.getSignSimulTx(
+                authResponse,
+                Signer.getDelegateMsg(accountAddress, toValidatorAddress, isValidateDelegateAmount(delegateAmount)),
+                fee,
+                memoSimulation,
+                ecKey,
+                chainId,
+                publicKey
+            )
+            val response = simulateTx(simulationRequest?.txBytes)
+
+            return Signer.adjustGas(response.gasInfo.gasUsed to response.gasInfo.gasWanted)
+        } catch (e: Exception) {
+            throw e
+        }
     }
 
     suspend fun delegate(privateKey: String, publicKey: String, accountAddress: String, toValidatorAddress: String, delegateAmount: String, fee: Double): String {
@@ -172,18 +186,23 @@ class TxService @Inject constructor() {
         )
         val authResponse = getAuthResponse(accountAddress)
         val feeObj = Fee.newBuilder().addAmount(Coin.newBuilder().setAmount(Signer.reAdjustGas(fee)).setDenom(TOKEN_DEC).build()).build()
-        val broadcastTxRequest: BroadcastTxRequest = Signer.getSignTx(
-            authResponse,
-            Signer.getDelegateMsg(accountAddress, toValidatorAddress, isValidateDelegateAmount(delegateAmount)),
-            feeObj,
-            memoTarget,
-            ecKey,
-            chainId,
-            publicKey
-        ) ?: throw IllegalStateException("broadcast cannot be null")
-        val response = broadcastTx(broadcastTxRequest)
 
-        return response.txResponse.txhash
+        try {
+            val broadcastTxRequest: BroadcastTxRequest = Signer.getSignTx(
+                authResponse,
+                Signer.getDelegateMsg(accountAddress, toValidatorAddress, isValidateDelegateAmount(delegateAmount)),
+                feeObj,
+                memoTarget,
+                ecKey,
+                chainId,
+                publicKey
+            ) ?: throw IllegalStateException("broadcast cannot be null")
+            val response = broadcastTx(broadcastTxRequest)
+
+            return response.txResponse.txhash
+        } catch (e: Exception) {
+            throw e
+        }
     }
 
     suspend fun simulationUndelegate(privateKey: String, publicKey: String, accountAddress: String, fromValidator: String, delegateAmount: String): Pair<Double, Double> {
@@ -193,18 +212,23 @@ class TxService @Inject constructor() {
         )
         val authResponse = getAuthResponse(accountAddress)
         val fee = Fee.newBuilder().addAmount(Coin.newBuilder().setAmount("0").setDenom(TOKEN_DEC).build()).build()
-        val simulationRequest = Signer.getSignSimulTx(
-            authResponse,
-            Signer.getUnDelegateMsg(accountAddress, fromValidator, isValidateDelegateAmount(delegateAmount)),
-            fee,
-            memoSimulation,
-            ecKey,
-            chainId,
-            publicKey
-        )
-        val response = simulateTx(simulationRequest?.txBytes)
 
-        return Signer.adjustGas(response.gasInfo.gasUsed to response.gasInfo.gasWanted)
+        try {
+            val simulationRequest = Signer.getSignSimulTx(
+                authResponse,
+                Signer.getUnDelegateMsg(accountAddress, fromValidator, isValidateDelegateAmount(delegateAmount)),
+                fee,
+                memoSimulation,
+                ecKey,
+                chainId,
+                publicKey
+            )
+            val response = simulateTx(simulationRequest?.txBytes)
+
+            return Signer.adjustGas(response.gasInfo.gasUsed to response.gasInfo.gasWanted)
+        } catch (e: Exception) {
+            throw e
+        }
     }
 
     suspend fun undelegate(privateKey: String, publicKey: String, accountAddress: String, fromValidator: String, delegateAmount: String, fee: Double): String {
@@ -215,18 +239,22 @@ class TxService @Inject constructor() {
         val authResponse = getAuthResponse(accountAddress)
         val feeObj = Fee.newBuilder().addAmount(Coin.newBuilder().setAmount(Signer.reAdjustGas(fee)).setDenom(TOKEN_DEC).build()).build()
 
-        val broadcastTxRequest: BroadcastTxRequest = Signer.getSignTx(
-            authResponse,
-            Signer.getUnDelegateMsg(accountAddress, fromValidator, isValidateDelegateAmount(delegateAmount)),
-            feeObj,
-            memoTarget,
-            ecKey,
-            chainId,
-            publicKey
-        ) ?: throw IllegalStateException("broadcast cannot be null")
-        val response = broadcastTx(broadcastTxRequest)
+        try {
+            val broadcastTxRequest: BroadcastTxRequest = Signer.getSignTx(
+                authResponse,
+                Signer.getUnDelegateMsg(accountAddress, fromValidator, isValidateDelegateAmount(delegateAmount)),
+                feeObj,
+                memoTarget,
+                ecKey,
+                chainId,
+                publicKey
+            ) ?: throw IllegalStateException("broadcast cannot be null")
+            val response = broadcastTx(broadcastTxRequest)
 
-        return response.txResponse.txhash
+            return response.txResponse.txhash
+        } catch (e: Exception) {
+            throw e
+        }
     }
 
     private suspend fun getAuthResponse(address: String): AuthQuery.QueryAccountResponse {

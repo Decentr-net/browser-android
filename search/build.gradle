@@ -1,0 +1,97 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion Config.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion Config.minSdkVersion
+        targetSdkVersion Config.targetSdkVersion
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            resValue "bool", "IS_DEBUG", "true"
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            resValue "bool", "IS_DEBUG", "false"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        test {
+            resources {
+                // We want to access the assets from unit tests. With this configuration we can just
+                // read the files directly and do not need to rely on Robolectric.
+                srcDir "${projectDir}/src/main/assets/"
+            }
+        }
+    }
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    kotlinOptions.freeCompilerArgs += [
+        "-Xopt-in=kotlinx.coroutines.FlowPreview",
+        "-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
+    ]
+}
+
+dependencies {
+    api Deps.kotlin_coroutines
+    api Deps.kotlin_coroutines_android
+
+    api Deps.mozilla_feature_tabs
+    api Deps.mozilla_browser_state
+    api Deps.mozilla_concept_engine
+    api Deps.mozilla_service_location
+    api Deps.mozilla_support_utils
+    api Deps.mozilla_support_ktx
+
+    implementation Deps.kotlin_stdlib
+
+    testImplementation Deps.mozilla_support_test
+//    testImplementation project(':support-test-fakes')
+    testImplementation Deps.mozilla_support_test
+    testImplementation Deps.mozilla_support_test_libstate
+    testImplementation Deps.androidx_junit
+    testImplementation Deps.androidx_work_testing
+    testImplementation Deps.androidx_test_core
+    testImplementation Deps.robolectric, {
+        exclude group: 'org.apache.maven'
+    }
+    testImplementation Deps.testing_mockito
+    testImplementation Deps.testing_coroutines
+}
+
+repositories {
+    mavenCentral()
+}
+
+tasks.register("updateAdsExtensionVersion", org.gradle.api.tasks.Copy) { task ->
+    updateExtensionVersion(task, 'src/main/assets/extensions/ads')
+}
+
+tasks.register("updateCookiesExtensionVersion", org.gradle.api.tasks.Copy) { task ->
+    updateExtensionVersion(task, 'src/main/assets/extensions/search')
+}
+
+//preBuild.dependsOn "updateAdsExtensionVersion"
+//preBuild.dependsOn "updateCookiesExtensionVersion"
+
+//apply from: '../../../publish.gradle'
+//ext.configurePublish(config.componentsGroupId, archivesBaseName, project.ext.description)

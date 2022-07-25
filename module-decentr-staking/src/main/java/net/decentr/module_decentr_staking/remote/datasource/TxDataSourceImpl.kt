@@ -41,7 +41,7 @@ class TxDataSourceImpl @Inject constructor(private val txService: TxService): Tx
         toValidatorAddress: String,
         redelegateAmount: String
     ): Pair<Double, Double> {
-        val (gasWanted, gasUsed) = txService.simulateRedelegate(privateKey, publicKey, accountAddress, fromValidatorAddress, toValidatorAddress, redelegateAmount.toDouble().times(DIVIDER_SMALL.toDouble()).toString())
+        val (gasWanted, gasUsed) = txService.simulateRedelegate(privateKey, publicKey, accountAddress, fromValidatorAddress, toValidatorAddress, redelegateAmount.toDouble().times(DIVIDER_SMALL.toDouble()).toInt().toString())
         return gasWanted.div(DIVIDER_SMALL.toDouble()) to gasUsed.div(DIVIDER_SMALL.toDouble())
     }
 
@@ -54,7 +54,7 @@ class TxDataSourceImpl @Inject constructor(private val txService: TxService): Tx
         redelegateAmount: String,
         fee: String
     ): String {
-        return txService.redelegate(privateKey, publicKey, accountAddress, fromValidatorAddress, toValidatorAddress, redelegateAmount.toDouble().times(DIVIDER_SMALL.toDouble()).toString(), fee.toDouble().times(DIVIDER_SMALL.toDouble()))
+        return txService.redelegate(privateKey, publicKey, accountAddress, fromValidatorAddress, toValidatorAddress, redelegateAmount.toDouble().times(DIVIDER_SMALL.toDouble()).toInt().toString(), fee.toDouble().times(DIVIDER_SMALL.toDouble()))
     }
 
     override suspend fun simulateDelegate(
@@ -64,7 +64,7 @@ class TxDataSourceImpl @Inject constructor(private val txService: TxService): Tx
         toValidatorAddress: String,
         delegateAmount: String
     ): Pair<Double, Double> {
-        val (gasWanted, gasUsed) = txService.simulationDelegate(privateKey, publicKey, accountAddress, toValidatorAddress, delegateAmount.toDouble().times(DIVIDER_SMALL.toDouble()).toString())
+        val (gasWanted, gasUsed) = txService.simulationDelegate(privateKey, publicKey, accountAddress, toValidatorAddress, delegateAmount.toDouble().times(DIVIDER_SMALL.toDouble()).toInt().toString())
         return gasWanted.div(DIVIDER_SMALL.toDouble()) to gasUsed.div(DIVIDER_SMALL.toDouble())
     }
 
@@ -76,7 +76,7 @@ class TxDataSourceImpl @Inject constructor(private val txService: TxService): Tx
         delegateAmount: String,
         fee: String
     ): String {
-        return txService.delegate(privateKey, publicKey, accountAddress, toValidatorAddress, delegateAmount.toDouble().times(DIVIDER_SMALL.toDouble()).toString(), fee.toDouble().times(DIVIDER_SMALL.toDouble()))
+        return txService.delegate(privateKey, publicKey, accountAddress, toValidatorAddress, delegateAmount.toDouble().times(DIVIDER_SMALL.toDouble()).toInt().toString(), fee.toDouble().times(DIVIDER_SMALL.toDouble()))
     }
 
     override suspend fun simulateUndelegate(
@@ -86,7 +86,7 @@ class TxDataSourceImpl @Inject constructor(private val txService: TxService): Tx
         fromValidator: String,
         delegateAmount: String
     ): Pair<Double, Double> {
-        val (gasWanted, gasUsed) = txService.simulationUndelegate(privateKey, publicKey, accountAddress, fromValidator, delegateAmount.toDouble().times(DIVIDER_SMALL.toDouble()).toString())
+        val (gasWanted, gasUsed) = txService.simulationUndelegate(privateKey, publicKey, accountAddress, fromValidator, delegateAmount.toDouble().times(DIVIDER_SMALL.toDouble()).toInt().toString())
         return gasWanted.div(DIVIDER_SMALL.toDouble()) to gasUsed.div(DIVIDER_SMALL.toDouble())
     }
 
@@ -98,7 +98,7 @@ class TxDataSourceImpl @Inject constructor(private val txService: TxService): Tx
         delegateAmount: String,
         fee: String
     ): String {
-        return txService.undelegate(privateKey, publicKey, accountAddress, fromValidator, delegateAmount.toDouble().times(DIVIDER_SMALL.toDouble()).toString(), fee.toDouble().times(DIVIDER_SMALL.toDouble()))
+        return txService.undelegate(privateKey, publicKey, accountAddress, fromValidator, delegateAmount.toDouble().times(DIVIDER_SMALL.toDouble()).toInt().toString(), fee.toDouble().times(DIVIDER_SMALL.toDouble()))
     }
 
     override fun closeChannel() {

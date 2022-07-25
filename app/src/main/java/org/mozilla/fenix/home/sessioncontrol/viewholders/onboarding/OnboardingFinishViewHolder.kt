@@ -22,15 +22,15 @@ class OnboardingFinishViewHolder(
         val binding = OnboardingFinishBinding.bind(view)
         binding.finishButton.setOnClickListener {
             interactor.onStartBrowsingClicked()
-
-            //add decentr default search engint DDG
-            val searchEngineId = "ddg"
-            val engine = requireNotNull(
-                it.context.components.core.store.state.search.searchEngines.find { searchEngine ->
-                    searchEngine.id == searchEngineId
-                }
-            )
-            it.context.components.useCases.searchUseCases.selectSearchEngine(engine)
+//
+//            //add decentr default search engint DDG
+//            val searchEngineId = "ddg"
+//            val engine = requireNotNull(
+//                it.context.components.core.store.state.search.searchEngines.find { searchEngine ->
+//                    searchEngine.id == searchEngineId
+//                }
+//            )
+//            it.context.components.useCases.searchUseCases.selectSearchEngine(engine)
             it.context.components.analytics.metrics.track(Event.OnboardingFinish)
         }
     }

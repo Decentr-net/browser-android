@@ -13,6 +13,7 @@ private val wellKnownSearchDomains = setOf(
     "ask",
     "baidu",
     "bing",
+    "presearch",
     "duckduckgo",
     "google",
     "yahoo",

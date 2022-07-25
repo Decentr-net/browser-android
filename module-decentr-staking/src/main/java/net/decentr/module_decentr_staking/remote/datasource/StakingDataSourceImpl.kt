@@ -34,8 +34,8 @@ class StakingDataSourceImpl @Inject constructor(
                 .setPagination(pageRequest).build()
         return service.delegatorDelegations(request).delegationResponsesList.map {
             it.delegation.validatorAddress to
-                    if (!it.delegation.shares.isNullOrEmpty())
-                        (it.delegation.shares.toBigDecimal().divide((DIVIDER_BIG).toBigDecimal()).divide((DIVIDER_MEDIUM).toBigDecimal())).toString()
+                    if (!it.balance.amount.isNullOrEmpty())
+                        it.balance.amount.toDouble().div(DIVIDER_SMALL).toString()
                     else "0"
         }
     }

@@ -5,6 +5,8 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import net.decentr.module_decentr_domain.errors.DecException
+import net.decentr.module_decentr_domain.errors.ErrorHandler
 import net.decentr.module_decentr_domain.models.PDV
 import net.decentr.module_decentr_domain.models.PDVHistory
 import net.decentr.module_decentr_domain.usecases.pdv.*
@@ -13,10 +15,6 @@ import org.mozilla.fenix.ext.isKnownSearchDomain
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
-import kotlin.collections.ArrayList
-import kotlinx.coroutines.flow.collect
-import net.decentr.module_decentr_domain.errors.DecException
-import net.decentr.module_decentr_domain.errors.ErrorHandler
 
 class HomeDecentrViewModel @Inject constructor(
     private val savePDVUseCase: SavePDVUseCase,
@@ -68,7 +66,7 @@ class HomeDecentrViewModel @Inject constructor(
                         val smallerLists: List<List<PDV>> =
                             chopped(partitionByAddress.first.reversed(), MAX_PDV_COUNT)
                         val listToSend = smallerLists.first()
-                        if (listToSend.isNotEmpty()) {
+                        if (listToSend.isNotEmpty() && listToSend.size == MAX_PDV_COUNT) {
                             val result = sendPDVUseCase.invoke(listToSend)
                             if (result > 0) removePDVUseCase.invoke(listToSend)
                         }
@@ -111,7 +109,8 @@ class HomeDecentrViewModel @Inject constructor(
         val domain = url.substringAfter("://").substringBefore("/")
         if (url.isKnownSearchDomain()
             && domain.substringBeforeLast('.').substringAfter('.').isNotEmpty()
-            && (domain.isNotEmpty() && domain != "null")) {
+            && (domain.isNotEmpty() && domain != "null")
+        ) {
             val query = url.substringAfter("$domain/").substringAfter("=").substringBefore("&")
             val pdv = PDVHistory(
                 id = 0,
@@ -120,7 +119,9 @@ class HomeDecentrViewModel @Inject constructor(
                 query = query,
                 engine = domain.substringBeforeLast('.').substringAfter('.'),
                 domain = domain,
-                timestamp = SimpleDateFormat(timespampPattern).apply { timeZone = TimeZone.getTimeZone("GMT") }.format(Date())
+                timestamp = SimpleDateFormat(timespampPattern).apply {
+                    timeZone = TimeZone.getTimeZone("GMT")
+                }.format(Date())
             )
             savePDV(listOf(pdv))
         }

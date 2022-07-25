@@ -5,6 +5,7 @@ include ':module-decentr'
 include ':module-decentr-staking'
 include ':mozilla-detekt-rules'
 include ':mozilla-lint-rules'
+include ':search'
 
 def log(message) {
     logger.lifecycle("[settings] ${message}")

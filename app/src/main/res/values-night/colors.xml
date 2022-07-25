@@ -13,32 +13,32 @@
     <!-- App Bar Top, App Bar Bottom, Frontlayer header -->
     <color name="fx_mobile_layer_color_3" tools:ignore="UnusedResources">@color/photonDarkGrey60</color>
     <!-- App Bar Top (edit), Header (edit) -->
-    <color name="fx_mobile_layer_color_accent" tools:ignore="UnusedResources">@color/photonViolet40</color>
+    <color name="fx_mobile_layer_color_accent" tools:ignore="UnusedResources">@color/decentr_blue_hover_30</color>
     <!-- Selected tab -->
     <color name="fx_mobile_layer_color_accent_nonopaque">@color/photonViolet50A32</color>
     <color name="fx_mobile_layer_color_scrim" tools:ignore="UnusedResources">@color/photonDarkGrey05A45</color>
     <color name="fx_mobile_layer_color_scrim_start">@color/photonInk80A96</color>
     <color name="fx_mobile_layer_color_scrim_end">@color/photonDarkGrey90A96</color>
     <!-- Tooltip -->
-    <color name="fx_mobile_layer_color_gradient_start" tools:ignore="UnusedResources">@color/photonViolet70</color>
+    <color name="fx_mobile_layer_color_gradient_start" tools:ignore="UnusedResources">@color/decentr_blue_hover_60</color>
     <!-- Tooltip -->
-    <color name="fx_mobile_layer_color_gradient_end" tools:ignore="UnusedResources">@color/photonViolet40</color>
+    <color name="fx_mobile_layer_color_gradient_end" tools:ignore="UnusedResources">@color/decentr_blue_hover_30</color>
 
     <!-- Action -->
     <!-- Primary button, Snackbar, Floating action button, Chip selected -->
-    <color name="fx_mobile_action_color_primary">@color/photonViolet60</color>
+    <color name="fx_mobile_action_color_primary">@color/decentr_blue_hover_60</color>
     <!-- Secondary button, Chip -->
     <color name="fx_mobile_action_color_secondary" tools:ignore="UnusedResources">@color/photonDarkGrey10</color>
     <!-- Checkbox default, Radio button default -->
     <color name="fx_mobile_action_color_form_default" tools:ignore="UnusedResources">@color/photonLightGrey05</color>
     <!-- Checkbox selected, Radio button selected -->
-    <color name="fx_mobile_action_color_form_selected" tools:ignore="UnusedResources">@color/photonViolet40</color>
+    <color name="fx_mobile_action_color_form_selected" tools:ignore="UnusedResources">@color/decentr_blue_hover_30</color>
     <!-- Switch background OFF, Switch background ON -->
     <color name="fx_mobile_action_color_form_surface" tools:ignore="UnusedResources">@color/photonDarkGrey05</color>
     <!-- Checkbox disabled, Radio disabled -->
     <color name="fx_mobile_action_color_form_disabled" tools:ignore="UnusedResources">@color/photonDarkGrey05</color>
     <!-- Switch thumb ON -->
-    <color name="fx_mobile_action_color_form_on" tools:ignore="UnusedResources">@color/photonViolet40</color>
+    <color name="fx_mobile_action_color_form_on" tools:ignore="UnusedResources">@color/decentr_blue_hover_30</color>
     <!-- Switch thumb OFF -->
     <color name="fx_mobile_action_color_form_off" tools:ignore="UnusedResources">@color/photonLightGrey05</color>
     <!-- Scroll indicator active -->
@@ -56,7 +56,7 @@
     <!-- Warning text -->
     <color name="fx_mobile_text_color_warning" tools:ignore="UnusedResources">@color/photonRed40</color>
     <!-- Small heading, Text link -->
-    <color name="fx_mobile_text_color_accent">@color/photonViolet40</color>
+    <color name="fx_mobile_text_color_accent">@color/decentr_blue_hover_30</color>
     <!-- Text Inverted/On Color -->
     <color name="fx_mobile_text_color_inverted" tools:ignore="UnusedResources">@color/photonWhite</color>
 
@@ -92,7 +92,7 @@
     <!-- Form parts -->
     <color name="fx_mobile_border_color_form_default" tools:ignore="UnusedResources">@color/photonLightGrey05</color>
     <!-- Active tab (Nav), Selected tab, Active form -->
-    <color name="fx_mobile_border_color_accent">@color/photonViolet40</color>
+    <color name="fx_mobile_border_color_accent">@color/decentr_blue_hover</color>
     <!-- Form parts -->
     <color name="fx_mobile_border_color_disabled" tools:ignore="UnusedResources">@color/photonLightGrey70</color>
     <!-- Form parts -->
@@ -129,7 +129,7 @@
     <color name="prompt_login_edit_text_cursor_color_normal_theme">@color/photonViolet50</color>
     <color name="search_suggestion_indicator_icon_color_normal_theme">@color/photonGreen60</color>
     <color name="search_suggestion_indicator_icon_bookmark_color_normal_theme">@color/photonBlue40</color>
-    <color name="menu_item_button_normal_theme">@color/photonViolet40</color>
+    <color name="menu_item_button_normal_theme">@color/decentr_blue_hover_30</color>
     <color name="recently_used_share_theme">@color/photonDarkGrey10</color>
 
     <color name="mozac_widget_favicon_background_normal_theme">@color/photonDarkGrey50</color>
@@ -139,17 +139,17 @@
     <color name="tab_tray_item_text_normal_theme">@color/primary_text_normal_theme</color>
     <color name="tab_tray_item_url_normal_theme">@color/photonLightGrey60</color>
     <color name="tab_tray_item_background_normal_theme">@color/photonDarkGrey80</color>
-    <color name="tab_tray_item_selected_background_normal_theme">@color/tab_tray_item_selected_background_dark_theme</color>
+    <color name="tab_tray_item_selected_background_normal_theme">@color/decentr_blue_hover_60</color>
     <color name="tab_tray_item_divider_normal_theme">@color/photonDarkGrey10</color>
-    <color name="tab_tray_item_media_background_normal_theme">@color/photonViolet50</color>
-    <color name="tab_tray_heading_icon_normal_theme">@color/photonViolet50</color>
+    <color name="tab_tray_item_media_background_normal_theme">@color/decentr_blue_hover_60</color>
+    <color name="tab_tray_heading_icon_normal_theme">@color/decentr_blue_hover_30</color>
     <color name="tab_tray_heading_icon_inactive_normal_theme">@color/photonLightGrey05</color>
     <color name="tab_tray_heading_icon_menu_normal_theme">@color/photonLightGrey05</color>
     <color name="tab_tray_item_thumbnail_background_normal_theme">@color/photonDarkGrey50</color>
     <color name="tab_tray_item_thumbnail_icon_normal_theme">@color/photonDarkGrey05</color>
 
     <!-- Tab History -->
-    <color name="tab_history_item_selected_background_normal_theme">@color/tab_tray_item_selected_background_dark_theme</color>
+    <color name="tab_history_item_selected_background_normal_theme">@color/decentr_blue_hover_60</color>
 
     <!--Top site colors -->
     <color name="top_site_pager_dot">@color/photonDarkGrey40</color>

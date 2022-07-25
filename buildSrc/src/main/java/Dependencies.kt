@@ -6,8 +6,8 @@
 // FORCE REBUILD 2021-11-24
 
 object Versions {
-    const val kotlin = "1.5.31"
-    const val coroutines = "1.5.2"
+    const val kotlin = "1.6.10"
+    const val coroutines = "1.6.1"
 
     // These versions are linked: lint should be X+23.Y.Z of gradle_plugin version, according to:
     // https://github.com/alexjlockwood/android-lint-checks-demo/blob/0245fc027463137b1b4afb97c5295d60dce998b6/dependencies.gradle#L3
@@ -17,11 +17,10 @@ object Versions {
     const val sentry = "1.7.10"
     const val leakcanary = "2.8.1"
     const val osslicenses_plugin = "0.10.4"
-    const val detekt = "1.17.1"
-    const val jna = "5.6.0"
+    const val detekt = "1.19.0"
+    const val jna = "5.8.0"
 
-    const val androidx_activity_compose = "1.4.0"
-    const val androidx_compose = "1.0.5"
+    const val androidx_compose = "1.1.1"
     const val androidx_appcompat = "1.3.0"
     const val androidx_benchmark = "1.0.0"
     const val androidx_biometric = "1.1.0"
@@ -35,7 +34,7 @@ object Versions {
     const val androidx_navigation = "2.3.3"
     const val androidx_recyclerview = "1.2.1"
     const val androidx_core = "1.3.2"
-    const val androidx_paging = "2.1.2"
+    const val androidx_paging = "3.1.1"
     const val androidx_transition = "1.4.0"
     const val androidx_work = "2.7.1"
     const val androidx_datastore = "1.0.0"
@@ -51,7 +50,8 @@ object Versions {
 
     const val mockwebserver = "4.9.0"
     const val uiautomator = "2.2.0"
-    const val robolectric = "4.6.1"
+    const val robolectric = "4.8.1"
+    const val mockito = "3.11.2"
 
     const val google_ads_id_version = "16.0.0"
 
@@ -170,6 +170,10 @@ object Deps {
     const val mozilla_support_test_libstate = "org.mozilla.components:support-test-libstate:${Versions.mozilla_android_components}"
     const val mozilla_support_migration = "org.mozilla.components:support-migration:${Versions.mozilla_android_components}"
     const val mozilla_support_locale = "org.mozilla.components:support-locale:${Versions.mozilla_android_components}"
+
+    const val testing_coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
+    const val testing_robolectric = "org.robolectric:robolectric:${Versions.robolectric}"
+    const val testing_mockito = "org.mockito:mockito-core:${Versions.mockito}"
 
     const val sentry = "io.sentry:sentry-android:${Versions.sentry}"
     const val leakcanary = "com.squareup.leakcanary:leakcanary-android-core:${Versions.leakcanary}"

@@ -7,11 +7,11 @@
     <string name="header_staking_voting_power">Voting power</string>
     <string name="header_staking_status">Status</string>
     <string name="header_staking_commision">Commission</string>
-    <string name="header_staking_dec_amount">Delegated, tDEC</string>
+    <string name="header_staking_dec_amount">Delegated, DEC</string>
 
     <string name="rewards_withdraw_action">Withdraw</string>
-    <string name="rewards_legend_withdraw">Withdraw: %s tDEC of %s tDEC available</string>
-    <string name="rewards_legend_fee">Fee: %s tDEC</string>
+    <string name="rewards_legend_withdraw">Withdraw: %s DEC of %s DEC available</string>
+    <string name="rewards_legend_fee">Fee: %s DEC</string>
 
     <string name="title_validator">Validator</string>
 
@@ -36,11 +36,11 @@
 
     <string name="validator_actions_withdraw_commission">Withdraw commission: %s%%</string>
     <string name="validator_actions_to_validator">To validator</string>
-    <string name="validator_actions_balance">Balance: %s tDEC</string>
-    <string name="validator_actions_available">Available: %s tDEC</string>
-    <string name="validator_actions_fee">Fee: %s tDEC</string>
+    <string name="validator_actions_balance">Balance: %s DEC</string>
+    <string name="validator_actions_available">Available: %s DEC</string>
+    <string name="validator_actions_fee">Fee: %s DEC</string>
     <string name="validator_actions_delegated_amount_hint">Delegate amount</string>
-    <string name="validator_actions_delegated_amount_value">%s tDEC</string>
+    <string name="validator_actions_delegated_amount_value">%s DEC</string>
     <string name="validator_actions_redelegated_amount_hint">Redelegate amount</string>
     <string name="validator_actions_undelegated_amount_hint">Undelegate amount</string>
     <string name="validator_actions_error">Insufficient funds</string>
@@ -57,7 +57,7 @@
     <string name="validator_result_redelegate_success">Redelegation succeeded</string>
     <string name="validator_result_undelegate_success">Undelegation succeeded</string>
 
-    <string name="validator_result_delegate_info">To: %s\nAmount: %s tDEC</string>
-    <string name="validator_result_undelegate_info">From: %s\nAmount: %s tDEC</string>
-    <string name="validator_result_redelegate_info">From: %s\nTo: %s\nAmount: %s tDEC</string>
+    <string name="validator_result_delegate_info">To: %s\nAmount: %s DEC</string>
+    <string name="validator_result_undelegate_info">From: %s\nAmount: %s DEC</string>
+    <string name="validator_result_redelegate_info">From: %s\nTo: %s\nAmount: %s DEC</string>
 </resources>

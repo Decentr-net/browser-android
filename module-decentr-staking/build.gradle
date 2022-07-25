@@ -42,12 +42,10 @@ android {
 
     sourceSets {
         debug {
-            java.srcDirs += 'src/main/proto'
             java.srcDirs += "build/generated/source/proto/debug/grpckt"
             java.srcDirs += "build/generated/source/proto/debug/grpc"
         }
         release {
-            java.srcDirs += 'src/main/proto'
             java.srcDirs += "build/generated/source/proto/release/grpckt"
             java.srcDirs += "build/generated/source/proto/release/grpc"
         }
@@ -106,8 +104,6 @@ dependencies {
     implementation Deps.androidx_coordinatorlayout
 
     implementation Deps.androidx_legacy
-    implementation Deps.androidx_biometric
-    implementation Deps.androidx_paging
     implementation Deps.androidx_preference
     implementation Deps.androidx_fragment
     implementation Deps.androidx_navigation_fragment
@@ -135,7 +131,9 @@ dependencies {
     kapt DecentrDeps.dagger_processor
 
     //proto
-    api DecentrDeps.grpcKotlin
+    api DecentrDeps.grpcKotlin, {
+        exclude group: 'com.google.protobuf'
+    }
     api DecentrDeps.grpcProtobuf, {
         exclude group: 'com.google.protobuf'
     }

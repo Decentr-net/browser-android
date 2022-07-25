@@ -164,3 +164,11 @@
 -keep class * implements com.google.gson.TypeAdapterFactory
 -keep class * implements com.google.gson.JsonSerializer
 -keep class * implements com.google.gson.JsonDeserializer
+
+#R8 issue with proto files
+-keep class * extends com.google.protobuf.GeneratedMessageLite { *; }
+-keep class * extends com.google.api.** { *;}
+-keep class * extends cosmos.** { *;}
+-keep class * extends ics23.** { *;}
+-keep class * extends net.decentr.** { *;}
+-keep class * extends tendermint.** { *;}
